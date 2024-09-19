@@ -322,9 +322,8 @@ a.logo {
     color: white;
   }
 
-  .mobile-nav:hover {
+  .lien-cote li:hover {
     background-color: #dad3be;
-    border: solid 3px red;
   }
 
   .logo a {

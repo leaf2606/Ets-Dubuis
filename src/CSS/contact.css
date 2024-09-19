@@ -25,12 +25,3 @@ body {
 html {
   scroll-behavior: smooth;
 }
-
-h1 {
-  color: red;
-  font-family: var(--Montserrat-italic);
-}
-
-p {
-  font-family: var(--Montserrat-bold);
-}

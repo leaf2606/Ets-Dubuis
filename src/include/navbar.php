@@ -12,6 +12,8 @@ $loggedIn = isset($_SESSION["compte"]);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/contact.css">
     <title>Navbar</title>
 </head>
 
@@ -20,37 +22,37 @@ $loggedIn = isset($_SESSION["compte"]);
     <nav>
         <div class="navbar-cote">
             <ul class="links">
-                <a href="" class="logo">Accueil</a>
+                <a href="../index.php" class="logo">Accueil</a>
                 <div class="lien">
                     <ul class="menu-nav">
-                        <li><a href="" class="lien-cote">A propos</a></li>
+                        <li><a href="../propos.php" class="lien-cote">A propos</a></li>
                         <li class="has-sous-nav">
                             <a href="#" class="lien-cote">Equipements</a>
                             <ul class="sous-nav">
-                                <li><a href="">Boulangerie</a></li>
-                                <li><a href="">Patisserie</a></li>
-                                <li><a href="">Viennoiserie</a></li>
+                                <li><a href="">Gants</a></li>
+                                <li><a href="">Casques</a></li>
+                                <li><a href="">Blousons</a></li>
                             </ul>
                         </li>
                         <ul class="menu-nav">
                             <li class="has-sous-nav">
                                 <a href="#" class="lien-cote">Pièces</a>
                                 <ul class="sous-nav-1">
-                                    <li><a href="">Boulangerie</a></li>
-                                    <li><a href="">Patisserie</a></li>
-                                    <li><a href="">Viennoiserie</a></li>
+                                    <li><a href="">Pièces</a></li>
+                                    <li><a href="">Pièces</a></li>
+                                    <li><a href="">Pièces</a></li>
                                 </ul>
                             </li>
                             <ul class="menu-nav">
                                 <li class="has-sous-nav">
                                     <a href="#" class="lien-cote">Engins et Outils</a>
                                     <ul class="sous-nav-2">
-                                        <li><a href="">Boulangerie</a></li>
-                                        <li><a href="">Patisserie</a></li>
-                                        <li><a href="">Viennoiserie</a></li>
+                                        <li><a href="">Outils</a></li>
+                                        <li><a href="">Engins</a></li>
+                                        <li><a href=""> Outils</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="" class="lien-cote">Contact</a></li>
+                                <li><a href="../contact.php" class="lien-cote">Contact</a></li>
                                 <?php if ($loggedIn): ?>
                                 <li><a href="#" class="lien-cote">
                                         <?= htmlspecialchars($_SESSION["compte"]["username"]); ?></a></li>
