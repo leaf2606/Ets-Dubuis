@@ -46,8 +46,6 @@
         nobis rerum beatae cumque exercitationem laboriosam, dolores debitis. Saepe iure error suscipit, eaque
         praesentium quaerat minus ad!</p>
 
-    <?php include_once("./include/footer.php"); ?>
-
 </body>
 
 </html>

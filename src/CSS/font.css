@@ -33,7 +33,7 @@
   --Montserrat-bold: "Montserrat Bold", sans-serif;
 }
 
-/* h1 {
+h1 {
   font-family: var(--Montserrat-black);
 }
 
@@ -47,4 +47,4 @@ em {
 
 strong {
   font-family: var(--Montserrat-bold);
-} */
+}

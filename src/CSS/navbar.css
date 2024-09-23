@@ -63,6 +63,7 @@ html {
 .links .lien-cote {
   margin-left: 0px;
   margin-right: 80px;
+  font-weight: 600;
 }
 
 .lien {
@@ -261,6 +262,17 @@ a.logo {
   color: white;
 }
 
+/* Bouton pour le Jour / Nuit */
+
+.jour-nuit {
+  background: none;
+  border: none;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  padding-right: 40px;
+}
+
 /* Media pour navbar sur le cotê */
 
 @media screen and (max-width: 1349px) and (min-width: 150px) {
@@ -333,5 +345,16 @@ a.logo {
     font-size: 35px;
     color: white;
     position: fixed;
+  }
+
+  /* Bouton pour le Jour / Nuit */
+
+  .jour-nuit {
+    background: none;
+    border: none;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    padding-right: 40px;
   }
 }

@@ -14,10 +14,10 @@
 
         <section id="home">
             <img class="img-header active" src="../img/header-1.png" alt="header">
-            <img class="img-header" src="../img/header-2.png" alt="header">
+            <img class="img-header" src="../img/8.jpg" alt="header">
             <img class="img-header" src="../img/header-1.png" alt="header">
-            <img class="img-header" src="../img/header-2.png" alt="header">
-            <img class="img-header" src="../img/header-1.png" alt="header">
+            <img class="img-header" src="../img/12.jpg" alt="header">
+            <img class="img-header" src="../img/13.jpg" alt="header">
             <div class="content active">
                 <h1 class="titre-header">Bonjour,<span>Coucou</span></h1>
                 <p class="text-header">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae eligendi

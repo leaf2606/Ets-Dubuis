@@ -8,7 +8,7 @@
   padding: 0;
   list-style-type: none;
   text-decoration: none;
-  font-family: var(--Montserrat-light);
+  font-family: var(--Montserrat-light) !important;
   font-size: 20px;
 }
 
@@ -26,9 +26,17 @@ html {
 }
 
 footer {
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px;
+  text-align: center;
+  margin-top: auto;
   background-color: black;
+  border-top: solid 2px blue;
 }
 
 .text-footer {
-  color: red;
+  color: white;
 }

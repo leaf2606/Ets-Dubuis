@@ -1,0 +1,61 @@
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: var(--Montserrat-light) !important;
+  font-size: 20px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Les liens  */
+
+.content-section {
+  display: none;
+}
+
+.content-section.active {
+  display: block;
+}
+
+.lien-news {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  margin: 0 20%;
+}
+
+.lien-nouveautes,
+.lien-nouveautes-1 {
+  align-items: center;
+  text-decoration: none;
+  border: solid 1px gray;
+  padding: 10px 20px;
+  margin: 0 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  color: black;
+  cursor: pointer;
+}
+
+.lien-nouveautes:hover,
+.lien-nouveautes-1:hover {
+  background-color: lightgray;
+}

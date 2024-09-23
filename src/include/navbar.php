@@ -13,6 +13,7 @@ $loggedIn = isset($_SESSION["compte"]);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/propos.css">
     <link rel="stylesheet" href="css/contact.css">
     <title>Navbar</title>
 </head>
@@ -26,30 +27,25 @@ $loggedIn = isset($_SESSION["compte"]);
                 <div class="lien">
                     <ul class="menu-nav">
                         <li><a href="../propos.php" class="lien-cote">A propos</a></li>
-                        <li class="has-sous-nav">
-                            <a href="#" class="lien-cote">Equipements</a>
-                            <ul class="sous-nav">
-                                <li><a href="">Gants</a></li>
-                                <li><a href="">Casques</a></li>
-                                <li><a href="">Blousons</a></li>
-                            </ul>
-                        </li>
+                        <a href="../vetements.php" class="lien-cote">Vêtements</a>
                         <ul class="menu-nav">
                             <li class="has-sous-nav">
-                                <a href="#" class="lien-cote">Pièces</a>
+                                <a href="#" class="lien-cote">Matériels</a>
                                 <ul class="sous-nav-1">
-                                    <li><a href="">Pièces</a></li>
-                                    <li><a href="">Pièces</a></li>
-                                    <li><a href="">Pièces</a></li>
+                                    <li><a href="../debrousailleuse.php">Débrouissailleuse</a></li>
+                                    <li><a href="../taille-haie.php">Taille Haie</a></li>
+                                    <li><a href="../tronçonneuse.php">Tronçonneuse</a></li>
+                                    <li><a href="../elagueur.php">Puchi Elagueur</a></li>
+                                    <li><a href="../souffleur.php">Souffleur</a></li>
                                 </ul>
                             </li>
                             <ul class="menu-nav">
                                 <li class="has-sous-nav">
                                     <a href="#" class="lien-cote">Engins et Outils</a>
                                     <ul class="sous-nav-2">
-                                        <li><a href="">Outils</a></li>
-                                        <li><a href="">Engins</a></li>
-                                        <li><a href=""> Outils</a></li>
+                                        <li><a href="../motos.php">Motos</a></li>
+                                        <li><a href="../diesel.php">Véhicules Diesel</a></li>
+                                        <li><a href="../essence.php">Véhicules Essence</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="../contact.php" class="lien-cote">Contact</a></li>
@@ -60,6 +56,7 @@ $loggedIn = isset($_SESSION["compte"]);
 
                                 <?php else: ?>
                                 <li><a href="../compte.php" class="lien-cote">Compte</a></li>
+                                <img src="../img/jour-et-nuit.png" alt="img" class="jour-nuit">
                 </div>
                 <?php endif; ?>
             </ul>
@@ -81,6 +78,7 @@ $loggedIn = isset($_SESSION["compte"]);
                 <li class="lien-cote"><a href="../compte.php?action=deconnexion">Déconnexion</a></li>
                 <?php else: ?>
                 <li class="lien-cote"><a href="../compte.php">Compte</a></li>
+                <img src="../img/jour-et-nuit.png" alt="img" class="jour-nuit">
                 <?php endif; ?>
             </ul>
         </div>
@@ -95,6 +93,26 @@ $loggedIn = isset($_SESSION["compte"]);
     burgerMenuButton.onclick = function() {
         burgerMenu.classList.toggle('open');
     }
+    </script>
+
+    <!-- Menu Jour et Nuit -->
+    <script>
+    const switchThemeBtn = document.querySelector('.jour-nuit')
+    let toggleTheme = 0;
+
+    switchThemeBtn.addEventListener('click', () => {
+        if (toggleTheme === 0) {
+            document.documentElement.style.setProperty('--ecriture', '#262626');
+            document.documentElement.style.setProperty('--border', 'solid 2px black');
+            document.documentElement.style.setProperty('--background', '#f1f1f1');
+            toggleTheme++;
+        } else {
+            document.documentElement.style.setProperty('--ecriture', '#f1f1f1');
+            document.documentElement.style.setProperty('--border1', 'solid 2px white');
+            document.documentElement.style.setProperty('--background', '#262626');
+            toggleTheme--;
+        }
+    })
     </script>
 
 </body>
