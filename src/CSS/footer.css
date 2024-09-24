@@ -37,6 +37,11 @@ footer {
   border-top: solid 2px blue;
 }
 
+.container-footer {
+  display: flex;
+  flex-direction: column;
+}
+
 .text-footer {
   color: white;
 }

@@ -17,26 +17,26 @@
         <form method="post">
             <div class="container">
                 <div class="form">
-                    <h2 class="formulaire-contact">Formulaire de contact &ensp;|&ensp; <a
-                            href="../index.php">Accueil</a></h2>
+                    <h2 class="formulaire-contact">Formulaire de contact &ensp;|&ensp; <a href="../index.php"
+                            class="retour-accueil">Accueil</a></h2>
                     <div class="inputBox">
-                        <input type="text" name="nom" id="nom" placeholder="Nom" value="Nom" required>
+                        <input type="text" name="nom" id="nom" placeholder="Nom" required>
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="prenom" id="prenom" placeholder="Prénom" value="Prénom" required>
+                        <input type="text" name="prenom" id="prenom" placeholder="Prénom" required>
                     </div>
                     <div class="inputBox">
-                        <input type="email" name="email" id="email" placeholder="E-mail" value="E-mail" required>
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="telephone" id="telephone" placeholder="Téléphone" value="Téléphone"
+                        <input type="text" name="telephone" id="telephone" placeholder="Téléphone""
                             required>
                     </div>
-                    <div class="inputBox">
-                        <input type="datetime-local" name="date" id="date" placeholder="Date et Heure RDV" value="date"
+                    <div class=" inputBox">
+                        <input type="datetime-local" name="date" id="datetime-local" placeholder="Date et Heure RDV""
                             required>
                     </div>
-                    <div class="inputBox">
+                    <div class=" inputBox">
                         <textarea name="message" id="text" placeholder="Votre message"></textarea>
                     </div>
                     <div class="inputBox">

@@ -55,7 +55,7 @@ form {
   position: relative;
   width: 380px;
   height: 420px;
-  background: #1c1c1c;
+  background: black;
   border-radius: 8px;
   overflow: hidden;
   margin: 20px auto;
@@ -68,7 +68,7 @@ form {
   left: -50%;
   width: 380px;
   height: 420px;
-  background: linear-gradient(0deg, transparent, #aa8439, #aa8439);
+  background: linear-gradient(0deg, transparent, blue, blue);
   transform-origin: bottom right;
   animation: animate 7s linear infinite;
 }
@@ -80,7 +80,7 @@ form {
   left: -50%;
   width: 380px;
   height: 420px;
-  background: linear-gradient(0deg, transparent, #aa6b39, #aa6b39);
+  background: linear-gradient(0deg, transparent, red, red);
   transform-origin: bottom right;
   animation: animate 7s linear infinite;
   animation-delay: 3s;
@@ -96,7 +96,7 @@ form {
   position: absolute;
   inset: 4px;
   border-radius: 8px;
-  background: #24232a;
+  background: black;
   z-index: 10;
   padding: 20px 40px;
   display: flex;
@@ -119,7 +119,7 @@ form {
   width: 100%;
   padding: 10px 10px 10px;
   background: transparent;
-  border-color: red;
+  border-color: blue;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -140,6 +140,11 @@ input[type="submit"] {
 input[type="submit"].button-connexion {
   margin-top: 20px;
 }
+
+/* input#email,
+input#password {
+  color: white;
+} */
 
 .compte-wrapper {
   display: flex;

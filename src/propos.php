@@ -124,7 +124,7 @@
 
     <div class="container-text-img">
         <img class="img-container-text" src="../img/4.jpg" alt="img">
-        <form class="newletter" action="">
+        <form class="newsletter" action="">
             <input type="text" id="news" placeholder="Newsletter">
         </form>
     </div>
@@ -133,27 +133,36 @@
 
     <h2 class="titre-propos">Bonsoir, Paris</h2>
 
-    <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus, repellat enim
-        ipsum vitae odit
-        voluptate, quo quia minima saepe numquam facere possimus et labore minus cumque deleniti debitis.</p>
-    <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus, repellat enim
-        ipsum vitae odit
-        voluptate, quo quia minima saepe numquam facere possimus et labore minus cumque deleniti debitis.</p>
-    <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus, repellat enim
-        ipsum vitae odit
-        voluptate, quo quia minima saepe numquam facere possimus et labore minus cumque deleniti debitis.</p>
+    <div class="container-propos">
+        <div class="left-column">
+            <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus, repellat
+                enim ipsum vitae odit voluptate, quo quia minima saepe numquam facere possimus et labore minus cumque
+                deleniti debitis.</p>
+            <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus, repellat
+                enim ipsum vitae odit voluptate, quo quia minima saepe numquam facere possimus et labore minus cumque
+                deleniti debitis.</p>
+            <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus, repellat
+                enim ipsum vitae odit voluptate, quo quia minima saepe numquam facere possimus et labore minus cumque
+                deleniti debitis.</p>
+        </div>
 
-    <img class="img-container-text" src="../img/4.jpg" alt="img">
+        <div class="img-container">
+            <img class="img-container-text" src="../img/4.jpg" alt="img">
+        </div>
 
-    <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus, repellat enim
-        ipsum vitae odit
-        voluptate, quo quia minima saepe numquam facere possimus et labore minus cumque deleniti debitis.</p>
-    <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus, repellat enim
-        ipsum vitae odit
-        voluptate, quo quia minima saepe numquam facere possimus et labore minus cumque deleniti debitis.</p>
-    <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus, repellat enim
-        ipsum vitae odit
-        voluptate, quo quia minima saepe numquam facere possimus et labore minus cumque deleniti debitis.</p>
+        <div class="right-column">
+            <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus, repellat
+                enim ipsum vitae odit voluptate, quo quia minima saepe numquam facere possimus et labore minus cumque
+                deleniti debitis.</p>
+            <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus, repellat
+                enim ipsum vitae odit voluptate, quo quia minima saepe numquam facere possimus et labore minus cumque
+                deleniti debitis.</p>
+            <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus, repellat
+                enim ipsum vitae odit voluptate, quo quia minima saepe numquam facere possimus et labore minus cumque
+                deleniti debitis.</p>
+        </div>
+    </div>
+
 
     <?php include_once("./include/footer.php"); ?>
 

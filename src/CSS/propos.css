@@ -19,7 +19,7 @@ body {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-color: white;
+  background-color: #fff;
 }
 
 html {
@@ -140,15 +140,30 @@ html {
   margin-bottom: 20px;
 }
 
-form.newletter {
-  display: flex;
-  justify-content: center;
-  /* max-width: 100%;
-  height: 500px;
-  border: solid 3px red; */
+.container-text-img {
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+  height: auto;
+  color: red;
 }
 
-input[type="text"] {
+form.newsletter {
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter {
+  border: solid 3px red;
+  color: red;
+  background-color: red;
+}
+
+.newletter input#news::placeholder {
+  color: yellow;
+}
+
+input#news {
   border: 2px solid hsl(0, 0%, 80%);
   padding: 12px 20px;
   font-size: 18px;
@@ -163,10 +178,65 @@ input[type="text"]:focus {
   border-color: hsl(208, 87%, 50%);
 }
 
-/* Pour les textes en bas qui entoure l'image */
+/* Pour les textes autout de l'image */
+
+h1.titre-propos {
+  text-align: center;
+  padding: 20px;
+}
+
+.container-propos {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.left-column,
+.right-column {
+  width: 30%;
+  padding: 20px;
+}
 
 .text-bas {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  border-style: dotted;
+  padding: 10px;
+  color: black;
+}
+
+.img-container {
+  width: 40%;
   display: flex;
-  flex-direction: row;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-container img {
+  max-width: 100%;
+  height: 600px;
+  padding: 10px 0;
+}
+
+/* Media a revoir plus tard */
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-column,
+  .right-column {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .img-container {
+    width: 90%;
+    margin: 20px 0;
+  }
 }

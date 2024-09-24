@@ -13,11 +13,14 @@
 
     <footer>
 
-        <p class="text-footer">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi minima laudantium iste
-            possimus blanditiis
-        </p>
-        <a href="">bonjour</a>
-        <a href="">bonsoir</a>
+        <div class="container-footer">
+            <p class="text-footer">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi minima laudantium
+                iste
+                possimus blanditiis
+            </p>
+            <a href="">bonjour</a>
+            <a href="">bonsoir</a>
+        </div>
 
     </footer>
 

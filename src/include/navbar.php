@@ -20,67 +20,69 @@ $loggedIn = isset($_SESSION["compte"]);
 
 <body>
 
+
     <nav>
         <div class="navbar-cote">
             <ul class="links">
-                <a href="../index.php" class="logo">Accueil</a>
-                <div class="lien">
+                <li><a href="../index.php" class="logo">Accueil</a></li>
+                <li class="lien">
                     <ul class="menu-nav">
                         <li><a href="../propos.php" class="lien-cote">A propos</a></li>
-                        <a href="../vetements.php" class="lien-cote">Vêtements</a>
-                        <ul class="menu-nav">
-                            <li class="has-sous-nav">
-                                <a href="#" class="lien-cote">Matériels</a>
-                                <ul class="sous-nav-1">
-                                    <li><a href="../debrousailleuse.php">Débrouissailleuse</a></li>
-                                    <li><a href="../taille-haie.php">Taille Haie</a></li>
-                                    <li><a href="../tronçonneuse.php">Tronçonneuse</a></li>
-                                    <li><a href="../elagueur.php">Puchi Elagueur</a></li>
-                                    <li><a href="../souffleur.php">Souffleur</a></li>
-                                </ul>
-                            </li>
-                            <ul class="menu-nav">
-                                <li class="has-sous-nav">
-                                    <a href="#" class="lien-cote">Engins et Outils</a>
-                                    <ul class="sous-nav-2">
-                                        <li><a href="../motos.php">Motos</a></li>
-                                        <li><a href="../diesel.php">Véhicules Diesel</a></li>
-                                        <li><a href="../essence.php">Véhicules Essence</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="../contact.php" class="lien-cote">Contact</a></li>
-                                <?php if ($loggedIn): ?>
-                                <li><a href="#" class="lien-cote">
-                                        <?= htmlspecialchars($_SESSION["compte"]["username"]); ?></a></li>
-                                <li><a href="../compte.php?action=deconnexion" class="lien-cote">Déconnexion</a></li>
+                        <li><a href="../vetements.php" class="lien-cote">Vêtements</a></li>
+                        <li class="has-sous-nav">
+                            <a href="#" class="lien-cote">Matériels</a>
+                            <ul class="sous-nav-1">
+                                <li><a href="../debrousailleuse.php">Débrouissailleuse</a></li>
+                                <li><a href="../taille-haie.php">Taille Haie</a></li>
+                                <li><a href="../tronçonneuse.php">Tronçonneuse</a></li>
+                                <li><a href="../elagueur.php">Elagueuse</a></li>
+                                <li><a href="../souffleur.php">Souffleur</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-sous-nav">
+                            <a href="#" class="lien-cote">Engins et Outils</a>
+                            <ul class="sous-nav-2">
+                                <li><a href="../motos.php">Motos</a></li>
+                                <li><a href="../diesel.php">Véhicules Diesel</a></li>
+                                <li><a href="../essence.php">Véhicules Essence</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../contact.php" class="lien-cote">Contact</a></li>
+                        <?php if ($loggedIn): ?>
+                        <li><a href="#" class="lien-cote">
+                                <?= htmlspecialchars($_SESSION["compte"]["username"]); ?></a></li>
+                        <li><a href="../compte.php?action=deconnexion" class="lien-cote">Déconnexion</a></li>
 
-                                <?php else: ?>
-                                <li><a href="../compte.php" class="lien-cote">Compte</a></li>
-                                <img src="../img/jour-et-nuit.png" alt="img" class="jour-nuit">
-                </div>
-                <?php endif; ?>
+                        <?php else: ?>
+                        <li><a href="../compte.php" class="lien-cote">Compte</a></li>
+                        <?php endif; ?>
+                    </ul>
+                </li>
             </ul>
-
+            <img src="../img/jour-et-nuit.png" alt="img" class="jour-nuit">
+            <!-- <div id="changeur">
+                <div class="cercle"></div>
+            </div> -->
             <div class="burger-menu-button">
                 <img src="../img/menu-burger.png" alt="menu-burger" class="burger-menu-button">
             </div>
-            </ul>
         </div>
         <div class="burger-menu-cote">
             <ul class="links">
-                <li class="lien-cote"><a href="">Accueil</a></li>
-                <li class="lien-cote"><a href="">Equipements</a></li>
-                <li class="lien-cote"><a href="">Pièces</a></li>
-                <li class="lien-cote"><a href="">Engins et Outils</a></li>
-                <li class="lien-cote"><a href="">Contact</a></li>
+                <li class="lien-cote"><a href="../index.php">Accueil</a></li>
+                <li class="lien-cote"><a href="../propos.php">A propos</a></li>
+                <li class="lien-cote"><a href="../vetements.php">Vêtements</a></li>
+                <li class="lien-cote"><a href="#">Matériels</a></li>
+                <li class="lien-cote"><a href="#">Engins et Outils</a></li>
+                <li class="lien-cote"><a href="../contact.php">Contact</a></li>
                 <?php if ($loggedIn): ?>
                 <li class="lien-cote"><a href="#"><?= htmlspecialchars($_SESSION["compte"]["username"]); ?></a></li>
                 <li class="lien-cote"><a href="../compte.php?action=deconnexion">Déconnexion</a></li>
                 <?php else: ?>
                 <li class="lien-cote"><a href="../compte.php">Compte</a></li>
-                <img src="../img/jour-et-nuit.png" alt="img" class="jour-nuit">
                 <?php endif; ?>
             </ul>
+            <img src="../img/jour-nuit-essai.svg" alt="img" class="jour-nuit">
         </div>
     </nav>
 
@@ -113,6 +115,13 @@ $loggedIn = isset($_SESSION["compte"]);
             toggleTheme--;
         }
     })
+    const changeur = document.getElementById('changeur');
+    const body = document.getElementById('body');
+
+    changeur.onclick = function() {
+        changeur.classList.toggle('active')
+        body.classList.toggle('active')
+    }
     </script>
 
 </body>
