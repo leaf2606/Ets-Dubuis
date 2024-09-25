@@ -4,10 +4,10 @@ session_start();
 
 require_once("connect.php");
 
-$sql = "SELECT * FROM vetements";
+$sql = "SELECT * FROM catalogue";
 $query = $db->prepare($sql);
 $query->execute();
-$vetements = $query->fetchAll(PDO::FETCH_ASSOC);
+$catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
     
 ?>
 
@@ -37,20 +37,20 @@ $vetements = $query->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
-    <!-- Test de cards stylé  -->
+    <!-- Card  -->
 
     <div id="gants" class="card-container">
-        <div class="wrapper">
+        <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
-                    <?php foreach ($vetements as $item): ?>
+                    <?php foreach ($catalogue as $item): ?>
                     <?php if ($item['category'] === 'gants'): ?>
                     <div class="box">
                         <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
+                            <a class="lien-card" href="../description.php">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -61,10 +61,10 @@ $vetements = $query->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div id="pantalons" class="card-container">
-        <div class="wrapper">
+        <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
-                    <?php foreach ($vetements as $item): ?>
+                    <?php foreach ($catalogue as $item): ?>
                     <?php if ($item['category'] === 'pantalons'): ?>
                     <div class="box">
                         <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
@@ -82,10 +82,10 @@ $vetements = $query->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div id="veste" class="card-container">
-        <div class="wrapper">
+        <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
-                    <?php foreach ($vetements as $item): ?>
+                    <?php foreach ($catalogue as $item): ?>
                     <?php if ($item['category'] === 'veste'): ?>
                     <div class="box">
                         <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
@@ -103,10 +103,10 @@ $vetements = $query->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div id="casque" class="card-container">
-        <div class="wrapper">
+        <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
-                    <?php foreach ($vetements as $item): ?>
+                    <?php foreach ($catalogue as $item): ?>
                     <?php if ($item['category'] === 'casque'): ?>
                     <div class="box">
                         <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
@@ -124,10 +124,10 @@ $vetements = $query->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div id="blousons" class="card-container">
-        <div class="wrapper">
+        <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
-                    <?php foreach ($vetements as $item): ?>
+                    <?php foreach ($catalogue as $item): ?>
                     <?php if ($item['category'] === 'blousons'): ?>
                     <div class="box">
                         <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">

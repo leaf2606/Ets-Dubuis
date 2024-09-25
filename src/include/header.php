@@ -10,6 +10,8 @@
 
 <body>
 
+    <!-- Le header ici est uniquement pour la page index -->
+
     <header>
 
         <section id="home">
