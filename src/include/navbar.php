@@ -82,7 +82,7 @@ $loggedIn = isset($_SESSION["compte"]);
                 <li class="lien-cote"><a href="../compte.php">Compte</a></li>
                 <?php endif; ?>
             </ul>
-            <img src="../img/jour-nuit-essai.svg" alt="img" class="jour-nuit">
+            <img src="../img/jour-nuit-essai.svg" alt="img" class="jour-nuit-svg">
         </div>
     </nav>
 
@@ -100,6 +100,7 @@ $loggedIn = isset($_SESSION["compte"]);
     <!-- Menu Jour et Nuit -->
     <script>
     const switchThemeBtn = document.querySelector('.jour-nuit')
+    const switchThemeBtn = document.querySelector('.jour-nuit-svg')
     let toggleTheme = 0;
 
     switchThemeBtn.addEventListener('click', () => {
