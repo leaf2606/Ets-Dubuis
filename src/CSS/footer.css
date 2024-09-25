@@ -25,23 +25,55 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Footer */
+
 footer {
   bottom: 0;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-  padding: 25px;
-  text-align: center;
-  margin-top: auto;
+  padding: 0;
   background-color: black;
   border-top: solid 2px blue;
+  width: 100%;
+  box-sizing: border-box;
+  height: auto;
 }
+
+/* Container footer */
 
 .container-footer {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  margin-bottom: auto;
 }
 
 .text-footer {
   color: white;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 20px;
+}
+
+.lien-footer {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Container mension légale */
+
+.container-mension {
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.lien-mension {
+  margin: 0 50px;
 }

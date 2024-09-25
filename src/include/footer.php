@@ -18,8 +18,14 @@
                 iste
                 possimus blanditiis
             </p>
-            <a href="">bonjour</a>
-            <a href="">bonsoir</a>
+            <a class="lien-footer" href="">bonjour</a>
+            <a class="lien-footer" href="">bonsoir</a>
+        </div>
+
+        <div class="container-mension">
+            <a class="lien-mension" href="">Mension légale</a>
+            <a class="lien-mension" href="">Mension légale</a>
+            <a class="lien-mension" href="">Mension légale</a>
         </div>
 
     </footer>
