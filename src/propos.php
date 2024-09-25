@@ -125,7 +125,9 @@
     <div class="container-text-img">
         <img class="img-container-text" src="../img/4.jpg" alt="img">
         <form class="newsletter" action="">
+            <p>Une phrase d'accroche</p>
             <input type="text" id="news" placeholder="Newsletter">
+            <button>Envoyer</button>
         </form>
     </div>
 

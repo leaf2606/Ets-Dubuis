@@ -130,7 +130,8 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px 0;
+  width: 50px;
+  border: solid 3px black;
 }
 
 .img-container-text {
@@ -151,16 +152,16 @@ html {
 form.newsletter {
   display: flex;
   justify-content: center;
+  background-color: gray;
+  padding: 160px;
 }
 
 .newsletter {
-  border: solid 3px red;
   color: red;
-  background-color: red;
 }
 
-.newletter input#news::placeholder {
-  color: yellow;
+.newsletter input#news::placeholder {
+  color: blue;
 }
 
 input#news {

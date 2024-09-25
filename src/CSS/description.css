@@ -30,7 +30,7 @@ html {
 
 .section1 {
   width: 100%;
-  min-height: 100vh;
+  min-height: 65vh;
   position: relative;
   transform-style: preserve-3d;
 }
@@ -38,13 +38,22 @@ html {
 .section1::before {
   content: "";
   width: 100%;
-  height: 300px;
+  height: 250px;
   position: absolute;
   background: url(../img/fond.jpg) top center no-repeat;
   background-size: cover;
   transform: translateZ(-1px) scale(2.2);
   filter: blur(1px);
 }
+
+/* .section1::after {
+  content: "";
+  width: 100%;
+  height: 250px;
+  position: absolute;
+  background: url(../img/fond.jpg) top center no-repeat;
+  background-size: cover;
+} */
 
 .section1 .text-description {
   top: 10%;
@@ -69,19 +78,72 @@ html {
 
 /* Section pour la déscription */
 
+.img-description {
+  height: 600px;
+  width: 600px;
+  padding-left: 500px;
+}
+
 .text-descriptif {
   text-align: center;
-  max-width: 1000px;
+  padding: 30px;
 }
 
-.figure-description {
-  align-items: center;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+.container-description {
+  /* padding: 50px; */
+  border: solid 3px black;
+  width: 70%;
+  margin: 50px 200px;
 }
 
-.img-description {
-  height: 400px;
+/* Etoiles */
+
+.container-etoile {
+  margin: 190px auto;
   width: 400px;
+  padding-top: 50px;
+}
+
+.container-etoile > * {
+  float: right;
+}
+
+.container-etoile label {
+  height: 40px;
+  width: 20%;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.container-etoile label::after {
+  transition: all 0.4s ease-out;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  content: "☆";
+  color: black;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 80px;
+  -webkit-animation: 1s pulse ease;
+  animation: 1s pulse ease;
+}
+
+.container-etoile label:hover::after {
+  color: yellow;
+  text-shadow: 0 0 15px black;
+}
+
+.container-etoile input {
+  display: none;
+}
+
+.container-etoile input:checked + label::after,
+.container-etoile input:checked ~ label::after {
+  content: "★";
+  color: yellow;
+  text-shadow: 0 0 20px yellow;
 }

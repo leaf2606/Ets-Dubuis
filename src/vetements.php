@@ -19,7 +19,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/vetements.css">
+    <link rel="stylesheet" href="css/materiels.css">
     <title>Vêtements</title>
 </head>
 
@@ -50,7 +50,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="../description.php">Description</a>
+                            <a class="lien-card" href="<?= htmlspecialchars($item['button']); ?>">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -71,7 +71,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
+                            <a class="lien-card" href="<?= htmlspecialchars($item['button']); ?>">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -92,7 +92,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
+                            <a class="lien-card" href="<?= htmlspecialchars($item['button']); ?>">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -113,7 +113,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
+                            <a class="lien-card" href="<?= htmlspecialchars($item['button']); ?>">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -134,7 +134,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
+                            <a class="lien-card" href="<?= htmlspecialchars($item['button']); ?>">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -163,7 +163,6 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
         openTab('gants');
     });
     </script>
-
 
     <?php include_once("./include/footer.php"); ?>
 
