@@ -30,7 +30,7 @@
                     soluta, omnis quasi. Esse cum, eos, eius ex expedita maxime, quasi ipsum quam doloribus accusamus
                     libero
                     nemo dolorum quia.</p>
-                <a href="" class="button-lien">Bonsoir</a>
+                <a href="../propos.php#paragraphe-1-section" class="button-lien">Bonsoir</a>
             </div>
             <div class="content">
                 <h1 class="titre-header">Hello,<span>Coucou</span></h1>
@@ -42,7 +42,7 @@
                     soluta, omnis quasi. Esse cum, eos, eius ex expedita maxime, quasi ipsum quam doloribus accusamus
                     libero
                     nemo dolorum quia.</p>
-                <a href="" class="button-lien">Bonsoir</a>
+                <a href="../propos.php#paragraphe-2-section" class="button-lien">Bonsoir</a>
             </div>
             <div class="content">
                 <h1 class="titre-header">Hi,<span>Coucou</span></h1>
@@ -54,7 +54,7 @@
                     soluta, omnis quasi. Esse cum, eos, eius ex expedita maxime, quasi ipsum quam doloribus accusamus
                     libero
                     nemo dolorum quia.</p>
-                <a href="" class="button-lien">Bonsoir</a>
+                <a href="../propos.php#paragraphe-3-section" class="button-lien">Bonsoir</a>
             </div>
             <div class="content">
                 <h1 class="titre-header">Salut,<span>Coucou</span></h1>
@@ -66,7 +66,7 @@
                     soluta, omnis quasi. Esse cum, eos, eius ex expedita maxime, quasi ipsum quam doloribus accusamus
                     libero
                     nemo dolorum quia.</p>
-                <a href="" class="button-lien">Bonsoir</a>
+                <a href="../propos.php" class="button-lien">Bonsoir</a>
             </div>
             <div class="content">
                 <h1 class="titre-header">Beunos,<span>Coucou</span></h1>
@@ -78,7 +78,7 @@
                     soluta, omnis quasi. Esse cum, eos, eius ex expedita maxime, quasi ipsum quam doloribus accusamus
                     libero
                     nemo dolorum quia.</p>
-                <a href="" class="button-lien">Bonsoir</a>
+                <a href="../propos.php" class="button-lien">Bonsoir</a>
             </div>
             <div class="media-icons">
                 <a href="" class="lien-logo-header"><img class="img-logo" src="../img/insta.png" alt="facebook"></a>

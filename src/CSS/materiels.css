@@ -157,3 +157,20 @@ h1 {
 .text-card-3 {
   color: white;
 }
+
+.admin-buttons {
+  margin-top: 10px;
+}
+
+.admin-buttons button {
+  margin-right: 5px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.admin-buttons button:hover {
+  background-color: #0056b3;
+}

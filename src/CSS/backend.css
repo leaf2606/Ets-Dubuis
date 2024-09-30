@@ -1,0 +1,127 @@
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: var(--Montserrat-light);
+  font-size: 20px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ici c'est pour les 3 fichiers back réuni */
+
+.container-back {
+  border: solid 3px black;
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f5f5f5;
+}
+
+.titre-back {
+  text-align: center;
+  color: blue;
+  font-size: 30px;
+  padding: 20px;
+  font-family: var(--Montserrat-bold);
+}
+
+.button-back {
+  border: none;
+  margin: 20px;
+  background-color: blue;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: white;
+}
+
+.formulaire-admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.input-admin {
+  margin: 10px 0;
+  padding: 10px;
+  width: 80%;
+  background-color: gray;
+  color: black;
+  border-radius: 5px;
+  border: none;
+}
+
+input#titre::placeholder,
+input#text::placeholder,
+input#prix::placeholder,
+input#ref::placeholder,
+input#marque::placeholder,
+input#couleur::placeholder,
+input#fichier,
+textarea.input-admin::placeholder {
+  color: black;
+}
+
+textarea.input-admin {
+  height: 100px;
+}
+
+.input-admin-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.input-admin-group label {
+  margin-left: 10px;
+  margin-right: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.container {
+  max-width: 500px; /* Augmentation de la largeur */
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+  width: 1000px;
+}
+
+.title {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #1a73e8;
+}
+
+/* Backend ajouter */
+
+/* Backend modifier */
+
+/* Backend supprimer */

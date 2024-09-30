@@ -49,6 +49,14 @@ footer {
   margin-bottom: auto;
 }
 
+.titre-footer {
+  color: white;
+  font-size: 35px;
+  font-family: var(--Montserrat-black);
+  text-align: center;
+  padding: 20px;
+}
+
 .text-footer {
   color: white;
   margin-bottom: 10px;

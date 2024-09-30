@@ -14,12 +14,11 @@
     <footer>
 
         <div class="container-footer">
-            <p class="text-footer">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi minima laudantium
-                iste
-                possimus blanditiis
+            <h1 class="titre-footer">Ets Dubuis</h1>
+            <p class="text-footer">Nos horaires &nbsp;:&nbsp; 08h30-12h / 14h-18h30
             </p>
-            <a class="lien-footer" href="">bonjour</a>
-            <a class="lien-footer" href="">bonsoir</a>
+            <p class="text-footer">Saint Benin d'Azy, &nbsp;&nbsp;22 Rue François Mitterand</p>
+            <p class="text-footer"> 03 86 58 56 91</p>
         </div>
 
         <div class="container-mension">

@@ -24,37 +24,55 @@ $loggedIn = isset($_SESSION["compte"]);
     <nav>
         <div class="navbar-cote">
             <ul class="links">
-                <li><a href="../index.php" class="logo">Accueil</a></li>
+                <li>
+                    <a href="../index.php" class="logo padding-20">Accueil</a>
+                </li>
                 <li class="lien">
                     <ul class="menu-nav">
-                        <li><a href="../propos.php" class="lien-cote">A propos</a></li>
-                        <li><a href="../vetements.php" class="lien-cote">Vêtements</a></li>
+                        <li>
+                            <a href="../propos.php" class="lien-cote padding-20">À propos</a>
+                        </li>
+                        <li>
+                            <a href="../vetements.php" class="lien-cote padding-20">Vêtements</a>
+                        </li>
                         <li class="has-sous-nav">
-                            <a href="#" class="lien-cote">Matériels</a>
+                            <a href="#" class="lien-cote padding-20">Matériels</a>
                             <ul class="sous-nav-1">
-                                <li><a href="../debrousailleuse.php">Débrouissailleuse</a></li>
+                                <li><a href="../debrousailleuse.php">Débroussailleuse</a></li>
                                 <li><a href="../taille-haie.php">Taille Haie</a></li>
                                 <li><a href="../tronçonneuse.php">Tronçonneuse</a></li>
-                                <li><a href="../elagueur.php">Elagueuse</a></li>
+                                <li><a href="../elagueur.php">Élagueuse</a></li>
                                 <li><a href="../souffleur.php">Souffleur</a></li>
                             </ul>
                         </li>
                         <li class="has-sous-nav">
-                            <a href="#" class="lien-cote">Engins et Outils</a>
+                            <a href="#" class="lien-cote padding-20">Engins et Outils</a>
                             <ul class="sous-nav-2">
                                 <li><a href="../motos.php">Motos</a></li>
                                 <li><a href="../diesel.php">Véhicules Diesel</a></li>
                                 <li><a href="../essence.php">Véhicules Essence</a></li>
                             </ul>
                         </li>
-                        <li><a href="../contact.php" class="lien-cote">Contact</a></li>
-                        <?php if ($loggedIn): ?>
-                        <li><a href="#" class="lien-cote">
-                                <?= htmlspecialchars($_SESSION["compte"]["username"]); ?></a></li>
-                        <li><a href="../compte.php?action=deconnexion" class="lien-cote">Déconnexion</a></li>
+                        <li>
+                            <a href="../contact.php" class="lien-cote padding-20">Contact</a>
+                        </li>
 
+                        <?php if ($loggedIn): ?>
+                        <li>
+                            <?php if (isset($_SESSION["compte"]["role"]) && $_SESSION["compte"]["role"] == "admin"): ?>
+                            <a href="../backend-ajout.php" class="lien-cote padding-admin">Admin</a>
+                            <?php else: ?>
+                            <span class="lien-cote"
+                                style="padding: 0;"><?= htmlspecialchars($_SESSION["compte"]["username"]); ?></span>
+                            <?php endif; ?>
+                        </li>
+                        <li>
+                            <a href="../compte.php?action=deconnexion" class="lien-cote padding-5">Déconnexion</a>
+                        </li>
                         <?php else: ?>
-                        <li><a href="../compte.php" class="lien-cote">Compte</a></li>
+                        <li>
+                            <a href="../compte.php" class="lien-cote padding-5">Compte</a>
+                        </li>
                         <?php endif; ?>
                     </ul>
                 </li>
@@ -69,19 +87,28 @@ $loggedIn = isset($_SESSION["compte"]);
         </div>
         <div class="burger-menu-cote">
             <ul class="links">
-                <li class="lien-cote"><a href="../index.php">Accueil</a></li>
-                <li class="lien-cote"><a href="../propos.php">A propos</a></li>
-                <li class="lien-cote"><a href="../vetements.php">Vêtements</a></li>
-                <li class="lien-cote"><a href="#">Matériels</a></li>
-                <li class="lien-cote"><a href="#">Engins et Outils</a></li>
-                <li class="lien-cote"><a href="../contact.php">Contact</a></li>
-                <?php if ($loggedIn): ?>
-                <li class="lien-cote"><a href="#"><?= htmlspecialchars($_SESSION["compte"]["username"]); ?></a></li>
-                <li class="lien-cote"><a href="../compte.php?action=deconnexion">Déconnexion</a></li>
+                <li class="lien-cote padding-20"><a href="../index.php">Accueil</a></li>
+                <li class="lien-cote padding-20"><a href="../propos.php">À propos</a></li>
+                <li class="lien-cote padding-20"><a href="../vetements.php">Vêtements</a></li>
+                <li class="lien-cote padding-20"><a href="#">Matériels</a></li>
+                <li class="lien-cote padding-20"><a href="#">Engins et Outils</a></li>
+
+                <?php if (isset($_SESSION["compte"]["role"]) && $_SESSION["compte"]["role"] == "admin"): ?>
+                <li class="lien-cote padding-20"><a href="../backend-ajout.php">Admin</a></li>
                 <?php else: ?>
-                <li class="lien-cote"><a href="../compte.php">Compte</a></li>
+                <li class="lien-cote padding-20"><a href="../contact.php">Contact</a></li>
+                <?php endif; ?>
+
+                <?php if ($loggedIn): ?>
+                <li class="lien-cote padding-30"><a href="#"
+                        style="padding-left: 25px;"><?= htmlspecialchars($_SESSION["compte"]["username"]); ?></a></li>
+                <li class="lien-cote padding-30"><a href="../compte.php?action=deconnexion"
+                        style="padding-left: 20px;">Déconnexion</a></li>
+                <?php else: ?>
+                <li class="lien-cote padding-20"><a href="../compte.php">Compte</a></li>
                 <?php endif; ?>
             </ul>
+
             <img src="../img/jour-nuit-essai.svg" alt="img" class="jour-nuit-svg">
         </div>
     </nav>
