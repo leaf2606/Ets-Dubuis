@@ -4,11 +4,36 @@ session_start();
 
 require_once("connect.php");
 
-$sql = "SELECT * FROM article_back";
-$query = $db->prepare($sql);
-$query->execute();
-$suggestion = $query->fetchAll(PDO::FETCH_ASSOC);
-    
+// Vérifie si l'ID est passé dans l'URL
+if (isset($_GET['id'])) {
+    $id = intval($_GET['id']); // Sécuriser l'entrée
+
+    // Préparer la requête pour obtenir l'article correspondant à l'ID
+    $sql = "SELECT * FROM catalogue WHERE id = :id"; 
+    $query = $db->prepare($sql);
+    $query->bindParam(':id', $id, PDO::PARAM_INT);
+    $query->execute();
+    $item = $query->fetch(PDO::FETCH_ASSOC);
+
+    // Vérifier si l'article existe
+    if (!$item) {
+        echo "Article non trouvé.";
+        exit;
+    }
+} else {
+    echo "Aucun ID fourni.";
+    exit;
+}
+
+// Récupérer les articles similaires dans la même catégorie
+$category = $item['category']; 
+$sqlSimilar = "SELECT * FROM catalogue WHERE category = :category AND id != :id"; 
+$querySimilar = $db->prepare($sqlSimilar);
+$querySimilar->bindParam(':category', $category, PDO::PARAM_STR);
+$querySimilar->bindParam(':id', $id, PDO::PARAM_INT);
+$querySimilar->execute();
+$similarItems = $querySimilar->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -27,323 +52,75 @@ $suggestion = $query->fetchAll(PDO::FETCH_ASSOC);
 
     <?php include_once("./include/navbar.php"); ?>
 
-    <div id="news-lien-id">
-        <div class="lien-news">
-            <button class="lien-nouveautes" onclick="openTab('gants')">Gants</button>
-            <button class="lien-nouveautes" onclick="openTab('pantalons')">Pantalons</button>
-            <button class="lien-nouveautes" onclick="openTab('veste')">Veste</button>
-            <button class="lien-nouveautes" onclick="openTab('casque')">Casque</button>
-            <button class="lien-nouveautes" onclick="openTab('blousons')">Blousons</button>
-        </div>
-    </div>
-
-    <!-- Articles -->
-
-    <?php foreach ($suggestion as $item): ?>
-    <?php if ($item['category'] === 'gants'): ?>
+    <!-- Article unique -->
     <header>
         <div class="section1">
-            <div class="text-description"><?php echo htmlspecialchars($item['titre']); ?></div>
+            <div class="text-description"><?= htmlspecialchars($item['titre']); ?></div>
         </div>
     </header>
 
     <figure class="figure-description">
-        <img class="img-description" src="<?php echo htmlspecialchars($item['img']); ?>" alt="img">
+        <img class="img-description" src="<?= htmlspecialchars($item['img']); ?>"
+            alt="Image de <?= htmlspecialchars($item['titre']); ?>">
     </figure>
 
     <div class="container-description">
-        <p class="text-descriptif"><?php echo htmlspecialchars($item['message']); ?></p>
-        <p class="text-descriptif">Référence: <?php echo htmlspecialchars($item['ref']); ?></p>
-        <p class="text-descriptif">Marque: <?php echo htmlspecialchars($item['marque']); ?></p>
-        <p class="text-descriptif">Prix: <?php echo htmlspecialchars($item['prix']); ?> €</p>
-        <p class="text-descriptif">Couleur: <?php echo htmlspecialchars($item['couleur']); ?></p>
-        <p class="text-descriptif">Catégories: <?php echo htmlspecialchars($item['category']); ?></p>
+        <p class="text-descriptif"><?= htmlspecialchars($item['message']); ?></p>
+        <p class="text-descriptif">Référence: <?= htmlspecialchars($item['ref']); ?></p>
+        <p class="text-descriptif">Marque: <?= htmlspecialchars($item['marque']); ?></p>
+        <p class="text-descriptif">Prix: <?= htmlspecialchars($item['prix']); ?> €</p>
+        <p class="text-descriptif">Couleur: <?= htmlspecialchars($item['couleur']); ?></p>
+        <p class="text-descriptif">Catégories: <?= htmlspecialchars($item['category']); ?></p>
         <div class="container-etoile">
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile1<?php echo $item['id']; ?>">
-            <label for="etoile1<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile2<?php echo $item['id']; ?>">
-            <label for="etoile2<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile3<?php echo $item['id']; ?>">
-            <label for="etoile3<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile4<?php echo $item['id']; ?>">
-            <label for="etoile4<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile5<?php echo $item['id']; ?>">
-            <label for="etoile5<?php echo $item['id']; ?>"></label>
+            <input type="radio" name="etoile<?= $item['id']; ?>" id="etoile1<?= $item['id']; ?>">
+            <label for="etoile1<?= $item['id']; ?>"></label>
+            <input type="radio" name="etoile<?= $item['id']; ?>" id="etoile2<?= $item['id']; ?>">
+            <label for="etoile2<?= $item['id']; ?>"></label>
+            <input type="radio" name="etoile<?= $item['id']; ?>" id="etoile3<?= $item['id']; ?>">
+            <label for="etoile3<?= $item['id']; ?>"></label>
+            <input type="radio" name="etoile<?= $item['id']; ?>" id="etoile4<?= $item['id']; ?>">
+            <label for="etoile4<?= $item['id']; ?>"></label>
+            <input type="radio" name="etoile<?= $item['id']; ?>" id="etoile5<?= $item['id']; ?>">
+            <label for="etoile5<?= $item['id']; ?>"></label>
         </div>
     </div>
-    <?php endif; ?>
-    <?php endforeach; ?>
 
-    <?php foreach ($suggestion as $item): ?>
-    <?php if ($item['category'] === 'pantalons'): ?>
-    <header>
-        <div class="section1">
-            <div class="text-description"><?php echo htmlspecialchars($item['titre']); ?></div>
-        </div>
-    </header>
-
-    <figure class="figure-description">
-        <img class="img-description" src="<?php echo htmlspecialchars($item['img']); ?>" alt="img">
-    </figure>
-
-    <div class="container-description">
-        <p class="text-descriptif"><?php echo htmlspecialchars($item['message']); ?></p>
-        <p class="text-descriptif">Référence: <?php echo htmlspecialchars($item['ref']); ?></p>
-        <p class="text-descriptif">Marque: <?php echo htmlspecialchars($item['marque']); ?></p>
-        <p class="text-descriptif">Prix: <?php echo htmlspecialchars($item['prix']); ?> €</p>
-        <p class="text-descriptif">Couleur: <?php echo htmlspecialchars($item['couleur']); ?></p>
-        <p class="text-descriptif">Catégories: <?php echo htmlspecialchars($item['category']); ?></p>
-        <div class="container-etoile">
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile1<?php echo $item['id']; ?>">
-            <label for="etoile1<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile2<?php echo $item['id']; ?>">
-            <label for="etoile2<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile3<?php echo $item['id']; ?>">
-            <label for="etoile3<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile4<?php echo $item['id']; ?>">
-            <label for="etoile4<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile5<?php echo $item['id']; ?>">
-            <label for="etoile5<?php echo $item['id']; ?>"></label>
-        </div>
-    </div>
-    <?php endif; ?>
-    <?php endforeach; ?>
-
-    <?php foreach ($suggestion as $item): ?>
-    <?php if ($item['category'] === 'veste'): ?>
-    <header>
-        <div class="section1">
-            <div class="text-description"><?php echo htmlspecialchars($item['titre']); ?></div>
-        </div>
-    </header>
-
-    <figure class="figure-description">
-        <img class="img-description" src="<?php echo htmlspecialchars($item['img']); ?>" alt="img">
-    </figure>
-
-    <div class="container-description">
-        <p class="text-descriptif"><?php echo htmlspecialchars($item['message']); ?></p>
-        <p class="text-descriptif">Référence: <?php echo htmlspecialchars($item['ref']); ?></p>
-        <p class="text-descriptif">Marque: <?php echo htmlspecialchars($item['marque']); ?></p>
-        <p class="text-descriptif">Prix: <?php echo htmlspecialchars($item['prix']); ?> €</p>
-        <p class="text-descriptif">Couleur: <?php echo htmlspecialchars($item['couleur']); ?></p>
-        <p class="text-descriptif">Catégories: <?php echo htmlspecialchars($item['category']); ?></p>
-        <div class="container-etoile">
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile1<?php echo $item['id']; ?>">
-            <label for="etoile1<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile2<?php echo $item['id']; ?>">
-            <label for="etoile2<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile3<?php echo $item['id']; ?>">
-            <label for="etoile3<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile4<?php echo $item['id']; ?>">
-            <label for="etoile4<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile5<?php echo $item['id']; ?>">
-            <label for="etoile5<?php echo $item['id']; ?>"></label>
-        </div>
-    </div>
-    <?php endif; ?>
-    <?php endforeach; ?>
-
-    <?php foreach ($suggestion as $item): ?>
-    <?php if ($item['category'] === 'casque'): ?>
-    <header>
-        <div class="section1">
-            <div class="text-description"><?php echo htmlspecialchars($item['titre']); ?></div>
-        </div>
-    </header>
-
-    <figure class="figure-description">
-        <img class="img-description" src="<?php echo htmlspecialchars($item['img']); ?>" alt="img">
-    </figure>
-
-    <div class="container-description">
-        <p class="text-descriptif"><?php echo htmlspecialchars($item['message']); ?></p>
-        <p class="text-descriptif">Référence: <?php echo htmlspecialchars($item['ref']); ?></p>
-        <p class="text-descriptif">Marque: <?php echo htmlspecialchars($item['marque']); ?></p>
-        <p class="text-descriptif">Prix: <?php echo htmlspecialchars($item['prix']); ?> €</p>
-        <p class="text-descriptif">Couleur: <?php echo htmlspecialchars($item['couleur']); ?></p>
-        <p class="text-descriptif">Catégories: <?php echo htmlspecialchars($item['category']); ?></p>
-        <div class="container-etoile">
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile1<?php echo $item['id']; ?>">
-            <label for="etoile1<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile2<?php echo $item['id']; ?>">
-            <label for="etoile2<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile3<?php echo $item['id']; ?>">
-            <label for="etoile3<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile4<?php echo $item['id']; ?>">
-            <label for="etoile4<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile5<?php echo $item['id']; ?>">
-            <label for="etoile5<?php echo $item['id']; ?>"></label>
-        </div>
-    </div>
-    <?php endif; ?>
-    <?php endforeach; ?>
-
-    <?php foreach ($suggestion as $item): ?>
-    <?php if ($item['category'] === 'blousons'): ?>
-    <header>
-        <div class="section1">
-            <div class="text-description"><?php echo htmlspecialchars($item['titre']); ?></div>
-        </div>
-    </header>
-
-    <figure class="figure-description">
-        <img class="img-description" src="<?php echo htmlspecialchars($item['img']); ?>" alt="img">
-    </figure>
-
-    <div class="container-description">
-        <p class="text-descriptif"><?php echo htmlspecialchars($item['message']); ?></p>
-        <p class="text-descriptif">Référence: <?php echo htmlspecialchars($item['ref']); ?></p>
-        <p class="text-descriptif">Marque: <?php echo htmlspecialchars($item['marque']); ?></p>
-        <p class="text-descriptif">Prix: <?php echo htmlspecialchars($item['prix']); ?> €</p>
-        <p class="text-descriptif">Couleur: <?php echo htmlspecialchars($item['couleur']); ?></p>
-        <p class="text-descriptif">Catégories: <?php echo htmlspecialchars($item['category']); ?></p>
-        <div class="container-etoile">
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile1<?php echo $item['id']; ?>">
-            <label for="etoile1<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile2<?php echo $item['id']; ?>">
-            <label for="etoile2<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile3<?php echo $item['id']; ?>">
-            <label for="etoile3<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile4<?php echo $item['id']; ?>">
-            <label for="etoile4<?php echo $item['id']; ?>"></label>
-            <input type="radio" name="etoile<?php echo $item['id']; ?>" id="etoile5<?php echo $item['id']; ?>">
-            <label for="etoile5<?php echo $item['id']; ?>"></label>
-        </div>
-    </div>
-    <?php endif; ?>
-    <?php endforeach; ?>
-
-    <!-- Card  -->
-
+    <!-- Produits similaires -->
     <h1 class="produit-suggeres">Produits similaires</h1>
-
-    <div id="gants" class="card-container">
+    <?php if ($similarItems): ?>
+    <div class="card-container">
         <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
-                    <?php foreach ($suggestion as $item): ?>
-                    <?php if ($item['category'] === 'gants'): ?>
+                    <?php foreach ($similarItems as $similarItem): ?>
                     <div class="box">
-                        <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
+                        <img class="img-card" src="<?= htmlspecialchars($similarItem['img']); ?>"
+                            alt="Image de <?= htmlspecialchars($similarItem['titre']); ?>">
                         <div class="overlay">
-                            <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
-                            <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
+                            <h3 class="titre-3"><?= htmlspecialchars($similarItem['titre']); ?></h3>
+                            <p class="text-card-3"><?= htmlspecialchars($similarItem['text']); ?></p>
+                            <a class="lien-card" href="description.php?id=<?= $similarItem['id']; ?>">Description</a>
+                            <!-- Boutons administrateur -->
+                            <?php if (isset($_SESSION['admin']) && $_SESSION['admin']): ?>
+                            <div class="admin-buttons">
+                                <button class="btn-edit">Modifier</button>
+                                <button class="btn-delete">Supprimer</button>
+                            </div>
+                            <?php endif; ?>
                         </div>
                     </div>
-                    <?php endif; ?>
                     <?php endforeach; ?>
                 </div>
             </div>
         </div>
     </div>
+    <?php else: ?>
+    <p>Aucun produit similaire trouvé dans la catégorie <?= htmlspecialchars($category); ?>.</p>
+    <?php endif; ?>
 
-    <div id="pantalons" class="card-container">
-        <div class="wrapper-vetements">
-            <div class="card-area">
-                <div class="box-area">
-                    <?php foreach ($suggestion as $item): ?>
-                    <?php if ($item['category'] === 'pantalons'): ?>
-                    <div class="box">
-                        <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
-                        <div class="overlay">
-                            <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
-                            <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
-                        </div>
-                    </div>
-                    <?php endif; ?>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="veste" class="card-container">
-        <div class="wrapper-vetements">
-            <div class="card-area">
-                <div class="box-area">
-                    <?php foreach ($suggestion as $item): ?>
-                    <?php if ($item['category'] === 'veste'): ?>
-                    <div class="box">
-                        <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
-                        <div class="overlay">
-                            <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
-                            <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
-                        </div>
-                    </div>
-                    <?php endif; ?>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="casque" class="card-container">
-        <div class="wrapper-vetements">
-            <div class="card-area">
-                <div class="box-area">
-                    <?php foreach ($suggestion as $item): ?>
-                    <?php if ($item['category'] === 'casque'): ?>
-                    <div class="box">
-                        <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
-                        <div class="overlay">
-                            <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
-                            <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
-                        </div>
-                    </div>
-                    <?php endif; ?>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="blousons" class="card-container">
-        <div class="wrapper-vetements">
-            <div class="card-area">
-                <div class="box-area">
-                    <?php foreach ($suggestion as $item): ?>
-                    <?php if ($item['category'] === 'blousons'): ?>
-                    <div class="box">
-                        <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
-                        <div class="overlay">
-                            <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
-                            <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
-                        </div>
-                    </div>
-                    <?php endif; ?>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <a href="backend-ajout.php">Ajouter un article</a>
-    <a href="backend-modif.php">Modifier un article</a>
+    <a href="formulaire.php">Ajouter un article</a>
+    <a href="backend-modifs.php">Modifier un article</a>
     <a href="description.php">Voir les descriptions</a>
-
-    <script>
-    function openTab(tabId) {
-        console.log('Tab clicked:', tabId);
-        // Cache toutes les sections
-        document.querySelectorAll('.card-container').forEach(function(tab) {
-            tab.style.display = 'none';
-        });
-
-        // Affiche la section cliquée
-        document.getElementById(tabId).style.display = 'block';
-    }
-
-    // Affiche le premier onglet chaque fois que la page est rafraîchie
-    document.addEventListener('DOMContentLoaded', function() {
-        openTab('gants');
-    });
-    </script>
 
     <?php include_once("./include/footer.php"); ?>
 

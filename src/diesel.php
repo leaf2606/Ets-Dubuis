@@ -19,37 +19,39 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/materiels.css">
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/vetements.css">
     <title>Débrousailleuse</title>
 </head>
 
 <body>
 
-    <?php include_once("./include/navbar.php"); ?>
+    <?php include_once("./include/navbar.php"); ?> <br>
+
+    <h1 class="titre-categorie">Véhicules moteur Diesel</h1>
 
     <div id="news-lien-id">
         <div class="lien-news">
-            <button class="lien-nouveautes" onclick="openTab('gants')">Gants</button>
-            <button class="lien-nouveautes" onclick="openTab('pantalons')">Pantalons</button>
-            <button class="lien-nouveautes" onclick="openTab('veste')">Veste</button>
-            <button class="lien-nouveautes" onclick="openTab('casque')">Casque</button>
-            <button class="lien-nouveautes" onclick="openTab('blousons')">Blousons</button>
+            <button class="lien-nouveautes" onclick="openTab('terre')">Travail de la terre</button>
+            <button class="lien-nouveautes" onclick="openTab('vegetation')">Végétation</button>
+            <button class="lien-nouveautes" onclick="openTab('gazon')">Gazon</button>
+            <button class="lien-nouveautes" onclick="openTab('grands')">Grands espaces</button>
         </div>
     </div>
 
     <!-- Card  -->
 
-    <div id="gants" class="card-container">
+    <div id="terre" class="card-container">
         <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
                     <?php foreach ($catalogue as $item): ?>
-                    <?php if ($item['category'] === 'gants'): ?>
+                    <?php if ($item['category'] === 'terre'): ?>
                     <div class="box">
                         <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
+                            <a class="lien-card" href="../description.php">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -59,18 +61,18 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
-    <div id="pantalons" class="card-container">
+    <div id=" vegetation" class="card-container">
         <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
                     <?php foreach ($catalogue as $item): ?>
-                    <?php if ($item['category'] === 'pantalons'): ?>
+                    <?php if ($item['category'] === 'vegetation'): ?>
                     <div class="box">
                         <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
+                            <a class="lien-card" href="../description.php">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -80,18 +82,22 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
-    <div id="veste" class="card-container">
+    <div id=" gazon" class="card-container">
         <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
                     <?php foreach ($catalogue as $item): ?>
-                    <?php if ($item['category'] === 'veste'): ?>
+                    <?php if ($item['category'] === 'gazon'): ?>
                     <div class="box">
                         <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
                         <div class="overlay">
-                            <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
-                            <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
+                            <h3 class="titre-3">
+                                <?= htmlspecialchars($item['titre']); ?>
+                            </h3>
+                            <p class="text-card-3">
+                                <?= htmlspecialchars($item['text']); ?>
+                            </p>
+                            <a class="lien-card" href="../description.php">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -101,18 +107,22 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
-    <div id="casque" class="card-container">
+    <div id=" grands" class="card-container">
         <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
                     <?php foreach ($catalogue as $item): ?>
-                    <?php if ($item['category'] === 'casque'): ?>
+                    <?php if ($item['category'] === 'grands'): ?>
                     <div class="box">
                         <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
                         <div class="overlay">
-                            <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
-                            <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
+                            <h3 class="titre-3">
+                                <?= htmlspecialchars($item['titre']); ?>
+                            </h3>
+                            <p class="text-card-3">
+                                <?= htmlspecialchars($item['text']); ?>
+                            </p>
+                            <a class="lien-card" href="../description.php">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -121,46 +131,27 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
     </div>
-
-    <div id="blousons" class="card-container">
-        <div class="wrapper-vetements">
-            <div class="card-area">
-                <div class="box-area">
-                    <?php foreach ($catalogue as $item): ?>
-                    <?php if ($item['category'] === 'blousons'): ?>
-                    <div class="box">
-                        <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
-                        <div class="overlay">
-                            <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
-                            <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
-                        </div>
-                    </div>
-                    <?php endif; ?>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <!-- Le script sert à accéder aux autres liens sur la même page et à activer ou cacher les sections -->
     <script>
     function openTab(tabId) {
         console.log('Tab clicked:', tabId);
         // Cache toutes les sections
-        document.querySelectorAll('.card-container').forEach(function(tab) {
-            tab.style.display = 'none';
-        });
+        document.querySelectorAll('.card-container')
+            .forEach(function(tab) {
+                tab.style.display = 'none';
+            });
 
         // Affiche la section cliquée
-        document.getElementById(tabId).style.display = 'block';
+        document.getElementById(tabId).style
+            .display = 'block';
     }
 
     // Affiche le premier onglet chaque fois que la page est rafraîchie
-    document.addEventListener('DOMContentLoaded', function() {
-        openTab('gants');
-    });
+    document.addEventListener('DOMContentLoaded',
+        function() {
+            openTab('terre');
+        });
     </script>
 
     <?php include_once("./include/footer.php"); ?>

@@ -14,7 +14,7 @@
     <footer>
 
         <div class="container-footer">
-            <h1 class="titre-footer">Ets Dubuis</h1>
+            <h1 class="titre-footer">Ets Dubuis Entreprise de motoculture, motos et quads</h1>
             <p class="text-footer">Nos horaires &nbsp;:&nbsp; 08h30-12h / 14h-18h30
             </p>
             <p class="text-footer">Saint Benin d'Azy, &nbsp;&nbsp;22 Rue François Mitterand</p>

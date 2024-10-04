@@ -26,8 +26,12 @@ require_once("connect.php");
     <section id="paragraphe-1-section">
 
         <header>
-            <figure>
+            <figure class="figure-container">
                 <img class="img-propos" src="../img/header-1.png" alt="img-header">
+                <div class="animated-text">
+                    <h1 class="titre-animated">Entreprise de &ensp;<span class="auto-typing"></span>
+                    </h1>
+                </div>
             </figure>
         </header>
 
@@ -53,10 +57,11 @@ require_once("connect.php");
             tempora
             quaerat?</p>
 
-        <figure>
-            <img class="img-dessous-text" src="../img/1.jpg" alt="img">
-            <img class="img-dessous-text" src="../img/2.jpg" alt="img">
-        </figure>
+        <section class="parallax-1">
+            <div class="parallax-inner">
+                <h1 class="titre-parallax">Réparations</h1>
+            </div>
+        </section>
 
     </section>
 
@@ -95,10 +100,23 @@ require_once("connect.php");
             tempora
             quaerat?</p>
 
-        <figure>
-            <img class="img-dessous-text-1" src="../img/1.jpg" alt="img">
-        </figure>
+        <section class="parallax-2">
+            <div class="parallax-inner">
+                <h1 class="titre-parallax">Ventes</h1>
+            </div>
+        </section>
 
+    </section>
+
+    <section>
+        <h1 class="titre-propos">Coucou la papaye</h1>
+        <p class="text-propos ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti exercitationem omnis
+            architecto quam? Est,
+            officiis expedita fuga assumenda non voluptas libero esse, deserunt autem, sint itaque quasi quod quos
+            nobis.
+            Doloremque saepe nihil veniam consequuntur modi quibusdam inventore suscipit sequi laudantium incidunt vitae
+            totam eveniet minus obcaecati, architecto fugit temporibus explicabo, nisi doloribus aut voluptatum aliquid
+            enim similique. Error, officiis.</p>
     </section>
 
     <div class="wrapper">
@@ -130,20 +148,16 @@ require_once("connect.php");
                 </div>
 
                 <div class="slide">
-                    <img class="img-marque" src="../img/stiga.png" alt="img">
+                    <img class="img-marque" src="../img/ktm-logo.png" alt="img">
                 </div>
 
                 <div class="slide">
-                    <img class="img-marque" src="../img/iseki.png" alt="img">
+                    <img class="img-marque" src="../img/solo.png" alt="img">
                 </div>
 
 
                 <div class="slide">
-                    <img class="img-marque" src="../img/stiga.png" alt="img">
-                </div>
-
-                <div class="slide">
-                    <img class="img-marque" src="../img/iseki.png" alt="img">
+                    <img class="img-marque" src="../img/beal.png" alt="img">
                 </div>
 
             </div>
@@ -163,6 +177,12 @@ require_once("connect.php");
                 </form>
             </div>
             <img class="formulaire-droite" src="../img/5.jpg" alt="img">
+        </div>
+    </section><br>
+
+    <section class="parallax-3">
+        <div class="parallax-inner">
+            <h1 class="titre-parallax">Conseils</h1>
         </div>
     </section>
 
@@ -215,6 +235,25 @@ require_once("connect.php");
         </div>
 
     </section>
+
+    <!-- JS pour l'animation du titre sur le header  -->
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+    let typed = new Typed('.auto-typing', {
+        strings: ['Ets dubuis', 'Motos', 'Réparation', 'Rendez-vous'],
+        typeSpeed: 100,
+        backSpeed: 100,
+        startDelay: 300,
+        backDelay: 1000,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|',
+        autoInsertCss: true,
+        showCursor: false
+    });
+    </script>
 
     <?php include_once("./include/footer.php"); ?>
 

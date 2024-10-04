@@ -19,6 +19,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/materiels.css">
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/vetements.css">
     <title>Débrousailleuse</title>
 </head>
 
@@ -28,28 +29,29 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
 
     <div id="news-lien-id">
         <div class="lien-news">
-            <button class="lien-nouveautes" onclick="openTab('gants')">Gants</button>
-            <button class="lien-nouveautes" onclick="openTab('pantalons')">Pantalons</button>
-            <button class="lien-nouveautes" onclick="openTab('veste')">Veste</button>
-            <button class="lien-nouveautes" onclick="openTab('casque')">Casque</button>
-            <button class="lien-nouveautes" onclick="openTab('blousons')">Blousons</button>
+            <button class="lien-nouveautes" onclick="openTab('hc')">HC</button>
+            <button class="lien-nouveautes" onclick="openTab('hcr')">HCR</button>
+            <button class="lien-nouveautes" onclick="openTab('dhc')">DHC</button>
+            <button class="lien-nouveautes" onclick="openTab('dhcs')">DHCS</button>
+            <button class="lien-nouveautes" onclick="openTab('hcs')">HCS</button>
         </div>
     </div>
 
     <!-- Card  -->
 
-    <div id="gants" class="card-container">
+    <div id="hc" class="card-container">
+        <h1 class="titre-categorie">Taille Haie HC</h1>
         <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
                     <?php foreach ($catalogue as $item): ?>
-                    <?php if ($item['category'] === 'gants'): ?>
+                    <?php if ($item['category'] === 'hc'): ?>
                     <div class="box">
                         <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
+                            <a class="lien-card" href="../description.php">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -59,18 +61,19 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
-    <div id="pantalons" class="card-container">
+    <div id="hcr" class="card-container">
+        <h1 class="titre-categorie">Taille Haie HCR</h1>
         <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
                     <?php foreach ($catalogue as $item): ?>
-                    <?php if ($item['category'] === 'pantalons'): ?>
+                    <?php if ($item['category'] === 'hcr'): ?>
                     <div class="box">
                         <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
+                            <a class="lien-card" href="../description.php">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -80,18 +83,19 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
-    <div id="veste" class="card-container">
+    <div id="dhc" class="card-container">
+        <h1 class="titre-categorie">Taille Haie DHC</h1>
         <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
                     <?php foreach ($catalogue as $item): ?>
-                    <?php if ($item['category'] === 'veste'): ?>
+                    <?php if ($item['category'] === 'dhc'): ?>
                     <div class="box">
                         <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
+                            <a class="lien-card" href="../description.php">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -101,18 +105,19 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
-    <div id="casque" class="card-container">
+    <div id="dhcs" class="card-container">
+        <h1 class="titre-categorie">Taille Haie DHCS</h1>
         <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
                     <?php foreach ($catalogue as $item): ?>
-                    <?php if ($item['category'] === 'casque'): ?>
+                    <?php if ($item['category'] === 'dhcs'): ?>
                     <div class="box">
                         <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
+                            <a class="lien-card" href="../description.php">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -122,18 +127,19 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
-    <div id="blousons" class="card-container">
+    <div id="hcs" class="card-container">
+        <h1 class="titre-categorie">Taille Haie HCS</h1>
         <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
                     <?php foreach ($catalogue as $item): ?>
-                    <?php if ($item['category'] === 'blousons'): ?>
+                    <?php if ($item['category'] === 'hcs'): ?>
                     <div class="box">
                         <img class="img-card" src="<?= htmlspecialchars($item['img']); ?>" alt="img">
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="">Description</a>
+                            <a class="lien-card" href="../description.php">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -159,7 +165,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
 
     // Affiche le premier onglet chaque fois que la page est rafraîchie
     document.addEventListener('DOMContentLoaded', function() {
-        openTab('gants');
+        openTab('hc');
     });
     </script>
 

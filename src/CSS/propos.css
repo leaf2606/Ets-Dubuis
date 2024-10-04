@@ -231,7 +231,6 @@ h1.titre-propos {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
-  border-style: dotted;
   padding: 10px;
   color: black;
 }
@@ -247,6 +246,116 @@ h1.titre-propos {
   max-width: 100%;
   height: 600px;
   padding: 10px 0;
+}
+
+/* Effect parallax essai */
+
+.titre-parallax {
+  font-size: 120px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+.parallax-1 {
+  background-image: url(../img/19.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.parallax-2 {
+  background-image: url(../img/16.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.parallax-3 {
+  background-image: url(../img/5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.parallax-inner {
+  padding: 15% 0;
+}
+
+.sous-titre-parallax {
+  font-size: 35px;
+  color: #555;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin: 20px 50px 10px;
+}
+
+p.text-parallax {
+  font-size: 25px;
+  color: #555;
+  text-align: justify;
+  line-height: 40px;
+  margin: 0 50px 10px;
+}
+
+/* Animation pour changer de phrase avec un début fixe */
+
+.animated-text {
+  max-width: 90%;
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.titre-animated {
+  font-family: var(--Montserrat-black);
+  font-size: 75px;
+  color: blue;
+  position: relative;
+}
+
+.auto-typing {
+  font-size: 75px;
+  color: white;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  display: inline;
+  white-space: nowrap;
+}
+
+/* Ajuster la position et l'apparence du curseur */
+
+.typed-cursor {
+  font-size: 75px;
+  color: white;
+  animation: blink 0.7s infinite;
+}
+
+/* Animation de clignotement du curseur */
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Masquer le curseur pendant la suppression */
+
+.typed-cursor.typed-cursor--blink {
+  visibility: hidden;
 }
 
 /* Media a revoir plus tard */
