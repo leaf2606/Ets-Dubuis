@@ -52,7 +52,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="../description.php">Description</a>
+                            <a class="lien-card" href="description.php?id=<?= $item['id']; ?>">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -73,7 +73,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="../description.php">Description</a>
+                            <a class="lien-card" href="description.php?id=<?= $item['id']; ?>">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -94,7 +94,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="../description.php">Description</a>
+                            <a class="lien-card" href="description.php?id=<?= $item['id']; ?>">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -115,7 +115,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="../description.php">Description</a>
+                            <a class="lien-card" href="description.php?id=<?= $item['id']; ?>">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -136,7 +136,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="../description.php">Description</a>
+                            <a class="lien-card" href="description.php?id=<?= $item['id']; ?>">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -158,7 +158,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="../description.php">Description</a>
+                            <a class="lien-card" href="description.php?id=<?= $item['id']; ?>">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -180,7 +180,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
                         <div class="overlay">
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
-                            <a class="lien-card" href="../description.php">Description</a>
+                            <a class="lien-card" href="description.php?id=<?= $item['id']; ?>">Description</a>
                         </div>
                     </div>
                     <?php endif; ?>

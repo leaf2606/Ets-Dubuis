@@ -1,12 +1,10 @@
 <?php
-
 session_start();
-
 require_once("connect.php");
 
 // Vérifie si l'ID est passé dans l'URL
-if (isset($_GET['id'])) {
-    $id = intval($_GET['id']); // Sécuriser l'entrée
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+    $id = intval($_GET['id']); 
 
     // Préparer la requête pour obtenir l'article correspondant à l'ID
     $sql = "SELECT * FROM catalogue WHERE id = :id"; 
@@ -20,20 +18,19 @@ if (isset($_GET['id'])) {
         echo "Article non trouvé.";
         exit;
     }
+
+    // Récupérer les articles similaires dans la même catégorie
+    $category = $item['category']; 
+    $sqlSimilar = "SELECT * FROM catalogue WHERE category = :category AND id != :id"; 
+    $querySimilar = $db->prepare($sqlSimilar);
+    $querySimilar->bindParam(':category', $category, PDO::PARAM_STR);
+    $querySimilar->bindParam(':id', $id, PDO::PARAM_INT);
+    $querySimilar->execute();
+    $similarItems = $querySimilar->fetchAll(PDO::FETCH_ASSOC);
 } else {
     echo "Aucun ID fourni.";
     exit;
 }
-
-// Récupérer les articles similaires dans la même catégorie
-$category = $item['category']; 
-$sqlSimilar = "SELECT * FROM catalogue WHERE category = :category AND id != :id"; 
-$querySimilar = $db->prepare($sqlSimilar);
-$querySimilar->bindParam(':category', $category, PDO::PARAM_STR);
-$querySimilar->bindParam(':id', $id, PDO::PARAM_INT);
-$querySimilar->execute();
-$similarItems = $querySimilar->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
 
 <!DOCTYPE html>
