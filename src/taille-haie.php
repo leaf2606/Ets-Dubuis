@@ -28,7 +28,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
     <?php include_once("./include/navbar.php"); ?>
 
     <div id="news-lien-id">
-        <div class="lien-news">
+        <div class="lien-news-7">
             <button class="lien-nouveautes" onclick="openTab('hc')">HC</button>
             <button class="lien-nouveautes" onclick="openTab('hcr')">HCR</button>
             <button class="lien-nouveautes" onclick="openTab('dhc')">DHC</button>

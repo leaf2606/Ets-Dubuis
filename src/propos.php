@@ -23,17 +23,23 @@ require_once("connect.php");
 
     <?php include_once("./include/navbar.php"); ?>
 
-    <section id="paragraphe-1-section">
+    <section id="header-section">
 
         <header>
             <figure class="figure-container">
                 <img class="img-propos" src="../img/header-1.png" alt="img-header">
                 <div class="animated-text">
-                    <h1 class="titre-animated">Entreprise de &ensp;<span class="auto-typing"></span>
-                    </h1>
+                    <h1 class="titre-animated">Entreprise de &ensp;<span class="auto-typing"></span></h1><br><br>
+                    <a href="#paragraphe-1-section">
+                        <img class="fleche-bas" src="../img/fleche-bas.png" alt="img-fleche-bas">
+                    </a>
                 </div>
             </figure>
         </header>
+
+    </section>
+
+    <section id="paragraphe-1-section">
 
         <h1 class="titre-propos">Informations sur l'entreprise</h1>
 
@@ -57,12 +63,23 @@ require_once("connect.php");
             tempora
             quaerat?</p>
 
-        <section class="parallax-1">
-            <div class="parallax-inner">
-                <h1 class="titre-parallax">Réparations</h1>
-            </div>
-        </section>
+    </section>
 
+    <section id="parallax-1">
+        <div class="parallax-trios">
+            <div class="parallax-item">
+                <img src="../img/reparation.png" class="img-parallax" alt="img-reparation">
+                <p class="parallax-text">Réparation</p>
+            </div>
+            <div class="parallax-item">
+                <img src="../img/vente.png" class="img-parallax" alt="img-vente">
+                <p class="parallax-text">Vente</p>
+            </div>
+            <div class="parallax-item">
+                <img src="../img/conseil.png" class="img-parallax" alt="img-conseil">
+                <p class="parallax-text">Conseil</p>
+            </div>
+        </div>
     </section>
 
     <section id="paragraphe-2-section">
@@ -155,6 +172,41 @@ require_once("connect.php");
                     <img class="img-marque" src="../img/solo.png" alt="img">
                 </div>
 
+                <div class="slide">
+                    <img class="img-marque" src="../img/beal.png" alt="img">
+                </div>
+
+                <div class="slide">
+                    <img class="img-marque" src="../img/beta-logo.png" alt="img">
+                </div>
+
+                <div class="slide">
+                    <img class="img-marque" src="../img/echo.png" alt="img">
+                </div>
+
+                <div class="slide">
+                    <img class="img-marque" src="../img/stiga.png" alt="img">
+                </div>
+
+                <div class="slide">
+                    <img class="img-marque" src="../img/iseki.png" alt="img">
+                </div>
+
+                <div class="slide">
+                    <img class="img-marque" src="../img/igol.png" alt="img">
+                </div>
+
+                <div class="slide">
+                    <img class="img-marque" src="../img/peugeot.png" alt="img">
+                </div>
+
+                <div class="slide">
+                    <img class="img-marque" src="../img/ktm-logo.png" alt="img">
+                </div>
+
+                <div class="slide">
+                    <img class="img-marque" src="../img/solo.png" alt="img">
+                </div>
 
                 <div class="slide">
                     <img class="img-marque" src="../img/beal.png" alt="img">
@@ -180,11 +232,11 @@ require_once("connect.php");
         </div>
     </section><br>
 
-    <section class="parallax-3">
+    <!-- <section class="parallax-3">
         <div class="parallax-inner">
             <h1 class="titre-parallax">Conseils</h1>
         </div>
-    </section>
+    </section> -->
 
     <section id="paragraphe-3-section">
 
@@ -242,7 +294,7 @@ require_once("connect.php");
 
     <script>
     let typed = new Typed('.auto-typing', {
-        strings: ['Ets dubuis', 'Motos', 'Réparation', 'Rendez-vous'],
+        strings: ['Ets Dubuis', 'Motos', 'Réparation', 'Rendez-vous'],
         typeSpeed: 100,
         backSpeed: 100,
         startDelay: 300,

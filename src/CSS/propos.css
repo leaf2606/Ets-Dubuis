@@ -29,10 +29,19 @@ html {
 /* Header image  */
 
 .img-propos {
+  height: 700px;
   width: 100%;
-  height: 350px;
   object-fit: cover;
-  /* border-bottom: 4px solid hsl(210, 10%, 80%); */
+  overflow: hidden;
+}
+
+.fleche-bas {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  top: 200px;
+  left: 90%;
+  transform: translateX(-50%);
 }
 
 /* Images sous le premier texte  */
@@ -108,7 +117,7 @@ html {
   height: 100px;
   object-fit: contain;
   filter: grayscale(100%);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .slider .slide:hover .img-marque {
@@ -129,7 +138,6 @@ html {
 #newsletter-section {
   text-align: center;
   padding: 20px;
-  /* background-color: #3399ff; */
 }
 
 .titre-2-news,
@@ -206,7 +214,7 @@ html {
   box-shadow: 0 6px 15px rgba(38, 114, 204, 0.3);
 }
 
-/* Pour les textes autout de l'image */
+/* Pour les textes autour de l'image */
 
 h1.titre-propos {
   text-align: center;
@@ -250,19 +258,51 @@ h1.titre-propos {
 
 /* Effect parallax essai */
 
+.parallax-trios {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 50px 0;
+}
+
+.parallax-item {
+  text-align: center;
+  margin: 0 20px;
+  flex: 1;
+}
+
+.img-parallax {
+  height: auto;
+  width: auto;
+  max-height: 200px;
+  max-width: 200px;
+  border: solid 3px white;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.parallax-text {
+  font-size: 35px;
+  color: black;
+  font-weight: bold;
+}
+
+#parallax-1 {
+  background-image: url(../img/14.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 7% 0;
+}
+
 .titre-parallax {
   font-size: 120px;
   font-weight: bold;
   text-align: center;
   color: white;
-}
-
-.parallax-1 {
-  background-image: url(../img/19.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
 }
 
 .parallax-2 {
@@ -285,15 +325,6 @@ h1.titre-propos {
   padding: 15% 0;
 }
 
-.sous-titre-parallax {
-  font-size: 35px;
-  color: #555;
-  text-align: center;
-  font-weight: 500;
-  letter-spacing: 2px;
-  margin: 20px 50px 10px;
-}
-
 p.text-parallax {
   font-size: 25px;
   color: #555;
@@ -307,8 +338,8 @@ p.text-parallax {
 .animated-text {
   max-width: 90%;
   position: absolute;
-  top: 30%;
-  left: 40%;
+  top: 55%;
+  left: 20%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -322,7 +353,7 @@ p.text-parallax {
 
 .auto-typing {
   font-size: 75px;
-  color: white;
+  color: black;
   position: absolute;
   left: 100%;
   top: 0;
@@ -358,7 +389,7 @@ p.text-parallax {
   visibility: hidden;
 }
 
-/* Media a revoir plus tard */
+/* Media Newsletter */
 
 @media (max-width: 768px) {
   .container {
@@ -375,5 +406,213 @@ p.text-parallax {
   .img-container {
     width: 90%;
     margin: 20px 0;
+  }
+}
+
+/* Media queries pour le header */
+
+@media (max-width: 1349px) and (min-width: 1025px) {
+  .animated-text {
+    left: 30%;
+  }
+
+  .fleche-bas {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 710px) {
+  .animated-text {
+    max-width: 20%;
+    position: absolute;
+    top: 55%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .auto-typing {
+    font-size: 75px;
+    color: black;
+    position: absolute;
+    left: 100%;
+    top: 99px;
+    display: inline;
+    white-space: nowrap;
+  }
+
+  .fleche-bas {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: 150px;
+    left: 160%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 778px) and (min-width: 710px) {
+  .fleche-bas {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: 100px;
+    left: 170%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 709px) and (min-width: 570px) {
+  .animated-text {
+    max-width: 20%;
+    position: absolute;
+    top: 55%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .auto-typing {
+    font-size: 75px;
+    color: black;
+    position: absolute;
+    left: 0%;
+    top: 235px;
+    display: inline;
+    white-space: nowrap;
+  }
+
+  .fleche-bas {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: 100px;
+    left: 170%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 569px) and (min-width: 349px) {
+  .animated-text {
+    display: none;
+  }
+
+  .img-propos {
+    display: none;
+  }
+
+  .fleche-bas {
+    display: none;
+  }
+}
+
+/* Media pour les titres et paragraphes */
+
+@media (max-width: 1024px) and (max-width: 769px) {
+  .titre-propos {
+    font-size: 32px;
+    padding: 30px 15px;
+  }
+
+  .text-propos {
+    padding: 30px 15px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 349px) {
+  .titre-propos {
+    font-size: 28px;
+    padding: 20px 10px;
+  }
+
+  .text-propos {
+    padding: 20px 10px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* Media pour les les textes autour de l'image au dessus du footer */
+
+@media (max-width: 1160px) {
+  .container-propos {
+    flex-wrap: wrap;
+  }
+
+  .left-column,
+  .right-column,
+  .img-container {
+    width: 100%;
+  }
+
+  .left-column,
+  .right-column {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .img-container img {
+    height: auto;
+    max-height: 400px;
+  }
+
+  .left-column,
+  .right-column {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 800px) and (min-width: 349px) {
+  .container-propos {
+    display: block;
+    text-align: center;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+    padding: 10px;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .img-container {
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  .img-container img {
+    height: auto;
+    max-width: 80%;
+  }
+
+  .text-bas {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+/* Media pour le newsletter */
+
+@media (max-width: 850px) and (min-width: 600px) {
+  .newsletter-section {
+    max-width: 100%;
+    width: 50%;
+  }
+
+  .conteneur-formulaire {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formulaire-droite {
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 0px;
   }
 }

@@ -266,7 +266,7 @@ section {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 349px) {
   header {
     padding: 5px 10px;
   }
@@ -275,9 +275,15 @@ section {
     width: 95%;
   }
 
-  #home .content .titre-header {
-    font-size: 1.8em;
-    line-height: 40px;
+  .titre-header {
+    display: block; /* Pour s'assurer que le h1 prend toute la largeur */
+    margin-bottom: 0; /* Ajuste si besoin */
+  }
+
+  .span-titre {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
   }
 
   #home .content .text-header {

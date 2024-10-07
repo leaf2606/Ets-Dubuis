@@ -19,8 +19,6 @@ require_once("connect.php");
 
 <body>
 
-    <?php include_once("./include/navbar.php"); ?>
-
     <div class="container-contact">
         <form method="post">
             <div class="container">

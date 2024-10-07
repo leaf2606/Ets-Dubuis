@@ -34,7 +34,15 @@ html {
   text-align: center;
 }
 
-.lien-news {
+.lien-news,
+.lien-news-1,
+.lien-news-2,
+.lien-news-3,
+.lien-news-4,
+.lien-news-5,
+.lien-news-6,
+.lien-news-7,
+.lien-news-8 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,8 +51,7 @@ html {
   margin: 20px auto;
 }
 
-.lien-nouveautes,
-.lien-nouveautes-1 {
+.lien-nouveautes {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,4 +69,148 @@ html {
 .lien-nouveautes:hover,
 .lien-nouveautes-1:hover {
   background-color: lightgray;
+}
+
+/* Media pour le lien motos */
+
+@media (max-width: 1349px) and (min-width: 600px) {
+  .lien-news {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    gap: 20px;
+  }
+}
+
+/* Media pour le lien débroussailleuse */
+
+@media (max-width: 600px) and (min-width: 349px) {
+  .lien-news-1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    gap: 20px;
+  }
+}
+
+/* Media pour le lien diesel */
+
+@media (max-width: 840px) and (min-width: 550px) {
+  .lien-news-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 549px) and (min-width: 349px) {
+  .lien-news-2 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px;
+    gap: 20px;
+  }
+}
+
+/* Media pour le lien elagueur */
+
+@media (max-width: 580px) and (min-width: 349px) {
+  .lien-news-3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    gap: 20px;
+  }
+}
+
+/* Media pour le lien essence */
+
+@media (max-width: 610px) and (min-width: 349px) {
+  .lien-news-4 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px;
+  }
+}
+
+/* Media pour le lien motos */
+
+@media (max-width: 1349px) and (min-width: 1041px) {
+  .lien-news-5 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px;
+  }
+}
+
+@media (max-width: 11040px) and (min-width: 951px) {
+  .lien-news-5 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+  }
+}
+
+@media (max-width: 950px) and (min-width: 641px) {
+  .lien-news-5 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+  }
+}
+
+@media (max-width: 640px) and (min-width: 349px) {
+  .lien-news-5 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px;
+  }
+}
+
+/* Media pour le lien souffleur */
+
+@media (max-width: 430px) and (min-width: 349px) {
+  .lien-news-6 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px;
+    gap: 20px;
+  }
+}
+
+/* Media pour le lien taille-haie */
+
+@media (max-width: 640px) and (min-width: 400px) {
+  .lien-news-7 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 399px) and (min-width: 349px) {
+  .lien-news-7 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px;
+    gap: 20px;
+  }
+}
+
+/* Media pour le lien vetements */
+
+@media (max-width: 630px) and (min-width: 349px) {
+  .lien-news-8 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px;
+    gap: 20px;
+  }
 }

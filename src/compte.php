@@ -73,7 +73,7 @@ if (!empty($_POST)) {
 
             // Redirection en fonction du rôle
             if ($_SESSION["compte"]["role"] === 'admin') {
-                header("Location: backend-ajout.php"); 
+                header("Location: formulaire.php"); 
             } else {
                 header("Location: index.php"); 
             }

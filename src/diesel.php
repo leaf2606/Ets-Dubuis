@@ -30,7 +30,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
     <h1 class="titre-categorie">Véhicules moteur Diesel</h1>
 
     <div id="news-lien-id">
-        <div class="lien-news">
+        <div class="lien-news-2">
             <button class="lien-nouveautes" onclick="openTab('terre')">Travail de la terre</button>
             <button class="lien-nouveautes" onclick="openTab('vegetation')">Végétation</button>
             <button class="lien-nouveautes" onclick="openTab('gazon')">Gazon</button>

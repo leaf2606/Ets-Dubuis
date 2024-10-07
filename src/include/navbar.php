@@ -101,20 +101,27 @@ $loggedIn = isset($_SESSION["compte"]);
                     </ul>
                 </li>
 
-                <?php if (isset($_SESSION["compte"]["role"]) && $_SESSION["compte"]["role"] == "admin"): ?>
-                <li class="lien-cote"><a href="../backend-ajout.php">Admin</a></li>
+                <li>
+                    <a href="contact.php" class="lien-cote">Contact</a>
+                </li>
+                <?php if ($loggedIn): ?>
+                <li>
+                    <?php if (isset($_SESSION["compte"]["role"]) && $_SESSION["compte"]["role"] == "admin"): ?>
+                    <a href="formulaire.php" class="lien-cote">Admin</a>
+                    <?php else: ?>
+                    <span class="lien-cote"><?= htmlspecialchars($_SESSION["compte"]["username"]); ?></span>
+                    <?php endif; ?>
+                </li>
+                <li>
+                    <a href="compte.php?action=deconnexion" class="lien-cote">Déconnexion</a>
+                </li>
                 <?php else: ?>
-                <li class="lien-cote"><a href="../contact.php">Contact</a></li>
+                <li>
+                    <a href="compte.php" class="lien-cote">Compte</a>
+                </li>
                 <?php endif; ?>
 
-                <?php if ($loggedIn): ?>
-                <li class="lien-cote"><a href="#"><?= htmlspecialchars($_SESSION["compte"]["username"]); ?></a></li>
-                <li class="lien-cote"><a href="../compte.php?action=deconnexion">Déconnexion</a></li>
-                <?php else: ?>
-                <li class="lien-cote"><a href="../compte.php">Compte</a></li>
-                <?php endif; ?>
-            </ul>
-            <img src="../img/jour-nuit-essai.svg" alt="img" class="jour-nuit-svg">
+                <img src="../img/jour-nuit-essai.svg" alt="img" class="jour-nuit-svg">
         </div>
     </nav>
 

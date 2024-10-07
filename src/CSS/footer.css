@@ -85,3 +85,12 @@ footer {
   margin: 0 50px;
   color: white;
 }
+
+@media (max-width: 787px) and (min-width: 349px) {
+  .container-mension {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+    height: 150px;
+  }
+}
