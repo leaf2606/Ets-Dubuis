@@ -36,19 +36,6 @@ html {
   display: block;
 }
 
-/* .container-formulaire {
-  border: solid 3px black;
-}
-
-form {
-  display: flex;
-  border: solid 3px red;
-  flex-direction: column;
-  padding: 50px;
-  width: 50%;
-  text-align: center;
-} */
-
 /* Connexion et Inscription */
 
 .container {
@@ -126,7 +113,6 @@ form {
   font-size: 1em;
   outline: none;
   color: white;
-  /* border: solid 3px red; */
 }
 
 input[type="submit"] {
@@ -140,11 +126,6 @@ input[type="submit"] {
 input[type="submit"].button-connexion {
   margin-top: 20px;
 }
-
-/* input#email,
-input#password {
-  color: white;
-} */
 
 .compte-wrapper {
   display: flex;

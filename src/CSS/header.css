@@ -266,18 +266,23 @@ section {
   }
 }
 
-@media (max-width: 349px) {
+@media (max-width: 545px) and (min-width: 349px) {
   header {
-    padding: 5px 10px;
+    padding: -2px 10px;
   }
 
   #home .content {
     width: 95%;
   }
 
+  .titre-div-header {
+    display: flex;
+    flex-direction: column;
+  }
+
   .titre-header {
-    display: block; /* Pour s'assurer que le h1 prend toute la largeur */
-    margin-bottom: 0; /* Ajuste si besoin */
+    display: block;
+    margin-bottom: 0;
   }
 
   .span-titre {
@@ -301,7 +306,6 @@ section {
   }
 
   #home .media-icons {
-    bottom: auto;
-    right: 5px;
+    top: 600px;
   }
 }

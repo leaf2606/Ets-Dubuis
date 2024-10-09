@@ -21,7 +21,9 @@
             <img class="img-header" src="../img/12.jpg" alt="header">
             <img class="img-header" src="../img/13.jpg" alt="header">
             <div class="content active">
-                <h1 class="titre-header">Bonjour,<span class="span-titre">Coucou</span></h1>
+                <div class="titre-div-header">
+                    <h1 class="titre-header">Bonjour,<span class="span-titre">Coucou</span></h1>
+                </div>
                 <p class="text-header">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae eligendi
                     molestias voluptatem
                     cupiditate doloremque, id recusandae fuga ipsa sint architecto rerum! Voluptatem consequuntur, ea
@@ -30,7 +32,7 @@
                     soluta, omnis quasi. Esse cum, eos, eius ex expedita maxime, quasi ipsum quam doloribus accusamus
                     libero
                     nemo dolorum quia.</p>
-                <a href="../propos.php#paragraphe-1-section" class="button-lien">Bonsoir</a>
+                <a href="../propos.php#paragraphe-1-section" class="button-lien">A propos</a>
             </div>
             <div class="content">
                 <h1 class="titre-header">Hello,<span class="span-titre">Coucou</span></h1>

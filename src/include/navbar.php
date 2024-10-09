@@ -17,75 +17,21 @@ $loggedIn = isset($_SESSION["compte"]);
 </head>
 
 <body>
-    <nav>
-        <div class="navbar-cote">
-            <ul class="links">
-                <li>
-                    <a href="index.php" class="logo">Accueil</a>
-                </li>
-                <li class="lien">
-                    <ul class="menu-nav">
-                        <li>
-                            <a href="propos.php" class="lien-cote">À propos</a>
-                        </li>
-                        <li>
-                            <a href="vetements.php" class="lien-cote">Vêtements</a>
-                        </li>
-                        <li class="has-sous-nav">
-                            <a href="#" class="lien-cote">Matériels</a>
-                            <ul class="sous-nav-1">
-                                <li><a href="debrousailleuse.php">Débroussailleuse</a></li>
-                                <li><a href="taille-haie.php">Taille Haie</a></li>
-                                <li><a href="tronçonneuse.php">Tronçonneuse</a></li>
-                                <li><a href="elagueur.php">Élagueuse</a></li>
-                                <li><a href="souffleur.php">Souffleur</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-sous-nav">
-                            <a href="#" class="lien-cote">Engins et Outils</a>
-                            <ul class="sous-nav-2">
-                                <li><a href="motos.php">Motos</a></li>
-                                <li><a href="diesel.php">Véhicules Diesel</a></li>
-                                <li><a href="essence.php">Véhicules Essence</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="contact.php" class="lien-cote">Contact</a>
-                        </li>
-                        <?php if ($loggedIn): ?>
-                        <li>
-                            <?php if (isset($_SESSION["compte"]["role"]) && $_SESSION["compte"]["role"] == "admin"): ?>
-                            <a href="formulaire.php" class="lien-cote">Admin</a>
-                            <?php else: ?>
-                            <span class="lien-cote"><?= htmlspecialchars($_SESSION["compte"]["username"]); ?></span>
-                            <?php endif; ?>
-                        </li>
-                        <li>
-                            <a href="compte.php?action=deconnexion" class="lien-cote">Déconnexion</a>
-                        </li>
-                        <?php else: ?>
-                        <li>
-                            <a href="compte.php" class="lien-cote">Compte</a>
-                        </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
-            </ul>
-            <img src="../img/jour-et-nuit.png" alt="img" class="jour-nuit">
-            <div class="burger-menu-button">
-                <img src="../img/menu-burger.png" alt="menu-burger" class="burger-menu-button">
-            </div>
+
+    <header class="header-nav">
+
+        <a href="index.php" class="logo-nav">Accueil</a>
+
+        <div class="menu-burger">
+            <img src="../img/menu-burger.png" alt="menu-burger" class="menu-burger">
         </div>
 
-        <!-- Navbar pour la version mobile (burger menu) -->
-
-        <div class="burger-menu-cote">
-            <ul class="links">
-                <li class="lien-cote"><a href="../index.php">Accueil</a></li>
-                <li class="lien-cote"><a href="../propos.php">À propos</a></li>
-                <li class="lien-cote"><a href="../vetements.php">Vêtements</a></li>
-                <li class="lien-cote"><a href="#" class="sous-menu-toggle">Matériels</a>
-                    <ul class="sous-nav-1">
+        <nav class="navbar">
+            <ul>
+                <li><a href="propos.php">A propos</a></li>
+                <li><a href="vetements.php">Vêtements</a></li>
+                <li><a href="">Matériels +</a>
+                    <ul>
                         <li><a href="debrousailleuse.php">Débroussailleuse</a></li>
                         <li><a href="taille-haie.php">Taille Haie</a></li>
                         <li><a href="tronçonneuse.php">Tronçonneuse</a></li>
@@ -93,80 +39,47 @@ $loggedIn = isset($_SESSION["compte"]);
                         <li><a href="souffleur.php">Souffleur</a></li>
                     </ul>
                 </li>
-                <li class="lien-cote"><a href="#" class="sous-menu-toggle">Engins et Outils</a>
-                    <ul class="sous-nav-2">
+                <li><a href="">Vêtements</a></li>
+                <li><a href="">Engins +</a>
+                    <ul>
                         <li><a href="motos.php">Motos</a></li>
                         <li><a href="diesel.php">Véhicules Diesel</a></li>
                         <li><a href="essence.php">Véhicules Essence</a></li>
                     </ul>
                 </li>
-
-                <li>
-                    <a href="contact.php" class="lien-cote">Contact</a>
-                </li>
+                <li><a href="contact.php">Contact</a></li>
                 <?php if ($loggedIn): ?>
                 <li>
                     <?php if (isset($_SESSION["compte"]["role"]) && $_SESSION["compte"]["role"] == "admin"): ?>
-                    <a href="formulaire.php" class="lien-cote">Admin</a>
+                    <a href="formulaire.php">Admin</a>
                     <?php else: ?>
-                    <span class="lien-cote"><?= htmlspecialchars($_SESSION["compte"]["username"]); ?></span>
+                    <span><?= htmlspecialchars($_SESSION["compte"]["username"]); ?></span>
                     <?php endif; ?>
                 </li>
                 <li>
-                    <a href="compte.php?action=deconnexion" class="lien-cote">Déconnexion</a>
+                    <a href="compte.php?action=deconnexion">Déconnexion</a>
                 </li>
                 <?php else: ?>
                 <li>
-                    <a href="compte.php" class="lien-cote">Compte</a>
+                    <a href="compte.php">Compte</a>
                 </li>
                 <?php endif; ?>
+            </ul>
+        </nav>
 
-                <img src="../img/jour-nuit-essai.svg" alt="img" class="jour-nuit-svg">
-        </div>
-    </nav>
+    </header>
 
+    <!-- JS pour le menu burger  -->
 
     <script>
-    const burgerMenuButton = document.querySelector('.burger-menu-button img');
-    const burgerMenu = document.querySelector('.burger-menu-cote');
+    const burgerMenuButton = document.querySelector('.menu-burger img');
+    const burgerMenu = document.querySelector('.menu-burger');
+    const navbar = document.querySelector('.navbar');
 
     burgerMenuButton.onclick = function() {
         burgerMenu.classList.toggle('open');
+        navbar.classList.toggle('open');
     }
-    </script>
-
-    <script>
-    const switchThemeBtn = document.querySelector('.jour-nuit');
-    const switchThemeSvg = document.querySelector('.jour-nuit-svg');
-    let toggleTheme = 0;
-
-    switchThemeBtn.addEventListener('click', () => {
-        if (toggleTheme === 0) {
-            document.documentElement.style.setProperty('--ecriture', '#262626');
-            document.documentElement.style.setProperty('--border', 'solid 2px black');
-            document.documentElement.style.setProperty('--background', '#f1f1f1');
-            toggleTheme++;
-        } else {
-            document.documentElement.style.setProperty('--ecriture', '#f1f1f1');
-            document.documentElement.style.setProperty('--border', 'solid 2px white');
-            document.documentElement.style.setProperty('--background', '#262626');
-            toggleTheme--;
-        }
-    });
-    </script>
-
-    <!-- JS pour gérer les sous-nav au menu-burger  -->
-
-    <script>
-    const sousMenuToggles = document.querySelectorAll('.sous-menu-toggle');
-
-    sousMenuToggles.forEach(toggle => {
-        toggle.addEventListener('click', (event) => {
-            event.preventDefault(); // Empêche le lien de naviguer
-            const sousMenu = toggle.nextElementSibling; // Sélectionne le sous-menu suivant
-            sousMenu.classList.toggle('open'); // Ajoute ou retire la classe 'open'
-        });
-    });
     </script>
 
 </body>

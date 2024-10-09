@@ -16,9 +16,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
   background-color: white;
 }
 
@@ -82,7 +79,7 @@ html {
   padding: 30px 40px;
   display: flex;
   flex-direction: column;
-  color: black;
+  color: white;
 }
 
 .form h2 {
@@ -98,11 +95,12 @@ html {
 }
 
 .inputBox input,
-.inputBox textarea {
+.inputBox textarea,
+.inputBox select {
   width: 100%;
   padding: 5px 10px 10px;
   background: transparent;
-  border-color: blue;
+  border-color: #1a4f7d;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -116,9 +114,9 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-  border: 1px solid #fff;
-  background: blue;
-  color: #fff;
+  border: 1px solid white;
+  background: #1a4f7e;
+  color: white;
   cursor: pointer;
   text-align: center;
 }
@@ -143,4 +141,42 @@ input#datetime-local {
 
 ::-webkit-input-placeholder {
   color: white;
+}
+
+select option[value="1"],
+select option[value="2"],
+select option[value="3"] {
+  background-color: white;
+  color: black;
+}
+
+/* Les deux liens qui bouge selon le click */
+
+.contact-lien {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.contact-link {
+  padding: 0 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.container-contact {
+  display: none;
+}
+
+.container-contact.active {
+  display: block;
+}
+
+/* Media contact */
+
+@media (max-width: 600px) and (min-width: 349px) {
+  .container {
+    width: 50px;
+  }
 }

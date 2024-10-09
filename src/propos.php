@@ -28,12 +28,12 @@ require_once("connect.php");
         <header>
             <figure class="figure-container">
                 <img class="img-propos" src="../img/header-1.png" alt="img-header">
-                <div class="animated-text">
+                <!-- <div class="animated-text">
                     <h1 class="titre-animated">Entreprise de &ensp;<span class="auto-typing"></span></h1><br><br>
                     <a href="#paragraphe-1-section">
                         <img class="fleche-bas" src="../img/fleche-bas.png" alt="img-fleche-bas">
                     </a>
-                </div>
+                </div> -->
             </figure>
         </header>
 
@@ -219,24 +219,17 @@ require_once("connect.php");
     <section id="newsletter-section">
         <div class="conteneur-formulaire">
             <div class="formulaire-gauche">
-                <form class="newsletter" action="">
+                <form class="newsletter" action="/api/newsAdd" method="POST">
                     <h2 class="titre-2-news">Inscrivez-vous à notre Newsletter</h2>
                     <p class="text-news">Recevez les dernières nouvelles et mises à jour directement dans votre
                         boîte
                         mail !</p>
-                    <input type="email" id="news" placeholder="monAdresseMail@gmail.com" required>
+                    <input type="email" id="news" name="email" placeholder="Mon adresse mail" required>
                     <button class="bouton-news">Envoyer</button>
                 </form>
             </div>
-            <img class="formulaire-droite" src="../img/5.jpg" alt="img">
         </div>
     </section><br>
-
-    <!-- <section class="parallax-3">
-        <div class="parallax-inner">
-            <h1 class="titre-parallax">Conseils</h1>
-        </div>
-    </section> -->
 
     <section id="paragraphe-3-section">
 

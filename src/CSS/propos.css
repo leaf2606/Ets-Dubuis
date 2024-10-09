@@ -29,10 +29,9 @@ html {
 /* Header image  */
 
 .img-propos {
-  height: 700px;
+  height: 400px;
   width: 100%;
   object-fit: cover;
-  overflow: hidden;
 }
 
 .fleche-bas {
@@ -137,76 +136,80 @@ html {
 
 #newsletter-section {
   text-align: center;
-  padding: 20px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f3f4f6 30%, #ffffff);
 }
 
-.titre-2-news,
-.text-news,
-.newsletter input,
-.bouton-news {
-  padding: 20px;
+.titre-2-news {
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 10px;
 }
 
-.formulaire-droite img {
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 20px;
+.text-news {
+  font-size: 16px;
+  color: black;
+  margin-bottom: 30px;
 }
 
 .conteneur-formulaire {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  max-width: 1020px;
+  max-width: 600px;
   margin: auto;
-  box-shadow: 0px 4px 61px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 30px;
+  padding: 30px 20px;
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  transition: all 0.5s ease-in-out;
 }
 
 .formulaire-gauche {
-  margin-right: 50px;
-  padding: 50px;
-  height: 300px;
-  width: 50%;
   text-align: center;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  background-color: #ffffff;
-}
-
-.formulaire-droite {
-  width: 70%;
-  height: 400px;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
+  width: 100%;
+  margin: 0;
 }
 
 .newsletter input {
-  border: 2px solid #ddd;
-  padding: 12px 20px;
-  font-size: 16px;
   width: 100%;
-  max-width: 400px;
+  padding: 15px 0px;
+  border: 2px solid #ddd;
+  font-size: 16px;
+  color: black;
   border-radius: 25px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
   outline: none;
-  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
 .newsletter input:focus {
-  border-color: #3399ff;
-  box-shadow: 0 4px 12px rgba(51, 153, 255, 0.2);
+  border-color: #1a4f7d;
+  box-shadow: 0 4px 12px rgba(51, 153, 255, 0.3);
+}
+
+::-webkit-input-placeholder {
+  color: black;
+  text-align: center;
 }
 
 .bouton-news {
-  margin-top: 20px;
+  display: inline-block;
+  width: 100%;
+  max-width: 200px;
   padding: 15px 30px;
-  font-size: 16px;
-  color: white;
-  background-color: #3399ff;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #1a4f7d;
   border: none;
-  border-radius: 25px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(51, 153, 255, 0.2);
+  transition: all 0.3s ease;
 }
 
 .bouton-news:hover {
@@ -335,7 +338,7 @@ p.text-parallax {
 
 /* Animation pour changer de phrase avec un début fixe */
 
-.animated-text {
+/* .animated-text {
   max-width: 90%;
   position: absolute;
   top: 55%;
@@ -359,19 +362,19 @@ p.text-parallax {
   top: 0;
   display: inline;
   white-space: nowrap;
-}
+} */
 
 /* Ajuster la position et l'apparence du curseur */
 
-.typed-cursor {
+/* .typed-cursor {
   font-size: 75px;
   color: white;
   animation: blink 0.7s infinite;
-}
+} */
 
 /* Animation de clignotement du curseur */
 
-@keyframes blink {
+/* @keyframes blink {
   0% {
     opacity: 1;
   }
@@ -381,13 +384,13 @@ p.text-parallax {
   100% {
     opacity: 1;
   }
-}
+} */
 
 /* Masquer le curseur pendant la suppression */
 
-.typed-cursor.typed-cursor--blink {
+/* .typed-cursor.typed-cursor--blink {
   visibility: hidden;
-}
+} */
 
 /* Media Newsletter */
 
@@ -600,19 +603,34 @@ p.text-parallax {
 
 /* Media pour le newsletter */
 
-@media (max-width: 850px) and (min-width: 600px) {
-  .newsletter-section {
-    max-width: 100%;
-    width: 50%;
-  }
-
+@media (max-width: 768px) and (min-width: 401px) {
   .conteneur-formulaire {
-    display: flex;
-    flex-direction: column;
+    padding: 20px 15px;
   }
 
-  .formulaire-droite {
-    border-bottom-left-radius: 30px;
-    border-top-right-radius: 0px;
+  .newsletter input,
+  .bouton-news {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) and (min-width: 349px) {
+  .conteneur-formulaire {
+    padding: 15px 10px;
+    width: 70%;
+    max-width: 627px;
+  }
+
+  .newsletter input {
+    padding: 12px 0px;
+  }
+
+  .bouton-news {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  #newsletter-section {
+    padding: 19px 10px;
   }
 }
