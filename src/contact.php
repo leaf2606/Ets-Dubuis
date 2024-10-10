@@ -1,3 +1,46 @@
+<?php
+
+session_start();
+
+require_once("connect.php");
+
+$erreur = '';
+$message_soumission = '';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Récupération des données du formulaire
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $email = $_POST['email'];
+    $telephone = $_POST['telephone'];
+    $objet = $_POST['objet']; 
+    $message = $_POST['message'];
+    $envoyer = $_POST['envoyer'];
+
+    if(isset($envoyer)) {
+        // Validation des champs
+        if(empty($nom)) $erreur .= "<li>Nom laissé vide !</li>";
+        if(empty($prenom)) $erreur .= "<li>Prénom laissé vide !</li>";
+        if(empty($email)) $erreur .= "<li>E-mail laissé vide !</li>";
+        if(empty($telephone)) $erreur .= "<li>Téléphone laissé vide !</li>";
+        if(empty($objet)) $erreur .= "<li>Statut laissé vide !</li>"; 
+        if(empty($message)) $erreur .= "<li>Message laissé vide !</li>";
+
+        // Si aucune erreur, procéder à l'insertion dans la base de données
+        if (empty($erreur)) {
+            // Insertion des données dans la table
+            $insertSql = "INSERT INTO formulaire_contact (nom, prenom, email, telephone, objet, message) VALUES (?, ?, ?, ?, ?, ?)";
+            $insertQuery = $db->prepare($insertSql);
+            $insertQuery->execute([$nom, $prenom, $email, $telephone, $objet, $message]);
+            
+            // Message de succès
+            echo "<p>Formulaire soumis avec succès!</p>";
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -36,9 +79,9 @@
                     </div>
                     <div class="inputBox">
                         <select name="objet" id="objet_devis">
-                            <option value="1">Votre status</option>
-                            <option value="2">Particulier</option>
-                            <option value="3">Professionnel</option>
+                            <option value="">Votre status</option>
+                            <option value="particulier">Particulier</option>
+                            <option value="profesionnel">Professionnel</option>
                         </select>
                     </div>
                     <div class="inputBox">
@@ -78,9 +121,9 @@
                     </div>
                     <div class="inputBox">
                         <select name="objet" id="objet_devis">
-                            <option value="1">Préférence de contact</option>
-                            <option value="2">Téléphone</option>
-                            <option value="3">E-mail</option>
+                            <option value="">Préférence de contact</option>
+                            <option value="telephone">Téléphone</option>
+                            <option value="email">E-mail</option>
                         </select>
                     </div>
                     <div class="inputBox">

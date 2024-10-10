@@ -38,8 +38,6 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
 
     <!-- Card  -->
 
-
-
     <div id="vetements" class="card-container">
         <h1 class="titre-categorie">Vêtements de sécurité</h1>
         <div class="wrapper-vetements">

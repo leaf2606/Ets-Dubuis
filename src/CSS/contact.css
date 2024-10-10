@@ -143,9 +143,10 @@ input#datetime-local {
   color: white;
 }
 
-select option[value="1"],
-select option[value="2"],
-select option[value="3"] {
+select option[value="particulier"],
+select option[value="profesionnel"],
+select option[value="telephone"],
+select option[value="email"] {
   background-color: white;
   color: black;
 }

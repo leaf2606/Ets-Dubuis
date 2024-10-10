@@ -24,11 +24,33 @@
             <p class="text-footer"> 03 86 58 56 91</p>
         </div>
 
+        <div id="footer-map"></div>
+
         <div class="container-mension">
             <a class="lien-mension" href="">Mension légale</a><br>
             <a class="lien-mension" href="">Mension légale</a><br>
             <a class="lien-mension" href="">Mension légale</a>
         </div>
+
+        <!-- JS pour la map  -->
+
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+        <script>
+        // Initialisation de la carte avec les bonnes coordonnées (latitude et longitude)
+        var footerMap = L.map('footer-map').setView([47.00562552928349, 3.392275880007283],
+        13); // Coordonnées exactes de votre entreprise
+
+        // Ajout de la couche OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '© OpenStreetMap'
+        }).addTo(footerMap);
+
+        // Ajout d'un marqueur sur l'emplacement exact de votre entreprise
+        var companyMarker = L.marker([47.00562552928349, 3.392275880007283]).addTo(footerMap);
+        companyMarker.bindPopup("<b>Ets Dubuis</b><br>22 Rue François Mitterand, Saint Benin d'Azy.<br>03 86 58 56 91");
+        </script>
 
     </footer>
 

@@ -4,6 +4,36 @@ session_start();
 
 require_once("connect.php");
 
+$erreur = '';
+$message_soumission = '';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Récupération des données du formulaire
+    $prenom = trim($_POST['prenom']);  
+    $email = trim($_POST['email']);    
+
+    // Validation des champs
+    if (empty($prenom)) {
+        $erreur .= "<li>Prénom laissé vide !</li>";
+    }
+    if (empty($email)) {
+        $erreur .= "<li>Email laissé vide !</li>";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) { 
+        $erreur .= "<li>Email invalide !</li>";
+    }
+
+    // Si aucune erreur, procéder à l'insertion dans la base de données
+    if (empty($erreur)) {
+        // Insertion des données dans la table
+        $insertSql = "INSERT INTO newsletter (prenom, email) VALUES (?, ?)";
+        $insertQuery = $db->prepare($insertSql);
+        $insertQuery->execute([$prenom, $email]);
+        
+        // Message de succès
+        $message_soumission = "<p>Formulaire soumis avec succès!</p>";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -219,11 +249,12 @@ require_once("connect.php");
     <section id="newsletter-section">
         <div class="conteneur-formulaire">
             <div class="formulaire-gauche">
-                <form class="newsletter" action="/api/newsAdd" method="POST">
+                <form class="newsletter" action="" method="POST">
                     <h2 class="titre-2-news">Inscrivez-vous à notre Newsletter</h2>
                     <p class="text-news">Recevez les dernières nouvelles et mises à jour directement dans votre
                         boîte
                         mail !</p>
+                    <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
                     <input type="email" id="news" name="email" placeholder="Mon adresse mail" required>
                     <button class="bouton-news">Envoyer</button>
                 </form>

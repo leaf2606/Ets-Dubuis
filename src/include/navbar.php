@@ -29,7 +29,6 @@ $loggedIn = isset($_SESSION["compte"]);
         <nav class="navbar">
             <ul>
                 <li><a href="propos.php">A propos</a></li>
-                <li><a href="vetements.php">Vêtements</a></li>
                 <li><a href="">Matériels +</a>
                     <ul>
                         <li><a href="debrousailleuse.php">Débroussailleuse</a></li>
@@ -39,7 +38,7 @@ $loggedIn = isset($_SESSION["compte"]);
                         <li><a href="souffleur.php">Souffleur</a></li>
                     </ul>
                 </li>
-                <li><a href="">Vêtements</a></li>
+                <li><a href="../vetements.php">Vêtements</a></li>
                 <li><a href="">Engins +</a>
                     <ul>
                         <li><a href="motos.php">Motos</a></li>

@@ -39,7 +39,6 @@ html {
 .lien-news-2,
 .lien-news-3,
 .lien-news-4,
-.lien-news-5,
 .lien-news-6,
 .lien-news-7,
 .lien-news-8 {
@@ -49,6 +48,11 @@ html {
   flex-wrap: wrap;
   padding: 20px;
   margin: 20px auto;
+}
+
+.lien-news-5 {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
 }
 
 .lien-nouveautes {

@@ -146,6 +146,48 @@ h1 {
   text-align: center;
 }
 
+/* Ici le code de la barre de recherche */
+
+.form-recherche {
+  display: flex;
+  justify-content: center;
+  margin: 20px 150px;
+  padding: 10px;
+  width: 30%;
+  border: solid 3px red;
+}
+
+.input-recherche {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+  border: none;
+  border-bottom: solid 3px black;
+}
+
+.input-recherche:focus {
+  border-color: #007bff;
+}
+
+.button-recherche {
+  padding: 10px 15px;
+  margin-left: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  border: solid 3px black;
+}
+
+.button-recherche:hover {
+  background-color: #0056b3;
+}
+
 /* Media pour les cards */
 
 @media (max-width: 1349px) and (min-width: 1061px) {
