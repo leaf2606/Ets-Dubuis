@@ -80,6 +80,13 @@ body {
   display: none;
 }
 
+.nav-span {
+  font-size: 20px;
+  padding: 20px;
+  color: white;
+  display: block;
+}
+
 /* Media pour la navbar */
 
 @media (max-width: 1349px) {
@@ -91,6 +98,10 @@ body {
   }
 
   .header-nav .navbar ul li a {
+    color: black;
+  }
+
+  .nav-span {
     color: black;
   }
 

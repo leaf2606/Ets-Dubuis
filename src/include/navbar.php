@@ -52,7 +52,7 @@ $loggedIn = isset($_SESSION["compte"]);
                     <?php if (isset($_SESSION["compte"]["role"]) && $_SESSION["compte"]["role"] == "admin"): ?>
                     <a href="formulaire.php">Admin</a>
                     <?php else: ?>
-                    <span><?= htmlspecialchars($_SESSION["compte"]["username"]); ?></span>
+                    <span class="nav-span"><?= htmlspecialchars($_SESSION["compte"]["username"]); ?></span>
                     <?php endif; ?>
                 </li>
                 <li>

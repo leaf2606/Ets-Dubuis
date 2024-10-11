@@ -4,43 +4,6 @@ session_start();
 
 require_once("connect.php");
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['button-back'])) {
-        // Récupérer les données du formulaire
-        $titre = $_POST['titre'] ?? null;
-        $message = $_POST['message'] ?? null;
-        $prix = $_POST['prix'] ?? null;
-        $ref = $_POST['ref'] ?? null;
-        $marque = $_POST['marque'] ?? null;
-        $couleur = $_POST['couleur'] ?? null;
-        $category = $_POST['category'] ?? null;
-
-        // Vérifiez que tous les champs sont remplis
-        if ($titre && $message && $prix && $ref && $marque && $couleur && $category) {
-            // Insérer dans la base de données
-            $sql = "INSERT INTO catalogue (titre, message, prix, ref, marque, couleur, category) VALUES (:titre, :message, :prix, :ref, :marque, :couleur, :category)";
-            $query = $db->prepare($sql);
-            $query->bindParam(':titre', $titre);
-            $query->bindParam(':message', $message);
-            $query->bindParam(':prix', $prix);
-            $query->bindParam(':ref', $ref);
-            $query->bindParam(':marque', $marque);
-            $query->bindParam(':couleur', $couleur);
-            $query->bindParam(':category', $category);
-            $query->execute();
-
-            // Récupérer l'ID de l'article nouvellement inséré
-            $lastId = $db->lastInsertId();
-
-            // Rediriger vers la page de description
-            header("Location: description.php?id=" . $lastId);
-            exit;
-        } else {
-            echo "Erreur : Tous les champs sont requis.";
-        }
-    }
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -57,18 +20,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
 
-    <h1 class="titre-back">Article |<a href="../index.php">&ensp;Accueil</a></h1>
+    <h1 class="titre-back">Article | <a href="../index.php">&ensp;Accueil</a></h1>
     <div class="container-back">
-
-        <!-- Formulaire ajout pour les cartes avec les catégories -->
-
-        <form action="" method="POST" class="formulaire-admin" enctype="multipart/form-data">
+        <form action="backend-ajout.php" method="POST" class="formulaire-admin" enctype="multipart/form-data">
             <h1>Formulaire d'ajout d'article</h1>
-            <input class="input-admin" type="file" name="image" required>
-            <input class="input-admin" type="text" name="titre" placeholder="Titre-carte" required>
-            <textarea class="input-admin" name="message" placeholder="Description-carte" required></textarea>
+            <input class="input-admin" type="text" name="img" required>
+            <input class="input-admin" type="text" name="titre" placeholder="Titre" required>
+            <input class="input-admin" type="text" name="text" placeholder="Titre" required>
+            <textarea class="input-admin" name="message" placeholder="Description" required></textarea>
+            <input class="input-admin" type="text" name="prix" placeholder="Prix" required>
+            <input class="input-admin" type="text" name="ref" placeholder="Référence" required>
+            <input class="input-admin" type="text" name="marque" placeholder="Marque" required>
+            <input class="input-admin" type="text" name="couleur" placeholder="Couleur" required>
 
-            <label for="category">Choisir une catégorie :</label>
+            <label for="category">Choisir la catégorie :</label><br>
             <select name="category" required>
                 <option value="vetements">Vêtements</option>
                 <option value="accessoires">Accessoires</option>
@@ -104,25 +69,56 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <option value="serie">Série T</option>
                 <option value="srm">SRM</option>
                 <option value="dsrm">DSRM</option>
+            </select><br>
+
+            <select id="typeProduit" onchange="afficherChamps()">
+                <option value="">Les liens pour la description</option>
+                <option value="vetements">Vêtements</option>
+                <option value="debrouissailleuse">Débrouissailleuse</option>
+                <option value="taille-haie">Taille Haie</option>
+                <option value="tronçonneuse">Tronçonneuse</option>
+                <option value="elagueuse">Elagueuse</option>
+                <option value="souffleur">Soufleur</option>
+                <option value="motos">Motos</option>
+                <option value="vehicules-diesel">vehicules Diesel</option>
+                <option value="vehicules-essence">Vehicules Essence</option>
             </select>
 
-        </form>
+            <div id="champsSpecifiques"></div>
 
-        <!-- Formulaire de description -->
-
-        <form action="description.php" method="POST" class="formulaire-admin" enctype="multipart/form-data">
-            <h1>Formulaire d'ajout de description</h1>
-            <input class="input-admin" type="text" name="titre" placeholder="Titre" required>
-            <textarea class="input-admin" name="message" placeholder="Description" required></textarea>
-            <input class="input-admin" type="text" name="prix" placeholder="Prix" required>
-            <input class="input-admin" type="text" name="ref" placeholder="Référence" required>
-            <input class="input-admin" type="text" name="marque" placeholder="Marque" required>
-            <input class="input-admin" type="text" name="couleur" placeholder="Couleur" required>
-
-            <input class="button-back" type="submit" value="Ajouter l'article" name="button-back">
-
+            <input class="button-back" type="submit" value="Ajouter un article">
         </form>
     </div>
+
+    <script>
+    function afficherChamps() {
+        const typeProduit = document.getElementById("typeProduit").value;
+        const champsDiv = document.getElementById("champsSpecifiques");
+        champsDiv.innerHTML = '';
+
+        let champs = '';
+
+        if (typeProduit === 'vetements') {
+            champs = `
+      <label>Couleur: <input type="text" name="couleur"></label><br>
+      <label>Marque: <input type="text" name="marque"></label><br>
+      <label>Référence: <input type="text" name="ref"></label><br>
+    `;
+        } else if (typeProduit === 'motos') {
+            champs = `
+      <label>Marque: <input type="text" name="marque"></label><br>
+    `;
+        } else if (typeProduit === 'debrouissailleuse') {
+            champs = `
+      <label>Référence: <input type="text" name="reference"></label><br>
+    `;
+        }
+
+        champsDiv.innerHTML = champs; // Afficher les champs correspondants
+    }
+    </script>
+
+
 </body>
 
 </html>

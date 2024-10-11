@@ -68,7 +68,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         <p class="text-descriptif">Prix: <?= htmlspecialchars($item['prix']); ?> €</p>
         <p class="text-descriptif">Couleur: <?= htmlspecialchars($item['couleur']); ?></p>
         <p class="text-descriptif">Catégories: <?= htmlspecialchars($item['category']); ?></p>
-        <div class="container-etoile">
+        <!-- <div class="container-etoile">
             <input type="radio" name="etoile<?= $item['id']; ?>" id="etoile1<?= $item['id']; ?>">
             <label for="etoile1<?= $item['id']; ?>"></label>
             <input type="radio" name="etoile<?= $item['id']; ?>" id="etoile2<?= $item['id']; ?>">
@@ -79,7 +79,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             <label for="etoile4<?= $item['id']; ?>"></label>
             <input type="radio" name="etoile<?= $item['id']; ?>" id="etoile5<?= $item['id']; ?>">
             <label for="etoile5<?= $item['id']; ?>"></label>
-        </div>
+        </div> -->
     </div>
 
     <!-- Produits similaires -->
