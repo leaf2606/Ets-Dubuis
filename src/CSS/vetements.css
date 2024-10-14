@@ -52,7 +52,9 @@ html {
 
 .lien-news-5 {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(8, 1fr); /* 7 colonnes de même largeur */
+  gap: 20px; /* Espacement entre les éléments */
+  padding: 20px; /* Ajout d'un padding autour de la grille */
 }
 
 .lien-nouveautes {

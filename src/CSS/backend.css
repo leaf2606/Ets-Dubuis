@@ -49,12 +49,25 @@ html {
 }
 
 .button-back {
+  display: inline-block;
+  width: 100%;
+  max-width: 250px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  background-color: #1a4f7d;
   border: none;
-  margin: 20px;
-  background-color: blue;
-  padding: 10px 20px;
-  border-radius: 20px;
-  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(51, 153, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.button-back:hover {
+  background-color: #2672cc;
+  box-shadow: 0 6px 15px rgba(38, 114, 204, 0.3);
 }
 
 .formulaire-admin {
@@ -74,15 +87,9 @@ html {
   border: none;
 }
 
-input#titre::placeholder,
-input#text::placeholder,
-input#prix::placeholder,
-input#ref::placeholder,
-input#marque::placeholder,
-input#couleur::placeholder,
-input#fichier,
-textarea.input-admin::placeholder {
+.input-admin::placeholder {
   color: black;
+  opacity: 1;
 }
 
 textarea.input-admin {

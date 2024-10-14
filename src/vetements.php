@@ -21,6 +21,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/materiels.css">
     <link rel="stylesheet" href="css/vetements.css">
+    <link rel="stylesheet" href="css/backend.css">
     <title>Vêtements</title>
 </head>
 
@@ -38,6 +39,10 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
 
     <!-- Card  -->
 
+    <?php if (isset($_SESSION['compte']) && $_SESSION['compte']['role'] === 'admin'): ?>
+    <a class="button-back" href="formulaire.php">Ajouter un article</a>
+    <?php endif; ?>
+
     <div id="vetements" class="card-container">
         <h1 class="titre-categorie">Vêtements de sécurité</h1>
         <div class="wrapper-vetements">
@@ -51,15 +56,6 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
                             <a class="lien-card" href="description.php?id=<?= $item['id']; ?>">Description</a>
-
-
-                            <!-- Boutons administrateur -->
-                            <?php if (isset($_SESSION['admin']) && $_SESSION['admin']): ?>
-                            <div class="admin-buttons">
-                                <button class="btn-edit">Modifier</button>
-                                <button class="btn-delete">Supprimer</button>
-                            </div>
-                            <?php endif; ?>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -68,12 +64,6 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
     </div>
-
-    <?php if (isset($_SESSION['admin']) && $_SESSION['admin']): ?>
-    <div class="admin-buttons">
-        <button class="btn-add">Ajouter</button>
-    </div>
-    <?php endif; ?>
 
     <div id="accessoires" class="card-container">
         <h1 class="titre-categorie">Accesoires Harnais Ergo-pro</h1>
@@ -111,7 +101,6 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
                             <h3 class="titre-3"><?= htmlspecialchars($item['titre']); ?></h3>
                             <p class="text-card-3"><?= htmlspecialchars($item['text']); ?></p>
                             <a class="lien-card" href="description.php?id=<?= $item['id']; ?>">Description</a>
-
                         </div>
                     </div>
                     <?php endif; ?>

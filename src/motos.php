@@ -41,6 +41,10 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
 
     <!-- Card  -->
 
+    <?php if (isset($_SESSION['compte']) && $_SESSION['compte']['role'] === 'admin'): ?>
+    <a class="button-back" href="formulaire.php">Ajouter un article</a>
+    <?php endif; ?>
+
     <div id="enduro" class="card-container">
         <div class="wrapper-vetements">
             <div class="card-area">

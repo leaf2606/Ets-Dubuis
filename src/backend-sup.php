@@ -1,46 +1,48 @@
 <?php
 
-// On vérifie qu'il y a bien un id dans l'url et que l'utilisteur correspondant existe //
-
-if(isset($_GET{"id"}) && !empty($_POST{"id"})) {
+session_start();
 
 require_once("connect.php");
 
-    // echo $_GET["id"];
-$id = strip_tags($_POST["id"]);
+// Vérifier si l'utilisateur est administrateur
+if (isset($_SESSION['compte']) && $_SESSION['compte']['role'] === 'admin') {
+    // Vérifier si l'ID de l'article est passé dans l'URL
+    if (isset($_GET['id']) && !empty($_GET['id'])) {
+        $id = strip_tags($_GET['id']);
 
-$sql = "SELECT * FROM users WHERE id = :id";
+        // Vérification de l'existence de l'article avant suppression
+        $sql = "SELECT * FROM catalogue WHERE id = :id";
+        $query = $db->prepare($sql);
+        $query->bindValue(":id", $id, PDO::PARAM_INT);
+        $query->execute();
+        $article = $query->fetch(PDO::FETCH_ASSOC);
 
-$query = $db->prepare($sql); 
-// On accroche la valeur id de la requête à celle de la variable $id //
+        if (!$article) {
+            echo "Erreur : article non trouvé.";
+            exit;
+        }
 
-$query->bindValue(":id", $id, PDO::PARAM_INT);
+        // Si l'utilisateur confirme la suppression
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $sql = "DELETE FROM catalogue WHERE id = :id";
+            $query = $db->prepare($sql);
+            $query->bindValue(":id", $id, PDO::PARAM_INT);
 
-$query->execute();
-
-$user = $query->fetch();
-
-// On vérifie si l'utilisateur existe // 
-
-if(!$user){
-    header("Location: index.php");
+            // Exécuter la suppression
+            if ($query->execute()) {
+                header("Location: index.php"); 
+                exit();
+            } else {
+                echo "Erreur : impossible de supprimer l'article.";
+            }
+        }
+    } else {
+        echo "Erreur : aucun ID d'article fourni.";
+        exit();
+    }
 } else {
-    // On gère la suppresion de l'utilisateur //
-    $sql = "DELETE FROM users WHERE id = :id";
-    
-    $query = $db->prepare($sql); 
-    
-    $query->bindValue(":id", $id, PDO::PARAM_INT);
-
-    $query->execute();
-    header("Location: index.php");
-}
-
-
-// print_r($user);
-
-} else{
-    header("Location: index.php");
+    echo "Erreur : accès interdit.";
+    exit();
 }
 
 ?>
@@ -53,26 +55,19 @@ if(!$user){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/backend.css">
-    <title>Page administrateur</title>
+    <title>Suppression d'article</title>
 </head>
 
 <body>
+    <h1>Suppression de l'article</h1>
+    <div>
+        <p>Êtes-vous sûr de vouloir supprimer cet article ?</p>
 
-    <h1 class="titre-back">Ici sert à supprimer les informations pour tout les articles</h1>
-
-    <div class="container-back">
-        <form action="" method="POST" class="formulaire-admin">
-            <input class="input-admin" type="text" name="titre" id="titre" placeholder="Titre">
-            <textarea class="input-admin" name="message" id="message" placeholder="Déscription"></textarea>
-            <input class="input-admin" type="text" name="prix" id="prix" placeholder="Prix">
-            <input class="input-admin" type="text" name="ref" id="ref" placeholder="Référence">
-            <input class="input-admin" type="text" name="marque" id="marque" placeholder="Marque">
-            <input class="input-admin" type="text" name="couleur" id="couleur" placeholder=" Couleur">
-            <input class="input-admin" type="file" name="fichier" id="fichier">
-            <button class="button-back">Supprimer l'article</button>
+        <form action="backend-sup.php?id=<?= htmlspecialchars($_GET['id']); ?>" method="POST">
+            <button type="submit" class="button-back">Supprimer l'article</button>
+            <a href="index.php" class="button-back">Annuler</a>
         </form>
     </div>
-
 </body>
 
 </html>

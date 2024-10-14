@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 if (
@@ -7,20 +8,17 @@ if (
     isset($_POST["titre"]) && !empty($_POST["titre"]) &&
     isset($_POST["message"]) && !empty($_POST["message"]) &&
     isset($_POST["prix"]) && !empty($_POST["prix"]) &&
-    isset($_POST["ref"]) && !empty($_POST["ref"]) &&
-    isset($_POST["marque"]) && !empty($_POST["marque"]) &&
-    isset($_POST["couleur"]) && !empty($_POST["couleur"]) &&
     isset($_POST["category"]) && !empty($_POST["category"])
 ) {
     require_once("connect.php");
 
-    // Récupérer les données
+    // Récupérer les données obligatoires
     $img = strip_tags($_POST["img"]);
     $titre = strip_tags($_POST["titre"]);
     $text = strip_tags($_POST["text"]);
 
     // Traitement pour le message
-    $message = htmlspecialchars($_POST["message"]); // Éviter XSS sans nl2br ici
+    $message = htmlspecialchars($_POST["message"]);
 
     // Vérification que le prix est un nombre positif
     $prix = str_replace('€', '', $_POST["prix"]);
@@ -29,10 +27,12 @@ if (
         exit;
     }
 
-    $ref = strip_tags($_POST["ref"]);
-    $marque = strip_tags($_POST["marque"]);
-    $couleur = strip_tags($_POST["couleur"]);
     $category = strip_tags($_POST["category"]);
+
+    // Récupérer les données facultatives (elles peuvent être vides)
+    $ref = isset($_POST["ref"]) ? strip_tags($_POST["ref"]) : null;
+    $marque = isset($_POST["marque"]) ? strip_tags($_POST["marque"]) : null;
+    $couleur = isset($_POST["couleur"]) ? strip_tags($_POST["couleur"]) : null;
 
     // Préparation de la requête SQL pour insérer les données
     $sql = "INSERT INTO catalogue (img, titre, text, message, prix, ref, marque, couleur, category) 
@@ -42,7 +42,7 @@ if (
     $query->bindValue(":img", $img);
     $query->bindValue(":titre", $titre);
     $query->bindValue(":text", $text);
-    $query->bindValue(":message", $message); // Stocker sans nl2br
+    $query->bindValue(":message", $message);
     $query->bindValue(":prix", floatval($prix));
     $query->bindValue(":ref", $ref);
     $query->bindValue(":marque", $marque);
@@ -61,6 +61,23 @@ if (
         echo "Erreur : Impossible d'ajouter l'article.";
     }
 } else {
-    echo "Veuillez remplir tous les champs du formulaire.";
+    echo "Erreur : Veuillez remplir tous les champs obligatoires.";
 }
+
 ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/script.js"></script>
+    <title>Backend-ajout</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
