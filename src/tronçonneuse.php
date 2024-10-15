@@ -20,6 +20,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="css/materiels.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/vetements.css">
+    <link rel="stylesheet" href="css/backend.css">
     <title>Débrousailleuse</title>
 </head>
 
@@ -35,6 +36,10 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <!-- Card  -->
+
+    <?php if (isset($_SESSION['compte']) && $_SESSION['compte']['role'] === 'admin'): ?>
+    <a class="button-back-1" href="formulaire.php">Ajouter un article</a>
+    <?php endif; ?>
 
     <div id="cs" class="card-container">
         <h1 class="titre-categorie">Tronçonneuse CS</h1>

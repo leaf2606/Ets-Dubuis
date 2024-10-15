@@ -16,7 +16,7 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
     $query = $db->prepare($sql);
     $query->bindValue(":id", $id, PDO::PARAM_INT);
     $query->execute();
-    $item = $query->fetch(PDO::FETCH_ASSOC); 
+    $item = $query->fetch(PDO::FETCH_ASSOC);
 
     // Vérifier si l'article existe
     if (!$item) {
@@ -31,21 +31,54 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
             isset($_POST["id"]) && !empty($_POST["id"]) &&
             isset($_POST["titre"]) && !empty($_POST["titre"]) &&
             isset($_POST["message"]) && !empty($_POST["message"]) &&
-            isset($_POST["prix"]) && !empty($_POST["prix"])
+            isset($_POST["prix"]) && !empty($_POST["prix"]) &&
+            isset($_POST["category"]) && !empty($_POST["category"])  
         ) {
             // Nettoyer et stocker les données
             $id = strip_tags($_POST["id"]);
             $titre = strip_tags($_POST["titre"]);
             $message = strip_tags($_POST["message"]);
             $prix = strip_tags($_POST["prix"]);
-            $img = strip_tags($_POST["img"]); 
-            $ref = strip_tags($_POST["ref"]);
-            $marque = strip_tags($_POST["marque"]);
-            $couleur = strip_tags($_POST["couleur"]);
-            $category = strip_tags($_POST["category"]);
+            $img = strip_tags($_POST["img"] ?? '');  
+            $ref = strip_tags($_POST["ref"] ?? '');
+            $marque = strip_tags($_POST["marque"] ?? '');
+            $couleur = strip_tags($_POST["couleur"] ?? '');
+            $largeur_coupe = strip_tags($_POST["largeur_coupe"] ?? '');
+            $moteur = strip_tags($_POST["moteur"] ?? '');
+            $capacite_bac = strip_tags($_POST["capacite_bac"] ?? '');
+            $coupe = strip_tags($_POST["coupe"] ?? '');
+            $roue = strip_tags($_POST["roue"] ?? '');
+            $divers = strip_tags($_POST["divers"] ?? '');
+            $transmission = strip_tags($_POST["transmission"] ?? '');
+            $cylindre = strip_tags($_POST["cylindre"] ?? '');
+            $carburant = strip_tags($_POST["carburant"] ?? '');
+            $poids = strip_tags($_POST["poids"] ?? '');
+            $puissance = strip_tags($_POST["puissance"] ?? '');
+            $category = strip_tags($_POST["category"]); 
 
             // Préparer la requête de mise à jour
-            $sql = "UPDATE catalogue SET img = :img, titre = :titre, message = :message, prix = :prix, ref = :ref, marque = :marque, couleur = :couleur, category = :category WHERE id = :id";
+            $sql = "UPDATE catalogue 
+                    SET img = :img, 
+                        titre = :titre, 
+                        message = :message, 
+                        prix = :prix, 
+                        ref = :ref, 
+                        marque = :marque, 
+                        couleur = :couleur, 
+                        category = :category, 
+                        largeur_coupe = :largeur_coupe, 
+                        moteur = :moteur, 
+                        capacite_bac = :capacite_bac, 
+                        coupe = :coupe, 
+                        roue = :roue, 
+                        divers = :divers, 
+                        transmission = :transmission, 
+                        cylindre = :cylindre, 
+                        carburant = :carburant, 
+                        poids = :poids, 
+                        puissance = :puissance 
+                    WHERE id = :id";
+            
             $query = $db->prepare($sql);
             $query->bindValue(":id", $id, PDO::PARAM_INT);
             $query->bindValue(":img", $img, PDO::PARAM_STR);
@@ -56,6 +89,17 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
             $query->bindValue(":marque", $marque, PDO::PARAM_STR);
             $query->bindValue(":couleur", $couleur, PDO::PARAM_STR);
             $query->bindValue(":category", $category, PDO::PARAM_STR);
+            $query->bindValue(":largeur_coupe", $largeur_coupe, PDO::PARAM_STR);
+            $query->bindValue(":moteur", $moteur, PDO::PARAM_STR);
+            $query->bindValue(":capacite_bac", $capacite_bac, PDO::PARAM_STR);
+            $query->bindValue(":coupe", $coupe, PDO::PARAM_STR);
+            $query->bindValue(":roue", $roue, PDO::PARAM_STR);
+            $query->bindValue(":divers", $divers, PDO::PARAM_STR);
+            $query->bindValue(":transmission", $transmission, PDO::PARAM_STR);
+            $query->bindValue(":cylindre", $cylindre, PDO::PARAM_STR);
+            $query->bindValue(":carburant", $carburant, PDO::PARAM_STR);
+            $query->bindValue(":poids", $poids, PDO::PARAM_STR);
+            $query->bindValue(":puissance", $puissance, PDO::PARAM_STR);
             
             // Exécution de la requête
             if ($query->execute()) {
@@ -73,6 +117,7 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
     echo "Aucun ID fourni.";
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -108,6 +153,28 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
                 placeholder="Marque">
             <input class="input-admin" type="text" name="couleur" value="<?= htmlspecialchars($item['couleur']); ?>"
                 placeholder="Couleur">
+            <input class="input-admin" type="text" name="largeur_coupe"
+                value="<?= htmlspecialchars($item['largeur_coupe']); ?>" placeholder="Largeur de la coupe">
+            <input class="input-admin" type="text" name="moteur" value="<?= htmlspecialchars($item['moteur']); ?>"
+                placeholder="Moteur">
+            <input class="input-admin" type="text" name="capacite_bac"
+                value="<?= htmlspecialchars($item['capacite_bac']); ?>" placeholder="Capacité du bac">
+            <input class="input-admin" type="text" name="coupe" value="<?= htmlspecialchars($item['coupe']); ?>"
+                placeholder="Coupe">
+            <input class="input-admin" type="text" name="roue" value="<?= htmlspecialchars($item['roue']); ?>"
+                placeholder="Roue">
+            <input class="input-admin" type="text" name="divers" value="<?= htmlspecialchars($item['divers']); ?>"
+                placeholder="Divers">
+            <input class="input-admin" type="text" name="transmission"
+                value="<?= htmlspecialchars($item['transmission']); ?>" placeholder="Transmisssion">
+            <input class="input-admin" type="text" name="cylindre" value="<?= htmlspecialchars($item['cylindre']); ?>"
+                placeholder="Cylindre">
+            <input class="input-admin" type="text" name="carburant" value="<?= htmlspecialchars($item['carburant']); ?>"
+                placeholder="Carburant">
+            <input class="input-admin" type="text" name="poids" value="<?= htmlspecialchars($item['poids']); ?>"
+                placeholder="Poids">
+            <input class="input-admin" type="text" name="puissance" value="<?= htmlspecialchars($item['puissance']); ?>"
+                placeholder="Puissance">
 
             <label for="category">Choisir la catégorie :</label><br>
             <select name="category" value="<?= htmlspecialchars($item['category']); ?>" required>
@@ -148,12 +215,10 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
             </select><br>
 
             <?php if (isset($_SESSION['compte']) && $_SESSION['compte']['role'] === 'admin'): ?>
-            <div class="admin-buttons">
-                <button type="submit" class="button-back">Modifier</button>
-                <a class="button-back" href="backend-sup.php?id=<?= $item['id']; ?>"
-                    onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?');">Supprimer
-                    l'article</a>
-            </div>
+            <button type="submit" class="button-back-3">Modifier</button>
+            <a class="button-back-3" href="backend-sup.php?id=<?= $item['id']; ?>"
+                onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?');">Supprimer
+                l'article</a>
             <?php endif; ?>
         </form>
     </div>

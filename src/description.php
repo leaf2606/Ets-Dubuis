@@ -1,5 +1,7 @@
 <?php
+
 session_start();
+
 require_once("connect.php");
 
 // Vérifie si l'ID est passé dans l'URL
@@ -22,6 +24,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     echo "Aucun ID fourni.";
     exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +36,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     <link rel="stylesheet" href="css/description.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/materiels.css">
+    <link rel="stylesheet" href="css/backend.css">
     <script src="js/script.js"></script>
     <title>Description</title>
 </head>
@@ -66,6 +70,38 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         <?php if (!empty($item['couleur'])): ?>
         <p class="text-descriptif">Couleur : <?= htmlspecialchars($item['couleur']); ?></p>
         <?php endif; ?>
+        <?php if (!empty($item['largeur_coupe'])): ?>
+        <p class="text-descriptif">Largeur de la coupe : <?= htmlspecialchars($item['largeur_coupe']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['moteur'])): ?>
+        <p class="text-descriptif">Moteur : <?= htmlspecialchars($item['moteur']); ?></p>
+        <?php endif; ?><?php if (!empty($item['capacite_bac'])): ?>
+        <p class="text-descriptif">Capacité de la coupe : <?= htmlspecialchars($item['capacite_bac']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['coupe'])): ?>
+        <p class="text-descriptif">Coupe : <?= htmlspecialchars($item['coupe']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['roue'])): ?>
+        <p class="text-descriptif">Roue : <?= htmlspecialchars($item['roue']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['divers'])): ?>
+        <p class="text-descriptif">Divers : <?= htmlspecialchars($item['divers']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['transmission'])): ?>
+        <p class="text-descriptif">Transmission : <?= htmlspecialchars($item['transmission']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['cylindre'])): ?>
+        <p class="text-descriptif">Cylindre : <?= htmlspecialchars($item['cylindre']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['carburant'])): ?>
+        <p class="text-descriptif">Carburant : <?= htmlspecialchars($item['carburant']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['poids'])): ?>
+        <p class="text-descriptif">Poids : <?= htmlspecialchars($item['poids']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['puissance'])): ?>
+        <p class="text-descriptif">Puissance : <?= htmlspecialchars($item['puissance']); ?></p>
+        <?php endif; ?>
         <?php if (isset($_SESSION['compte']) && $_SESSION['compte']['role'] === 'admin'): ?>
         <p class="text-descriptif">Catégorie : <?= htmlspecialchars($item['category']); ?></p>
         <?php endif; ?>
@@ -73,11 +109,11 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
     <?php if (isset($_SESSION['compte']) && $_SESSION['compte']['role'] === 'admin'): ?>
     <div class="admin-buttons">
-        <a href="backend-modifs.php?id=<?= $item['id']; ?>">Modifier</a>
-        <a href="backend-sup.php?id=<?= $item['id']; ?>"
+        <a class="button-back-2" href="backend-modifs.php?id=<?= $item['id']; ?>">Modifier</a>
+        <a class="button-back-2" href="backend-sup.php?id=<?= $item['id']; ?>"
             onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?');">Supprimer l'article</a>
     </div>
-    <?php endif; ?>
+    <?php endif; ?><br>
 
     <!-- Produit similaire  -->
     <h1 class="produit-suggeres">Produits similaires</h1>
@@ -113,8 +149,15 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         </div>
     </div>
     <?php else: ?>
-    <p>Aucun produit similaire trouvé dans la catégorie <?= htmlspecialchars($category); ?>.</p>
+    <?php if (isset($_SESSION['compte']) && $_SESSION['compte']['role'] === 'user'): ?>
+    <p class="similaire-backend">Aucun produit similaire.</p>
     <?php endif; ?>
+    <?php if (isset($_SESSION['compte']) && $_SESSION['compte']['role'] === 'admin'): ?>
+    <p class="similaire-backend">Aucun produit similaire trouvé dans la catégorie <?= htmlspecialchars($category); ?>.
+    </p>
+    <?php endif; ?>
+    <?php endif; ?>
+
 
     <?php include_once("./include/footer.php"); ?>
 

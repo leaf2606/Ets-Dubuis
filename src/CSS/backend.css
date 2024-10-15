@@ -48,7 +48,56 @@ html {
   font-family: var(--Montserrat-bold);
 }
 
+.admin-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.admin-buttons-5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .button-back {
+  display: inline-block;
+  width: 100%;
+  max-width: 250px;
+  padding: 15px 30px;
+  margin-left: 43%;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  background-color: #1a4f7d;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(51, 153, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.button-back-1 {
+  display: inline-block;
+  width: 100%;
+  max-width: 250px;
+  padding: 15px 30px;
+  margin-left: 43%;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  background-color: #1a4f7d;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(51, 153, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.button-back-2 {
   display: inline-block;
   width: 100%;
   max-width: 250px;
@@ -63,9 +112,63 @@ html {
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(51, 153, 255, 0.2);
   transition: all 0.3s ease;
+  margin: 10px;
 }
 
-.button-back:hover {
+.button-back-3 {
+  display: inline-block;
+  max-width: 250px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  background-color: #1a4f7d;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(51, 153, 255, 0.2);
+  transition: all 0.3s ease;
+  margin: 10px;
+}
+
+.button-back-4 {
+  display: inline-block;
+  max-width: 250px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  background-color: #1a4f7d;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(51, 153, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.button-back-5 {
+  display: inline-block;
+  max-width: 250px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  background-color: #1a4f7d;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(51, 153, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.button-back-1:hover,
+.button-back-2:hover,
+.button-back-3:hover,
+.button-back-4:hover,
+*.button-back-5:hover {
   background-color: #2672cc;
   box-shadow: 0 6px 15px rgba(38, 114, 204, 0.3);
 }
@@ -125,6 +228,22 @@ textarea.input-admin {
   margin-bottom: 20px;
   text-align: center;
   color: #1a73e8;
+}
+
+.similaire-backend {
+  padding: 200px;
+  text-align: center;
+}
+
+.sup-backend-titre {
+  text-align: center;
+  padding: 50px;
+  font-size: 35px;
+}
+
+.sup-backend {
+  text-align: center;
+  padding: 50px;
 }
 
 /* Backend ajouter */

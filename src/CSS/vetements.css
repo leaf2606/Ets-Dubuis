@@ -52,12 +52,13 @@ html {
 
 .lien-news-5 {
   display: grid;
-  grid-template-columns: repeat(8, 1fr); /* 7 colonnes de même largeur */
-  gap: 20px; /* Espacement entre les éléments */
-  padding: 20px; /* Ajout d'un padding autour de la grille */
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  padding: 10px;
 }
 
-.lien-nouveautes {
+.lien-nouveautes,
+.lien-nouveautes-5 {
   display: flex;
   align-items: center;
   justify-content: center;

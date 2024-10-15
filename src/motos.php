@@ -20,6 +20,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="css/materiels.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/vetements.css">
+    <link rel="stylesheet" href="css/backend.css">
     <title>Débrousailleuse</title>
 </head>
 
@@ -29,20 +30,20 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
 
     <div id="news-lien-id">
         <div class="lien-news-5">
-            <button class="lien-nouveautes" onclick="openTab('enduro')">RR ENDURO</button>
-            <button class="lien-nouveautes" onclick="openTab('motard')">RR MOTARD</button>
-            <button class="lien-nouveautes" onclick="openTab('rx')">RX</button>
-            <button class="lien-nouveautes" onclick="openTab('trainer')">XTRAINER</button>
-            <button class="lien-nouveautes" onclick="openTab('evo')">EVO</button>
-            <button class="lien-nouveautes" onclick="openTab('alp')">ALP</button>
-            <button class="lien-nouveautes" onclick="openTab('electric')">MINIBIKES ELECTRIC</button>
+            <button class="lien-nouveautes-5" onclick="openTab('enduro')">RR ENDURO</button>
+            <button class="lien-nouveautes-5" onclick="openTab('motard')">RR MOTARD</button>
+            <button class="lien-nouveautes-5" onclick="openTab('rx')">RX</button>
+            <button class="lien-nouveautes-5" onclick="openTab('trainer')">XTRAINER</button>
+            <button class="lien-nouveautes-5" onclick="openTab('evo')">EVO</button>
+            <button class="lien-nouveautes-5" onclick="openTab('alp')">ALP</button>
+            <button class="lien-nouveautes-5" onclick="openTab('electric')">MINIBIKES ELECTRIC</button>
         </div>
     </div>
 
     <!-- Card  -->
 
     <?php if (isset($_SESSION['compte']) && $_SESSION['compte']['role'] === 'admin'): ?>
-    <a class="button-back" href="formulaire.php">Ajouter un article</a>
+    <a class="button-back-1" href="formulaire.php">Ajouter un article</a>
     <?php endif; ?>
 
     <div id="enduro" class="card-container">
