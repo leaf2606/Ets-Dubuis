@@ -1,3 +1,11 @@
+:root {
+  --primary-text-color: black;
+  --secondary-text-color: white;
+  --background-color-main: white;
+  --background-color-secondary: #262626;
+  --background-color-tertiary: black;
+}
+
 *::before,
 *::after {
   box-sizing: border-box;
@@ -61,7 +69,7 @@ html {
   position: absolute;
   font-family: var(--Montserrat-bold);
   font-size: 150px;
-  color: white;
+  color: var(--secondary-text-color);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 2px 5px rgba(0, 0, 0, 0.5),
     0 4px 10px rgba(0, 0, 0, 0.4), 0 10px 20px rgba(0, 0, 0, 0.3),
     0 15px 30px rgba(0, 0, 0, 0.2);
@@ -114,7 +122,7 @@ html {
   -webkit-font-smoothing: antialiased;
   position: absolute;
   content: "☆";
-  color: black;
+  color: var(--secondary-text-color);
   top: 0;
   left: 0;
   width: 100%;

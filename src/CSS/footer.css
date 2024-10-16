@@ -1,3 +1,11 @@
+:root {
+  --primary-text-color: black;
+  --secondary-text-color: white;
+  --background-color-main: white;
+  --background-color-secondary: #262626;
+  --background-color-tertiary: black;
+}
+
 *::before,
 *::after {
   box-sizing: border-box;
@@ -58,7 +66,7 @@ footer {
 }
 
 .titre-footer {
-  color: white;
+  color: var(--secondary-text-color);
   font-size: 35px;
   font-family: var(--Montserrat-black);
   text-align: center;
@@ -66,7 +74,7 @@ footer {
 }
 
 .text-footer {
-  color: white;
+  color: var(--secondary-text-color);
   margin-bottom: 10px;
   text-align: center;
   padding: 20px;
@@ -75,6 +83,13 @@ footer {
 .lien-footer {
   padding: 10px;
   text-align: center;
+}
+
+/* La map google */
+
+iframe {
+  width: 80%;
+  padding: 20px;
 }
 
 /* Container mension légale */
@@ -92,7 +107,7 @@ footer {
 
 .lien-mension {
   margin: 0 50px;
-  color: white;
+  color: var(--secondary-text-color);
 }
 
 @media (max-width: 787px) and (min-width: 349px) {

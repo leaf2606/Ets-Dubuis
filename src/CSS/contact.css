@@ -1,3 +1,11 @@
+:root {
+  --primary-text-color: black;
+  --secondary-text-color: white;
+  --background-color-main: white;
+  --background-color-secondary: #262626;
+  --background-color-tertiary: black;
+}
+
 *::before,
 *::after {
   box-sizing: border-box;
@@ -16,7 +24,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--background-color-main);
 }
 
 html {
@@ -26,7 +34,7 @@ html {
 /* Contact */
 
 .retour-accueil {
-  color: white;
+  color: var(--secondary-text-color);
 }
 
 .container {
@@ -74,18 +82,18 @@ html {
   position: absolute;
   inset: 4px;
   border-radius: 8px;
-  background: black;
+  background: var(--background-color-tertiary);
   z-index: 10;
   padding: 30px 40px;
   display: flex;
   flex-direction: column;
-  color: white;
+  color: var(--secondary-text-color);
 }
 
 .form h2 {
   text-align: center;
   letter-spacing: 0.1em;
-  color: white;
+  color: var(--secondary-text-color);
 }
 
 .inputBox {
@@ -106,17 +114,17 @@ html {
   border-right: none;
   font-size: 1em;
   outline: none;
-  color: white;
+  color: var(--secondary-text-color);
 }
 
 input[type="text"] {
-  color: white;
+  color: var(--secondary-text-color);
 }
 
 input[type="submit"] {
   border: 1px solid white;
   background: #1a4f7e;
-  color: white;
+  color: var(--secondary-text-color);
   cursor: pointer;
   text-align: center;
 }
@@ -127,7 +135,7 @@ input[type="submit"].button-connexion {
 
 input#email,
 input#datetime-local {
-  color: white;
+  color: var(--secondary-text-color);
 }
 
 .container {
@@ -136,19 +144,19 @@ input#datetime-local {
 }
 
 .formulaire-contact {
-  color: white;
+  color: var(--secondary-text-color);
 }
 
 ::-webkit-input-placeholder {
-  color: white;
+  color: var(--secondary-text-color);
 }
 
 select option[value="particulier"],
 select option[value="profesionnel"],
 select option[value="telephone"],
 select option[value="email"] {
-  background-color: white;
-  color: black;
+  background-color: var(--background-color-main);
+  color: var(--secondary-text-color);
 }
 
 /* Les deux liens qui bouge selon le click */
@@ -162,7 +170,7 @@ select option[value="email"] {
 
 .contact-link {
   padding: 0 10px;
-  color: white;
+  color: var(--secondary-text-color);
   cursor: pointer;
 }
 

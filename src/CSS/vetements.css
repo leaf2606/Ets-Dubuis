@@ -1,3 +1,13 @@
+:root {
+  --primary-text-color: black;
+  --secondary-text-color: white;
+  --background-color-main: white;
+  --background-color-secondary: #262626;
+  --background-color-tertiary: black;
+  --primary-border-solid: black;
+  --secondary-border-solid: white;
+}
+
 *::before,
 *::after {
   box-sizing: border-box;
@@ -63,14 +73,14 @@ html {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  border: solid 1px black;
+  border: solid 1px var(--primary-border-solid);
   padding: 10px 20px;
   margin: 0 15px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  color: white;
+  color: var(--primary-text-color);
   cursor: pointer;
-  background-color: black;
+  background-color: gray;
 }
 
 .lien-nouveautes:hover,

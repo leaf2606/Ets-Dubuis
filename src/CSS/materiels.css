@@ -1,3 +1,11 @@
+:root {
+  --primary-text-color: black;
+  --secondary-text-color: white;
+  --background-color-main: white;
+  --background-color-secondary: #262626;
+  --background-color-tertiary: black;
+}
+
 *::before,
 *::after {
   box-sizing: border-box;
@@ -28,7 +36,7 @@ html {
 /* Ici ce trouve le css de toute la partie Matériels et Engins/Outils  */
 
 h1 {
-  color: black;
+  color: var(--);
   font-family: var(--Montserrat-bold);
 }
 
@@ -47,7 +55,7 @@ h1 {
   position: relative;
   overflow: hidden;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-  background-color: black;
+  background-color: var(--background-color-tertiary);
   width: 100%;
   max-width: 300px;
   height: auto;
@@ -101,7 +109,7 @@ h1 {
   color: blue;
   text-decoration: none;
   font-size: 14px;
-  background-color: white;
+  background-color: var(--background-color-main);
   border-radius: 50px;
   text-align: center;
   padding: 5px 5px;
@@ -117,7 +125,7 @@ h1 {
 
 .titre-3,
 .text-card-3 {
-  color: white;
+  color: var(--secondary-text-color);
 }
 
 .admin-buttons {
@@ -128,7 +136,7 @@ h1 {
   margin-right: 5px;
   padding: 8px 12px;
   background-color: #007bff;
-  color: white;
+  color: var(--secondary-text-color);
   border: none;
   cursor: pointer;
 }
@@ -176,7 +184,7 @@ h1 {
   padding: 10px 15px;
   margin-left: 10px;
   background-color: #007bff;
-  color: white;
+  color: var(--secondary-text-color);
   border: none;
   cursor: pointer;
   font-size: 16px;

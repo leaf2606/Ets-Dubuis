@@ -24,33 +24,16 @@
             <p class="text-footer"> 03 86 58 56 91</p>
         </div>
 
-        <div id="footer-map"></div>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3234.4487707709154!2d3.3897096766789745!3d47.005625529283996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f1b38b2a56c4e7%3A0xa2d472f209afaf64!2s22%20Rue%20Fran%C3%A7ois%20Mitterrand%2C%2058270%20Saint-Benin-d&#39;Azy!5e1!3m2!1sfr!2sfr!4v1729063141637!5m2!1sfr!2sfr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
 
         <div class="container-mension">
             <a class="lien-mension" href="">Mension légale</a><br>
-            <a class="lien-mension" href="">Mension légale</a><br>
-            <a class="lien-mension" href="">Mension légale</a>
+            <a class="lien-mension" href="">Condition générale</a><br>
+            <a class="lien-mension" href="">Politique de confidentialité</a>
         </div>
-
-        <!-- JS pour la map  -->
-
-        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-        <script>
-        // Initialisation de la carte avec les bonnes coordonnées (latitude et longitude)
-        var footerMap = L.map('footer-map').setView([47.00562552928349, 3.392275880007283],
-        13); // Coordonnées exactes de votre entreprise
-
-        // Ajout de la couche OpenStreetMap
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-            attribution: '© OpenStreetMap'
-        }).addTo(footerMap);
-
-        // Ajout d'un marqueur sur l'emplacement exact de votre entreprise
-        var companyMarker = L.marker([47.00562552928349, 3.392275880007283]).addTo(footerMap);
-        companyMarker.bindPopup("<b>Ets Dubuis</b><br>22 Rue François Mitterand, Saint Benin d'Azy.<br>03 86 58 56 91");
-        </script>
 
     </footer>
 

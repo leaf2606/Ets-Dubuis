@@ -1,3 +1,11 @@
+:root {
+  --primary-text-color: black;
+  --secondary-text-color: white;
+  --background-color-main: white;
+  --background-color-secondary: #262626;
+  --background-color-tertiary: black;
+}
+
 *::before,
 *::after {
   box-sizing: border-box;
@@ -19,7 +27,7 @@ body {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-color: #fff;
+  background-color: var(--background-color-main);
 }
 
 html {
@@ -43,26 +51,7 @@ html {
   transform: translateX(-50%);
 }
 
-/* Images sous le premier texte  */
-
-.img-dessous-text {
-  height: 400px;
-  width: 400px;
-  object-fit: cover;
-  padding: 0 190px;
-}
-
-/* Image sous le deuxieme texte  */
-
-.img-dessous-text-1 {
-  height: 450px;
-  width: 100%;
-  object-fit: cover;
-  display: block;
-  margin: 40px auto;
-}
-
-/* Le titre et le texte sous le header  */
+/* Section 1 et section 2 */
 
 .titre-propos {
   text-align: center;
@@ -70,7 +59,7 @@ html {
   font-size: 36px;
   font-weight: bold;
   padding: 40px 20px;
-  color: black;
+  color: var(--primary-text-color);
 }
 
 .text-propos {
@@ -80,7 +69,7 @@ html {
   padding: 40px 20px;
   font-size: 18px;
   line-height: 1.8;
-  color: black;
+  color: var(--primary-text-color);
 }
 
 /* Slider des marques */
@@ -143,13 +132,13 @@ html {
 .titre-2-news {
   font-size: 28px;
   font-weight: bold;
-  color: black;
+  color: var(--primary-text-color);
   margin-bottom: 10px;
 }
 
 .text-news {
   font-size: 16px;
-  color: black;
+  color: var(--primary-text-color);
   margin-bottom: 30px;
 }
 
@@ -161,7 +150,7 @@ html {
   max-width: 600px;
   margin: auto;
   padding: 30px 20px;
-  background: #ffffff;
+  background: var(--background-color-main);
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   transition: all 0.5s ease-in-out;
@@ -203,7 +192,7 @@ html {
   padding: 15px 30px;
   font-size: 18px;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--secondary-text-color);
   background-color: #1a4f7d;
   border: none;
   border-radius: 30px;
@@ -217,46 +206,42 @@ html {
   box-shadow: 0 6px 15px rgba(38, 114, 204, 0.3);
 }
 
-/* Pour les textes autour de l'image */
+/* La section 3 */
 
-h1.titre-propos {
+.container-section-3 {
+  max-width: 900px;
+  margin: 0 auto;
   text-align: center;
-  padding: 20px;
 }
 
-.container-propos {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 20px auto;
-  max-width: 1200px;
+.titre-propos {
+  font-size: 2.5rem;
+  color: var(--primary-text-color);
 }
 
-.left-column,
-.right-column {
-  width: 30%;
-  padding: 20px;
+.sub-title {
+  font-size: 1.8rem;
+  color: var(--primary-text-color);
+  margin-bottom: 30px;
 }
 
 .text-bas {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  padding: 10px;
-  color: black;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--primary-text-color);
+  margin-bottom: 40px;
 }
 
 .img-container {
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  margin: 40px 0;
 }
 
 .img-container img {
-  max-width: 100%;
-  height: 600px;
-  padding: 10px 0;
+  max-width: 70%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Effect parallax essai */
@@ -288,7 +273,7 @@ h1.titre-propos {
 
 .parallax-text {
   font-size: 35px;
-  color: black;
+  color: var(--primary-text-color);
   font-weight: bold;
 }
 
@@ -305,7 +290,7 @@ h1.titre-propos {
   font-size: 120px;
   font-weight: bold;
   text-align: center;
-  color: white;
+  color: var(--secondary-text-color);
 }
 
 .parallax-2 {
@@ -335,62 +320,6 @@ p.text-parallax {
   line-height: 40px;
   margin: 0 50px 10px;
 }
-
-/* Animation pour changer de phrase avec un début fixe */
-
-/* .animated-text {
-  max-width: 90%;
-  position: absolute;
-  top: 55%;
-  left: 20%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.titre-animated {
-  font-family: var(--Montserrat-black);
-  font-size: 75px;
-  color: blue;
-  position: relative;
-}
-
-.auto-typing {
-  font-size: 75px;
-  color: black;
-  position: absolute;
-  left: 100%;
-  top: 0;
-  display: inline;
-  white-space: nowrap;
-} */
-
-/* Ajuster la position et l'apparence du curseur */
-
-/* .typed-cursor {
-  font-size: 75px;
-  color: white;
-  animation: blink 0.7s infinite;
-} */
-
-/* Animation de clignotement du curseur */
-
-/* @keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-} */
-
-/* Masquer le curseur pendant la suppression */
-
-/* .typed-cursor.typed-cursor--blink {
-  visibility: hidden;
-} */
 
 /* Media Newsletter */
 
@@ -441,7 +370,7 @@ p.text-parallax {
 
   .auto-typing {
     font-size: 75px;
-    color: black;
+    color: var(--primary-text-color);
     position: absolute;
     left: 100%;
     top: 99px;
@@ -482,7 +411,7 @@ p.text-parallax {
 
   .auto-typing {
     font-size: 75px;
-    color: black;
+    color: var(--primary-text-color);
     position: absolute;
     left: 0%;
     top: 235px;
@@ -632,5 +561,21 @@ p.text-parallax {
 
   #newsletter-section {
     padding: 19px 10px;
+  }
+}
+
+/* Section 3 */
+
+@media (max-width: 768px) {
+  .titre-propos {
+    font-size: 2rem;
+  }
+
+  .sub-title {
+    font-size: 1.5rem;
+  }
+
+  .text-bas {
+    font-size: 1rem;
   }
 }

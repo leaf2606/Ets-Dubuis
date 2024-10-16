@@ -1,3 +1,11 @@
+:root {
+  --primary-text-color: black;
+  --secondary-text-color: white;
+  --background-color-main: white;
+  --background-color-secondary: #262626;
+  --background-color-tertiary: black;
+}
+
 *::before,
 *::after {
   box-sizing: border-box;
@@ -19,7 +27,7 @@ body {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-color: white;
+  background-color: var(--background-color-main);
 }
 
 html {
@@ -42,7 +50,7 @@ html {
   position: relative;
   width: 380px;
   height: 420px;
-  background: black;
+  background: var(--background-color-tertiary);
   border-radius: 8px;
   overflow: hidden;
   margin: 20px auto;
@@ -93,7 +101,7 @@ html {
 .form h2 {
   text-align: center;
   letter-spacing: 0.1em;
-  color: white;
+  color: var(--secondary-text-color);
 }
 
 .inputBox {
@@ -112,13 +120,13 @@ html {
   border-right: none;
   font-size: 1em;
   outline: none;
-  color: white;
+  color: var(--secondary-text-color);
 }
 
 input[type="submit"] {
   border: 1px solid #fff;
   background: blue;
-  color: #fff;
+  color: var(--secondary-text-color);
   cursor: pointer;
   margin-top: -10px;
 }
@@ -136,14 +144,14 @@ input[type="submit"].button-connexion {
 
 .compte-link {
   padding: 0 10px;
-  color: black;
+  color: var(--primary-text-color);
   cursor: pointer;
 }
 
 .fidelite {
   font-size: 40px;
   font-weight: bold;
-  color: black;
+  color: var(--primary-text-color);
   text-align: center;
   padding: 50px;
 }

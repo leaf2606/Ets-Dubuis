@@ -46,6 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/font.css">
+    <script src="js/script.js"></script>
     <title>A propos</title>
 </head>
 
@@ -58,12 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <header>
             <figure class="figure-container">
                 <img class="img-propos" src="../img/header-1.png" alt="img-header">
-                <!-- <div class="animated-text">
-                    <h1 class="titre-animated">Entreprise de &ensp;<span class="auto-typing"></span></h1><br><br>
-                    <a href="#paragraphe-1-section">
-                        <img class="fleche-bas" src="../img/fleche-bas.png" alt="img-fleche-bas">
-                    </a>
-                </div> -->
             </figure>
         </header>
 
@@ -263,54 +258,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section><br>
 
     <section id="paragraphe-3-section">
-
-        <h1 class="titre-propos">Autre infos sur l'entreprise</h1>
-
-        <h2 class="titre-propos">Bonsoir, Paris</h2>
-
-        <div class="container-propos">
-            <div class="left-column">
-                <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus,
-                    repellat
-                    enim ipsum vitae odit voluptate, quo quia minima saepe numquam facere possimus et labore minus
-                    cumque
-                    deleniti debitis.</p>
-                <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus,
-                    repellat
-                    enim ipsum vitae odit voluptate, quo quia minima saepe numquam facere possimus et labore minus
-                    cumque
-                    deleniti debitis.</p>
-                <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus,
-                    repellat
-                    enim ipsum vitae odit voluptate, quo quia minima saepe numquam facere possimus et labore minus
-                    cumque
-                    deleniti debitis.</p>
-            </div>
+        <div class="container-section-3">
+            <h1 class="titre-propos">Autre infos sur l'entreprise</h1>
+            <h2 class="sub-title">Bonsoir, Paris</h2>
+            <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus, repellat
+                enim ipsum vitae odit voluptate, quo quia minima saepe numquam facere possimus et labore minus cumque
+                deleniti debitis.</p>
 
             <div class="img-container">
-                <img class="img-container-text" src="../img/4.jpg" alt="img">
+                <img class="img-container-text" src="../img/4.jpg" alt="Image">
             </div>
 
-            <div class="right-column">
-                <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus,
-                    repellat
-                    enim ipsum vitae odit voluptate, quo quia minima saepe numquam facere possimus et labore minus
-                    cumque
-                    deleniti debitis.</p>
-                <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus,
-                    repellat
-                    enim ipsum vitae odit voluptate, quo quia minima saepe numquam facere possimus et labore minus
-                    cumque
-                    deleniti debitis.</p>
-                <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus,
-                    repellat
-                    enim ipsum vitae odit voluptate, quo quia minima saepe numquam facere possimus et labore minus
-                    cumque
-                    deleniti debitis.</p>
-            </div>
+            <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus, repellat
+                enim ipsum vitae odit voluptate, quo quia minima saepe numquam facere possimus et labore minus cumque
+                deleniti debitis.</p>
         </div>
-
     </section>
+
 
     <!-- JS pour l'animation du titre sur le header  -->
 
