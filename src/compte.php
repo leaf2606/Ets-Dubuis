@@ -94,67 +94,69 @@ if (!empty($_POST)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/compte.css">
+    <script src="js/script.js" defer></script>
     <title>Compte</title>
 </head>
 
 <body>
 
+    <div class="background-container-compte">
+        <h1 class="fidelite">Votre compte</h1>
 
-    <h1 class="fidelite">Votre compte</h1>
+        <!-- lien connexion-inscription -->
 
-    <!-- lien connexion-inscription -->
+        <div class="compte-wrapper">
+            <a href="#" class="compte-link" onclick="showForm('connexion')">Connexion &ensp;|</a>
+            <a href="#" class="compte-link" onclick="showForm('inscription')">Inscription &ensp;|</a>
+            <a href="../index.php" class="compte-link">Accueil</a>
+        </div>
 
-    <div class="compte-wrapper">
-        <a href="#" class="compte-link" onclick="showForm('connexion')">Connexion &ensp;|</a>
-        <a href="#" class="compte-link" onclick="showForm('inscription')">Inscription &ensp;|</a>
-        <a href="../index.php" class="compte-link">Accueil</a>
-    </div>
+        <!-- Connexion -->
 
-    <!-- Connexion -->
-
-    <div id="connexion" class="form-section active">
-        <form method="POST">
-            <input type="hidden" name="action" value="connexion">
-            <div class="container">
-                <div class="form">
-                    <h2>Connectez-vous</h2>
-                    <div class="inputBox">
-                        <input type="email" name="email" id="email" placeholder="E-mail">
-                    </div>
-                    <div class="inputBox">
-                        <input type="password" name="password" id="password" placeholder="Mot de passe">
-                    </div>
-                    <div class="inputBox">
-                        <input type="submit" value="Connexion" class="button-connexion">
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <!-- Inscription -->
-
-    <div id="inscription" class="form-section">
-        <form method="POST">
-            <input type="hidden" name="action" value="inscription">
-            <div class="container">
-                <div class="form">
-                    <h2>Inscrivez-vous</h2>
-                    <div class="inputBox">
-                        <input type="text" name="username" id="username" placeholder="Nom d'Utilisateur">
-                    </div>
-                    <div class="inputBox">
-                        <input type="email" name="email" id="email" placeholder="E-mail">
-                    </div>
-                    <div class="inputBox">
-                        <input type="password" name="password" id="password" placeholder="Mot de passe">
-                    </div>
-                    <div class="inputBox">
-                        <input type="submit" value="Inscription">
+        <div id="connexion" class="form-section active">
+            <form method="POST">
+                <input type="hidden" name="action" value="connexion">
+                <div class="container">
+                    <div class="form">
+                        <h2>Connectez-vous</h2>
+                        <div class="inputBox">
+                            <input type="email" name="email" id="email" placeholder="E-mail">
+                        </div>
+                        <div class="inputBox">
+                            <input type="password" name="password" id="password" placeholder="Mot de passe">
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" value="Connexion" class="button-connexion">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
+
+        <!-- Inscription -->
+
+        <div id="inscription" class="form-section">
+            <form method="POST">
+                <input type="hidden" name="action" value="inscription">
+                <div class="container">
+                    <div class="form">
+                        <h2>Inscrivez-vous</h2>
+                        <div class="inputBox">
+                            <input type="text" name="username" id="username" placeholder="Nom d'Utilisateur">
+                        </div>
+                        <div class="inputBox">
+                            <input type="email" name="email" id="email" placeholder="E-mail">
+                        </div>
+                        <div class="inputBox">
+                            <input type="password" name="password" id="password" placeholder="Mot de passe">
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" value="Inscription">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 
     <!-- lien connexion-inscription -->

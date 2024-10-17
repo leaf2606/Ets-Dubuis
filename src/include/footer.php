@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/propos.css">
     <link rel="stylesheet" href="css/font.css">
+    <script src="js/script.js" defer></script>
     <title>Footer</title>
 </head>
 

@@ -246,8 +246,11 @@ textarea.input-admin {
   padding: 50px;
 }
 
-/* Backend ajouter */
+/* Media queries pour les boutons des admins  */
 
-/* Backend modifier */
-
-/* Backend supprimer */
+@media (max-width: 600px) and (min-width: 349px) {
+  .admin-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}

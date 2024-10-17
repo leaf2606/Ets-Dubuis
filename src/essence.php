@@ -21,6 +21,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/vetements.css">
     <link rel="stylesheet" href="css/backend.css">
+    <script src="js/script.js" defer></script>
     <title>Débrousailleuse</title>
 </head>
 

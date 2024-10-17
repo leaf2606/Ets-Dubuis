@@ -109,7 +109,7 @@ h1 {
   color: blue;
   text-decoration: none;
   font-size: 14px;
-  background-color: var(--background-color-main);
+  background-color: white;
   border-radius: 50px;
   text-align: center;
   padding: 5px 5px;
@@ -125,7 +125,7 @@ h1 {
 
 .titre-3,
 .text-card-3 {
-  color: var(--secondary-text-color);
+  color: white;
 }
 
 .admin-buttons {

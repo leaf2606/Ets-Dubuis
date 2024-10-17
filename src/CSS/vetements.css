@@ -84,7 +84,8 @@ html {
 }
 
 .lien-nouveautes:hover,
-.lien-nouveautes-1:hover {
+.lien-nouveautes-1:hover,
+.lien-nouveautes-5:hover {
   background-color: lightgray;
 }
 

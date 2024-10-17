@@ -27,7 +27,7 @@ body {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-color: var(--background-color-main);
+  background-color: white;
 }
 
 html {
@@ -46,11 +46,20 @@ html {
 
 /* Connexion et Inscription */
 
+.background-container-compte {
+  background-image: url(../img/fond-gris.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   position: relative;
   width: 380px;
   height: 420px;
-  background: var(--background-color-tertiary);
+  background: black;
   border-radius: 8px;
   overflow: hidden;
   margin: 20px auto;
@@ -63,7 +72,7 @@ html {
   left: -50%;
   width: 380px;
   height: 420px;
-  background: linear-gradient(0deg, transparent, blue, blue);
+  background: linear-gradient(0deg, transparent, #1a4f7d, #1a4f7d);
   transform-origin: bottom right;
   animation: animate 7s linear infinite;
 }
@@ -75,7 +84,7 @@ html {
   left: -50%;
   width: 380px;
   height: 420px;
-  background: linear-gradient(0deg, transparent, red, red);
+  background: linear-gradient(0deg, transparent, #cb1414, #cb1414);
   transform-origin: bottom right;
   animation: animate 7s linear infinite;
   animation-delay: 3s;
@@ -101,7 +110,7 @@ html {
 .form h2 {
   text-align: center;
   letter-spacing: 0.1em;
-  color: var(--secondary-text-color);
+  color: white;
 }
 
 .inputBox {
@@ -114,19 +123,19 @@ html {
   width: 100%;
   padding: 10px 10px 10px;
   background: transparent;
-  border-color: blue;
+  border-color: #1a4f7d;
   border-top: none;
   border-left: none;
   border-right: none;
   font-size: 1em;
   outline: none;
-  color: var(--secondary-text-color);
+  color: white;
 }
 
 input[type="submit"] {
   border: 1px solid #fff;
-  background: blue;
-  color: var(--secondary-text-color);
+  background: #1a4f7d;
+  color: white;
   cursor: pointer;
   margin-top: -10px;
 }
@@ -144,14 +153,14 @@ input[type="submit"].button-connexion {
 
 .compte-link {
   padding: 0 10px;
-  color: var(--primary-text-color);
+  color: black;
   cursor: pointer;
 }
 
 .fidelite {
   font-size: 40px;
   font-weight: bold;
-  color: var(--primary-text-color);
+  color: black;
   text-align: center;
   padding: 50px;
 }

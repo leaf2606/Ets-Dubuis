@@ -13,6 +13,7 @@ $loggedIn = isset($_SESSION["compte"]);
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/propos.css">
     <link rel="stylesheet" href="css/contact.css">
+    <script src="js/script.js" defer></script>
     <title>Navbar</title>
 </head>
 
@@ -62,9 +63,9 @@ $loggedIn = isset($_SESSION["compte"]);
                 <li>
                     <a href="compte.php">Compte</a>
                 </li>
+                <?php endif; ?>
                 <li class="lien-img-navbar"><img class="img-jour-nuit" src="../img/jour-nuit-essai.svg"
                         alt="image-jour-nuit"></li>
-                <?php endif; ?>
             </ul>
 
             <div class="changeTheme"></div>
@@ -72,52 +73,6 @@ $loggedIn = isset($_SESSION["compte"]);
         </nav>
 
     </header>
-
-    <!-- JS pour l'animation jour / nuit  -->
-
-    <script>
-    const switchThemeBtn = document.querySelector('.img-jour-nuit');
-    let toggleTheme;
-
-    // Vérifie si un thème est enregistré dans LocalStorage, sinon par défaut au mode jour
-    if (localStorage.getItem('theme') === 'dark') {
-        toggleTheme = 1;
-    } else {
-        toggleTheme = 0;
-    }
-
-    // Fonction pour appliquer le thème
-    function applyTheme() {
-        if (toggleTheme === 1) {
-            // Mode nuit
-            document.documentElement.style.setProperty('--primary-text-color', 'white');
-            document.documentElement.style.setProperty('--secondary-text-color', 'black');
-            document.documentElement.style.setProperty('--background-color-main', '#262626');
-            document.documentElement.style.setProperty('--background-color-secondary', 'black');
-            document.documentElement.style.setProperty('--background-color-tertiary', '#1a1a1a');
-            document.documentElement.style.setProperty('--primary-border-solid', 'black');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            // Mode jour
-            document.documentElement.style.setProperty('--primary-text-color', 'black');
-            document.documentElement.style.setProperty('--secondary-text-color', 'white');
-            document.documentElement.style.setProperty('--background-color-main', 'white');
-            document.documentElement.style.setProperty('--background-color-secondary', '#262626');
-            document.documentElement.style.setProperty('--background-color-tertiary', 'black');
-            document.documentElement.style.setProperty('--secondary-border-solid', 'white');
-            localStorage.setItem('theme', 'light');
-        }
-    }
-
-    // Applique le thème dès le chargement de la page
-    applyTheme();
-
-    // Changement de thème lors du clic sur le bouton
-    switchThemeBtn.addEventListener('click', () => {
-        toggleTheme = toggleTheme === 0 ? 1 : 0;
-        applyTheme();
-    });
-    </script>
 
     <!-- JS pour le menu burger  -->
 

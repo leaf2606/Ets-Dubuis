@@ -37,6 +37,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/materiels.css">
     <link rel="stylesheet" href="css/backend.css">
+    <script src="js/script.js" defer></script>
     <script src="js/script.js"></script>
     <title>Description</title>
 </head>

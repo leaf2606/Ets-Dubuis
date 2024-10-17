@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/font.css">
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
     <title>A propos</title>
 </head>
 

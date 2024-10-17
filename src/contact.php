@@ -49,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/contact.css">
+    <script src="js/script.js" defer></script>
     <title>Contact</title>
 </head>
 
@@ -56,85 +57,92 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Formulaire de devis  -->
 
-    <div id="devis" class="container-contact active">
-        <form method="post">
-            <div class="container">
-                <div class="form">
-                    <div class="contact-lien">
-                        <a href="#" class="contact-link" onclick="showForm('devis')">Devis &ensp;|</a>
-                        <a href="#" class="contact-link" onclick="showForm('renseignement')">Renseignements &ensp;|</a>
-                        <a href="../index.php" class="contact-link">Accueil</a>
-                    </div>
-                    <div class="inputBox">
-                        <input type="text" name="nom" id="nom_devis" placeholder="Nom" required>
-                    </div>
-                    <div class="inputBox">
-                        <input type="text" name="prenom" id="prenom_devis" placeholder="Prénom" required>
-                    </div>
-                    <div class="inputBox">
-                        <input type="email" name="email" id="email_devis" placeholder="E-mail" required>
-                    </div>
-                    <div class="inputBox">
-                        <input type="text" name="telephone" id="telephone_devis" placeholder="Téléphone" required>
-                    </div>
-                    <div class="inputBox">
-                        <select name="objet" id="objet_devis">
-                            <option value="">Votre status</option>
-                            <option value="particulier">Particulier</option>
-                            <option value="profesionnel">Professionnel</option>
-                        </select>
-                    </div>
-                    <div class="inputBox">
-                        <textarea name="message" id="message_devis" placeholder="Votre message"></textarea>
-                    </div>
-                    <div class="inputBox">
-                        <input type="submit" value="Envoyer" name="envoyer" class="button-connexion">
+    <div class="background-container-contact">
+
+        <h1 class="titre-contact">Formulaire de contact</h1>
+
+        <div id="devis" class="container-contact active">
+            <form method="post">
+                <div class="container">
+                    <div class="form">
+                        <div class="contact-lien">
+                            <a href="#" class="contact-link" onclick="showForm('devis')">Devis &ensp;|</a>
+                            <a href="#" class="contact-link" onclick="showForm('renseignement')">Renseignements
+                                &ensp;|</a>
+                            <a href="../index.php" class="contact-link">Accueil</a>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="nom" id="nom_devis" placeholder="Nom" required>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="prenom" id="prenom_devis" placeholder="Prénom" required>
+                        </div>
+                        <div class="inputBox">
+                            <input type="email" name="email" id="email_devis" placeholder="E-mail" required>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="telephone" id="telephone_devis" placeholder="Téléphone" required>
+                        </div>
+                        <div class="inputBox">
+                            <select name="objet" id="objet_devis">
+                                <option value="">Votre status</option>
+                                <option value="particulier">Particulier</option>
+                                <option value="profesionnel">Professionnel</option>
+                            </select>
+                        </div>
+                        <div class="inputBox">
+                            <textarea name="message" id="message_devis" placeholder="Votre message"></textarea>
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" value="Envoyer" name="envoyer" class="button-connexion">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
 
-    <!-- Formulaire de renseignement  -->
+        <!-- Formulaire de renseignement  -->
 
-    <div id="renseignement" class="container-contact">
-        <form method="post">
-            <div class="container">
-                <div class="form">
-                    <div class="contact-lien">
-                        <a href="#" class="contact-link" onclick="showForm('devis')">Devis &ensp;|</a>
-                        <a href="#" class="contact-link" onclick="showForm('renseignement')">Renseignements &ensp;|</a>
-                        <a href="../index.php" class="contact-link">Accueil</a>
-                    </div>
-                    <div class="inputBox">
-                        <input type="text" name="nom" id="nom_renseignement" placeholder="Nom" required>
-                    </div>
-                    <div class="inputBox">
-                        <input type="text" name="prenom" id="prenom_renseignement" placeholder="Prénom" required>
-                    </div>
-                    <div class="inputBox">
-                        <input type="email" name="email" id="email_renseignement" placeholder="E-mail" required>
-                    </div>
-                    <div class="inputBox">
-                        <input type="text" name="telephone" id="telephone_renseignement" placeholder="Téléphone"
-                            required>
-                    </div>
-                    <div class="inputBox">
-                        <select name="objet" id="objet_devis">
-                            <option value="">Préférence de contact</option>
-                            <option value="telephone">Téléphone</option>
-                            <option value="email">E-mail</option>
-                        </select>
-                    </div>
-                    <div class="inputBox">
-                        <textarea name="message" id="message_renseignement" placeholder="Votre message"></textarea>
-                    </div>
-                    <div class="inputBox">
-                        <input type="submit" value="Envoyer" name="envoyer" class="button-connexion">
+        <div id="renseignement" class="container-contact">
+            <form method="post">
+                <div class="container">
+                    <div class="form">
+                        <div class="contact-lien">
+                            <a href="#" class="contact-link" onclick="showForm('devis')">Devis &ensp;|</a>
+                            <a href="#" class="contact-link" onclick="showForm('renseignement')">Renseignements
+                                &ensp;|</a>
+                            <a href="../index.php" class="contact-link">Accueil</a>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="nom" id="nom_renseignement" placeholder="Nom" required>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="prenom" id="prenom_renseignement" placeholder="Prénom" required>
+                        </div>
+                        <div class="inputBox">
+                            <input type="email" name="email" id="email_renseignement" placeholder="E-mail" required>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="telephone" id="telephone_renseignement" placeholder="Téléphone"
+                                required>
+                        </div>
+                        <div class="inputBox">
+                            <select name="objet" id="objet_devis">
+                                <option value="">Préférence de contact</option>
+                                <option value="telephone">Téléphone</option>
+                                <option value="email">E-mail</option>
+                            </select>
+                        </div>
+                        <div class="inputBox">
+                            <textarea name="message" id="message_renseignement" placeholder="Votre message"></textarea>
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" value="Envoyer" name="envoyer" class="button-connexion">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 
     <!-- lien connexion-inscription -->
