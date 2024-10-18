@@ -97,10 +97,8 @@ html {
   width: 50%;
   margin: 0 auto;
   display: block;
-  background-color: #f9f9f9;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(135deg, #f9f9f9, #ececec);
 }
 
 /* Pour les produits suggérés */
@@ -108,6 +106,20 @@ html {
 .produit-suggeres {
   text-align: center;
   font-size: 25px;
+}
+
+.container-avis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  padding: 30px 20px;
+  background: var(--background-color-main);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  transition: all 0.5s ease-in-out;
 }
 
 /* Media queries de la description  */

@@ -147,7 +147,7 @@ input[type="submit"] {
 }
 
 input[type="submit"].button-connexion {
-  margin-top: -60px;
+  /* margin-top: -60px; */
 }
 
 input#email,

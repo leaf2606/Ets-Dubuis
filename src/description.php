@@ -38,7 +38,6 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     <link rel="stylesheet" href="css/materiels.css">
     <link rel="stylesheet" href="css/backend.css">
     <script src="js/script.js" defer></script>
-    <script src="js/script.js"></script>
     <title>Description</title>
 </head>
 
@@ -116,6 +115,29 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     </div>
     <?php endif; ?><br>
 
+    <?php if ($loggedIn): ?>
+    <div class="container-avis">
+        <p><strong>Bonjour, <?= htmlspecialchars($_SESSION['compte']['username']); ?> laisser un avis !</strong></p>
+        <form action="avis.php" method="POST">
+            <input type="hidden" name="article_id" value="<?= htmlspecialchars($item['id']); ?>">
+            <label for="note">Note :</label>
+            <select name="note" id="note" required>
+                <option value="">Choisir une note</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <textarea name="commentaire" id="commentaire" required></textarea>
+
+            <button type="submit">Soumettre l'avis</button>
+        </form>
+    </div>
+    <?php else: ?>
+    <p>Veuillez vous connecter pour laisser un avis.</p>
+    <?php endif; ?>
+
     <!-- Produit similaire  -->
     <h1 class="produit-suggeres">Produits similaires</h1>
     <?php
@@ -158,7 +180,6 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     </p>
     <?php endif; ?>
     <?php endif; ?>
-
 
     <?php include_once("./include/footer.php"); ?>
 
