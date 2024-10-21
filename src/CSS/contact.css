@@ -200,3 +200,30 @@ select option[value="email"] {
 }
 
 /* Media contact */
+
+@media (max-width: 560px) {
+  .contact-lien {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+  }
+
+  .inputBox input,
+  .inputBox textarea,
+  .inputBox select {
+    width: 100%;
+    margin-left: -10px;
+  }
+
+  .container-contact {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .container {
+    padding: 210px 110px;
+    margin: 20px auto;
+  }
+}

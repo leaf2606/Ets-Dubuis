@@ -56,24 +56,24 @@ html {
 }
 
 .section1 .text-description {
-  top: 40%;
+  top: 20%;
   transform: translateZ(-0.5px) scale(1.5, 1.6) translate(-33%, 10%);
 }
 
 /* Texte avec effet parallax */
 
 .text-description {
-  padding-bottom: 30%;
-  left: 50%;
-  top: 20%;
   position: absolute;
-  font-family: var(--Montserrat-bold);
-  font-size: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 2vw;
+  text-align: center;
   color: white;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 2px 5px rgba(0, 0, 0, 0.5),
-    0 4px 10px rgba(0, 0, 0, 0.4), 0 10px 20px rgba(0, 0, 0, 0.3),
-    0 15px 30px rgba(0, 0, 0, 0.2);
-  transform: translate(-50%, 10%);
+  padding: 20px;
+  font-weight: bold;
+  word-wrap: break-word;
   z-index: 1;
 }
 
@@ -90,6 +90,7 @@ html {
 .text-descriptif {
   text-align: center;
   padding: 30px;
+  font-size: 20px;
 }
 
 .container-description {
@@ -99,6 +100,7 @@ html {
   display: block;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
 }
 
 /* Pour les produits suggérés */
@@ -106,6 +108,14 @@ html {
 .produit-suggeres {
   text-align: center;
   font-size: 25px;
+}
+
+/* Section avis formulaire  */
+
+#avis-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f3f4f6 30%, #ffffff);
 }
 
 .container-avis {
@@ -122,6 +132,60 @@ html {
   transition: all 0.5s ease-in-out;
 }
 
+.avis input,
+.avis select,
+.avis textarea {
+  width: 100%;
+  padding: 15px 30px;
+  border: 2px solid #ddd;
+  font-size: 16px;
+  color: black;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  outline: none;
+  text-align: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.avis input:focus,
+.avis select:focus,
+.avis textarea:focus {
+  border-color: #1a4f7d;
+  box-shadow: 0 4px 12px rgba(51, 153, 255, 0.3);
+}
+
+select option[value="1"],
+select option[value="2"],
+select option[value="3"],
+select option[value="4"],
+select option[value="5"] {
+  background-color: black;
+  text-align: center;
+  color: white;
+}
+
+.bouton-avis {
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--secondary-text-color);
+  background-color: #1a4f7d;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(51, 153, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.bouton-avis:hover {
+  background-color: #2672cc;
+  box-shadow: 0 6px 15px rgba(38, 114, 204, 0.3);
+}
+
 /* Media queries de la description  */
 
 @media (max-width: 1000px) {
@@ -130,8 +194,7 @@ html {
     padding-bottom: 20%;
   }
   .img-description {
-    height: 250px;
-    width: 80%;
+    width: 50%;
   }
   .container-description {
     width: 90%;
@@ -140,7 +203,77 @@ html {
     padding: 15px;
     font-size: 18px;
   }
+}
+
+@media (max-width: 750px) and (min-width: 349px) {
   .img-description {
+    width: 80%;
+  }
+}
+
+/* Media pour le avis */
+
+@media (max-width: 768px) and (min-width: 401px) {
+  .conteneur-avis {
+    padding: 20px 15px;
+  }
+
+  .avis input,
+  .bouton-avis {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) and (min-width: 349px) {
+  .conteneur-avis {
+    padding: 15px 10px;
     width: 70%;
+    max-width: 627px;
+  }
+
+  .avis input {
+    padding: 12px 0px;
+  }
+
+  .bouton-avis {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  #avis-section {
+    padding: 19px 10px;
+  }
+}
+
+/* Media parallax le titre  */
+
+@media (max-width: 1000px) {
+  .text-description {
+    font-size: 3vw;
+    padding: 15px;
+  }
+}
+
+/* Écrans de moins de 750px */
+@media (max-width: 750px) {
+  .text-description {
+    font-size: 4vw;
+    padding: 10px;
+  }
+}
+
+/* Écrans de moins de 500px */
+@media (max-width: 500px) {
+  .text-description {
+    font-size: 4vw;
+    padding: 8px;
+  }
+}
+
+/* Écrans de moins de 349px */
+@media (max-width: 349px) {
+  .text-description {
+    font-size: 5vw;
+    padding: 5px;
   }
 }

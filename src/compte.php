@@ -151,7 +151,7 @@ if (!empty($_POST)) {
                             <input type="password" name="password" id="password" placeholder="Mot de passe">
                         </div>
                         <div class="inputBox">
-                            <input type="submit" value="Inscription">
+                            <input type="submit" class="button-connexion" value="Inscription">
                         </div>
                     </div>
                 </div>

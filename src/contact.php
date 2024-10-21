@@ -128,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="inputBox">
                             <select name="objet" id="objet_devis">
-                                <option value="">Préférence de contact</option>
+                                <option value="">Préférence contact</option>
                                 <option value="telephone">Téléphone</option>
                                 <option value="email">E-mail</option>
                             </select>

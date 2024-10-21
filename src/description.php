@@ -116,24 +116,26 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     <?php endif; ?><br>
 
     <?php if ($loggedIn): ?>
-    <div class="container-avis">
-        <p><strong>Bonjour, <?= htmlspecialchars($_SESSION['compte']['username']); ?> laisser un avis !</strong></p>
-        <form action="avis.php" method="POST">
-            <input type="hidden" name="article_id" value="<?= htmlspecialchars($item['id']); ?>">
-            <label for="note">Note :</label>
-            <select name="note" id="note" required>
-                <option value="">Choisir une note</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            <textarea name="commentaire" id="commentaire" required></textarea>
+    <section id="avis-section">
+        <div class="container-avis">
+            <p><strong>Bonjour, <?= htmlspecialchars($_SESSION['compte']['username']); ?> laisser un
+                    avis !</strong></p><br>
+            <form action="avis.php" class="avis" method="POST">
+                <input type="hidden" name="article_id" value="<?= htmlspecialchars($item['id']); ?>">
+                <select name="note" id="note" required>
+                    <option value="">Choisir une note</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <textarea name="commentaire" id="commentaire" placeholder="Mettre un commentaire" required></textarea>
 
-            <button type="submit">Soumettre l'avis</button>
-        </form>
-    </div>
+                <button class="bouton-avis" type="submit">Soumettre l'avis</button>
+            </form>
+        </div>
+    </section>
     <?php else: ?>
     <p>Veuillez vous connecter pour laisser un avis.</p>
     <?php endif; ?>
