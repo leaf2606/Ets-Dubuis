@@ -117,3 +117,14 @@ switchThemeBtn.addEventListener("click", () => {
   toggleTheme = toggleTheme === 0 ? 1 : 0;
   applyTheme();
 });
+
+//  JS pour le menu burger
+
+const burgerMenuButton = document.querySelector(".menu-burger img");
+const burgerMenu = document.querySelector(".menu-burger");
+const navbar = document.querySelector(".navbar");
+
+burgerMenuButton.onclick = function () {
+  burgerMenu.classList.toggle("open");
+  navbar.classList.toggle("open");
+};

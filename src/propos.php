@@ -4,13 +4,15 @@ session_start();
 
 require_once("connect.php");
 
+// Pour la newsletter 
+
 $erreur = '';
 $message_soumission = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupération des données du formulaire
-    $prenom = trim($_POST['prenom']);  
-    $email = trim($_POST['email']);    
+    $prenom = trim($_POST['prenom_newsletter']);  
+    $email = trim($_POST['email_newsletter']);    
 
     // Validation des champs
     if (empty($prenom)) {
@@ -25,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Si aucune erreur, procéder à l'insertion dans la base de données
     if (empty($erreur)) {
         // Insertion des données dans la table
-        $insertSql = "INSERT INTO newsletter (prenom, email) VALUES (?, ?)";
+        $insertSql = "INSERT INTO newsletter (prenom_newsletter, email_newsletter) VALUES (?, ?)";
         $insertQuery = $db->prepare($insertSql);
         $insertQuery->execute([$prenom, $email]);
         
@@ -178,7 +180,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <div class="slide">
-                    <img class="img-marque" src="../img/iseki.png" alt="img">
+                    <img class="img-marque" src="../img/iseki-1.png" alt="img">
                 </div>
 
                 <div class="slide">
@@ -194,7 +196,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <div class="slide">
-                    <img class="img-marque" src="../img/solo.png" alt="img">
+                    <img class="img-marque" src="../img/solo-1.png" alt="img">
                 </div>
 
                 <div class="slide">
@@ -214,7 +216,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <div class="slide">
-                    <img class="img-marque" src="../img/iseki.png" alt="img">
+                    <img class="img-marque" src="../img/iseki-1.png" alt="img">
                 </div>
 
                 <div class="slide">
@@ -230,7 +232,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <div class="slide">
-                    <img class="img-marque" src="../img/solo.png" alt="img">
+                    <img class="img-marque" src="../img/solo-1.png" alt="img">
                 </div>
 
                 <div class="slide">
@@ -249,8 +251,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <p class="text-news">Recevez les dernières nouvelles et mises à jour directement dans votre
                         boîte
                         mail !</p>
-                    <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
-                    <input type="email" id="news" name="email" placeholder="Mon adresse mail" required>
+                    <input type="text" id="prenom" name="prenom_newsletter" placeholder="Prénom" required>
+                    <input type="email" id="news" name="email_newsletter" placeholder="Mon adresse mail" required>
                     <button class="bouton-news">Envoyer</button>
                 </form>
             </div>

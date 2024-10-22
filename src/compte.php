@@ -19,10 +19,10 @@ if (!empty($_POST)) {
     if (isset($_POST["action"])) {
         
         // Inscription
-        if ($_POST["action"] == "inscription" && isset($_POST["username"], $_POST["email"], $_POST["password"]) && !empty($_POST["username"]) && !empty($_POST["email"]) && !empty($_POST["password"])) {
+        if ($_POST["action"] == "inscription" && isset($_POST["username"], $_POST["email_compte"], $_POST["password"]) && !empty($_POST["username"]) && !empty($_POST["email_compte"]) && !empty($_POST["password"])) {
 
             $username = strip_tags($_POST["username"]);
-            $email = $_POST["email"];
+            $email = $_POST["email_compte"];
             $password = $_POST["password"];
             $role = 'user'; 
 
@@ -32,10 +32,10 @@ if (!empty($_POST)) {
 
             $password = password_hash($password, PASSWORD_ARGON2ID);
 
-            $sql = "INSERT INTO `compte` (`username`, `email`, `password`, `role`) VALUES (:username, :email, :password, :role)";
+            $sql = "INSERT INTO `compte` (`username`, `email_compte`, `password`, `role`) VALUES (:username, :email_compte, :password, :role)";
             $query = $db->prepare($sql);
             $query->bindValue(":username", $username, PDO::PARAM_STR);
-            $query->bindValue(":email", $email, PDO::PARAM_STR);
+            $query->bindValue(":email_compte", $email, PDO::PARAM_STR);
             $query->bindValue(":password", $password, PDO::PARAM_STR);
             $query->bindValue(":role", $role, PDO::PARAM_STR); 
 
@@ -48,14 +48,14 @@ if (!empty($_POST)) {
             }
 
         // Connexion
-        } elseif ($_POST["action"] == "connexion" && isset($_POST["email"], $_POST["password"]) && !empty($_POST["email"]) && !empty($_POST["password"])) {
+        } elseif ($_POST["action"] == "connexion" && isset($_POST["email_compte"], $_POST["password"]) && !empty($_POST["email_compte"]) && !empty($_POST["password"])) {
 
-            $email = $_POST["email"];
+            $email = $_POST["email_compte"];
             $password = $_POST["password"];
 
-            $sql = "SELECT * FROM `compte` WHERE `email` = :email";
+            $sql = "SELECT * FROM `compte` WHERE `email_compte` = :email_compte";
             $query = $db->prepare($sql);
-            $query->bindValue(":email", $email, PDO::PARAM_STR);
+            $query->bindValue(":email_compte", $email, PDO::PARAM_STR);
             $query->execute();
 
             $user = $query->fetch();
@@ -67,7 +67,7 @@ if (!empty($_POST)) {
             $_SESSION["compte"] = [
                 "id" => $user["id"],
                 "username" => $user["username"],
-                "email" => $user["email"],
+                "email_compte" => $user["email_compte"],
                 "role" => $user["role"] 
             ];
 
@@ -120,7 +120,7 @@ if (!empty($_POST)) {
                     <div class="form">
                         <h2>Connectez-vous</h2>
                         <div class="inputBox">
-                            <input type="email" name="email" id="email" placeholder="E-mail">
+                            <input type="email" name="email_compte" id="email_compte" placeholder="E-mail">
                         </div>
                         <div class="inputBox">
                             <input type="password" name="password" id="password" placeholder="Mot de passe">
@@ -145,7 +145,7 @@ if (!empty($_POST)) {
                             <input type="text" name="username" id="username" placeholder="Nom d'Utilisateur">
                         </div>
                         <div class="inputBox">
-                            <input type="email" name="email" id="email" placeholder="E-mail">
+                            <input type="email" name="email_compte" id="email_compte" placeholder="E-mail">
                         </div>
                         <div class="inputBox">
                             <input type="password" name="password" id="password" placeholder="Mot de passe">

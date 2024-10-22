@@ -28,39 +28,39 @@ $loggedIn = isset($_SESSION["compte"]);
         </div>
 
         <nav class="navbar">
-            <ul>
-                <li><a href="propos.php">A propos</a></li>
-                <li><a href="">Matériels +</a>
-                    <ul>
-                        <li><a href="debrousailleuse.php">Débroussailleuse</a></li>
-                        <li><a href="taille-haie.php">Taille Haie</a></li>
-                        <li><a href="tronçonneuse.php">Tronçonneuse</a></li>
-                        <li><a href="elagueur.php">Élagueuse</a></li>
-                        <li><a href="souffleur.php">Souffleur</a></li>
+            <ul class="ul-navbar">
+                <li class="li-navbar"><a href="propos.php">A propos</a></li>
+                <li class="li-navbar"><a href="">Matériels +</a>
+                    <ul class="ul-sous-nav">
+                        <li class="li-sous-nav"><a href="debrousailleuse.php">Débroussailleuse</a></li>
+                        <li class="li-sous-nav"><a href="taille-haie.php">Taille Haie</a></li>
+                        <li class="li-sous-nav"><a href="tronçonneuse.php">Tronçonneuse</a></li>
+                        <li class="li-sous-nav"><a href="elagueur.php">Élagueuse</a></li>
+                        <li class="li-sous-nav"><a href="souffleur.php">Souffleur</a></li>
                     </ul>
                 </li>
-                <li><a href="../vetements.php">Vêtements</a></li>
-                <li><a href="">Engins +</a>
-                    <ul>
-                        <li><a href="motos.php">Motos</a></li>
-                        <li><a href="diesel.php">Véhicules Diesel</a></li>
-                        <li><a href="essence.php">Véhicules Essence</a></li>
+                <li class="li-navbar"><a href="../vetements.php">Vêtements</a></li>
+                <li class="li-navbar"><a href="">Engins +</a>
+                    <ul class="ul-sous-nav">
+                        <li class="li-sous-nav"><a href="motos.php">Motos</a></li>
+                        <li class="li-sous-nav"><a href="diesel.php">Véhicules Diesel</a></li>
+                        <li class="li-sous-nav"><a href="essence.php">Véhicules Essence</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.php">Contact</a></li>
+                <li class="li-navbar"><a href="contact.php">Contact</a></li>
                 <?php if ($loggedIn): ?>
-                <li>
+                <li class="li-navbar">
                     <?php if (isset($_SESSION["compte"]["role"]) && $_SESSION["compte"]["role"] == "admin"): ?>
                     <a href="formulaire.php">Admin</a>
                     <?php else: ?>
                     <span class="nav-span"><?= htmlspecialchars($_SESSION["compte"]["username"]); ?></span>
                     <?php endif; ?>
                 </li>
-                <li>
+                <li class="li-navbar">
                     <a href="compte.php?action=deconnexion">Déconnexion</a>
                 </li>
                 <?php else: ?>
-                <li>
+                <li class="li-navbar">
                     <a href="compte.php">Compte</a>
                 </li>
                 <?php endif; ?>
@@ -69,23 +69,9 @@ $loggedIn = isset($_SESSION["compte"]);
             </ul>
 
             <div class="changeTheme"></div>
-
         </nav>
 
     </header>
-
-    <!-- JS pour le menu burger  -->
-
-    <script>
-    const burgerMenuButton = document.querySelector('.menu-burger img');
-    const burgerMenu = document.querySelector('.menu-burger');
-    const navbar = document.querySelector('.navbar');
-
-    burgerMenuButton.onclick = function() {
-        burgerMenu.classList.toggle('open');
-        navbar.classList.toggle('open');
-    }
-    </script>
 
 </body>
 

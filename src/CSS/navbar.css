@@ -12,6 +12,7 @@
   box-sizing: border-box;
   font-family: var(--Montserrat-light);
   text-decoration: none;
+  list-style: none;
 }
 
 body {
@@ -52,60 +53,42 @@ body {
   color: var(--secondary-text-color);
 }
 
-.header-nav .navbar ul li {
+.header-nav .navbar .ul-navbar .li-navbar {
   position: relative;
   float: left;
 }
 
-.header-nav .navbar ul li a {
+.header-nav .navbar .ul-navbar .li-navbar a {
   font-size: 20px;
   padding: 20px;
   color: var(--primary-text-color);
   display: block;
 }
 
-.header-nav .navbar ul li a:hover {
+.header-nav .navbar .ul-navbar .li-navbar a:hover {
   background-color: #a0a0a0;
 }
 
-.header-nav .navbar ul li ul {
+.header-nav .navbar .ul-navbar .li-navbar .ul-sous-nav {
   position: absolute;
   left: 0;
   width: 200px;
   background-color: #484848;
   display: none;
-  /* border-top: 1px solid black; */
 }
 
-.header-nav .navbar ul li ul li {
+.header-nav .navbar .ul-navbar .li-navbar .ul-sous-nav .li-sous-nav {
   width: 100%;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.header-nav .navbar ul li:focus-within > ul,
-.header-nav .navbar ul li:hover > ul {
+.header-nav .navbar .ul-navbar .li-navbar:focus-within > .ul-sous-nav,
+.header-nav .navbar .ul-navbar .li-navbar:hover > .ul-sous-nav {
   display: initial;
-}
-
-#menu-bar {
-  display: none;
-}
-
-.header-nav .label-nav {
-  font-family: 20px;
-  cursor: pointer;
-  display: none;
 }
 
 .menu-burger {
   display: none;
-}
-
-.nav-span {
-  font-size: 20px;
-  padding: 20px;
-  color: var(--primary-text-color);
-  display: block;
 }
 
 /* Image jour et nuit */
@@ -132,7 +115,7 @@ body {
     background-color: #1a4f7d;
   }
 
-  .header-nav .navbar ul li a {
+  .header-nav .navbar .ul-navbar .li-navbar a {
     color: var(--primary-text-color);
   }
 
@@ -154,20 +137,25 @@ body {
     background-color: var(--background-color-main);
   }
 
-  .header-nav .navbar ul li {
+  .header-nav .navbar .ul-navbar .li-navbar {
     width: 100%;
   }
 
-  .header-nav .navbar ul li ul {
+  .header-nav .navbar .ul-navbar .li-navbar .ul-sous-nav {
     position: relative;
-    width: 100%;
   }
 
-  .header-nav .navbar ul li ul li {
+  .header-nav .navbar .ul-navbar .li-navbar .ul-sous-nav .li-sous-nav {
     background-color: gray;
   }
 
-  .header-nav .navbar ul li ul li ul {
+  .header-nav
+    .navbar
+    .ul-navbar
+    .li-navbar
+    .ul-sous-nav
+    .li-sous-nav
+    .ul-sous-nav {
     width: 100%;
     left: 0;
   }
