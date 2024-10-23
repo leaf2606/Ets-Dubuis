@@ -33,9 +33,7 @@ require_once("connect.php");
             <img class="img-header" src="../img/12.jpg" alt="header">
             <img class="img-header" src="../img/13.jpg" alt="header">
             <div class="content active">
-                <div class="titre-div-header">
-                    <h1 class="titre-header">Bonjour,<span class="span-titre">Coucou</span></h1>
-                </div>
+                <h1 class="titre-header">Bonjour,<span class="span-titre">Coucou</span></h1>
                 <p class="text-header">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae eligendi
                     molestias voluptatem
                     cupiditate doloremque, id recusandae fuga ipsa sint architecto rerum! Voluptatem consequuntur, ea

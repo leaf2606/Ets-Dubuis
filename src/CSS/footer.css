@@ -21,12 +21,7 @@
 }
 
 body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+  background-color: var(--background-color-main);
 }
 
 html {
