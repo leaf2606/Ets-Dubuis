@@ -143,10 +143,6 @@ input[type="submit"] {
   text-align: center;
 }
 
-input[type="submit"].button-connexion {
-  /* margin-top: -60px; */
-}
-
 input#email,
 input#datetime-local {
   color: white;

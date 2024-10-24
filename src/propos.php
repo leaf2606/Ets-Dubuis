@@ -180,7 +180,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <div class="slide">
-                    <img class="img-marque" src="../img/iseki-1.png" alt="img">
+                    <img class="img-marque" src="../img/iseki.png" alt="img">
                 </div>
 
                 <div class="slide">
@@ -196,7 +196,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <div class="slide">
-                    <img class="img-marque" src="../img/solo-1.png" alt="img">
+                    <img class="img-marque" src="../img/solo.png" alt="img">
                 </div>
 
                 <div class="slide">
@@ -216,7 +216,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <div class="slide">
-                    <img class="img-marque" src="../img/iseki-1.png" alt="img">
+                    <img class="img-marque" src="../img/iseki.png" alt="img">
                 </div>
 
                 <div class="slide">
@@ -232,7 +232,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <div class="slide">
-                    <img class="img-marque" src="../img/solo-1.png" alt="img">
+                    <img class="img-marque" src="../img/solo.png" alt="img">
                 </div>
 
                 <div class="slide">
@@ -245,7 +245,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <section id="newsletter-section">
         <div class="conteneur-formulaire">
-            <div class="formulaire-gauche">
+            <div class="formulaire-news">
                 <form class="newsletter" action="" method="POST">
                     <h2 class="titre-2-news">Inscrivez-vous à notre Newsletter</h2>
                     <p class="text-news">Recevez les dernières nouvelles et mises à jour directement dans votre
@@ -276,26 +276,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 deleniti debitis.</p>
         </div>
     </section>
-
-
-    <!-- JS pour l'animation du titre sur le header  -->
-
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
-    <script>
-    let typed = new Typed('.auto-typing', {
-        strings: ['Ets Dubuis', 'Motos', 'Réparation', 'Rendez-vous'],
-        typeSpeed: 100,
-        backSpeed: 100,
-        startDelay: 300,
-        backDelay: 1000,
-        loop: true,
-        showCursor: true,
-        cursorChar: '|',
-        autoInsertCss: true,
-        showCursor: false
-    });
-    </script>
 
     <?php include_once("./include/footer.php"); ?>
 

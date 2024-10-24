@@ -39,7 +39,7 @@ $loggedIn = isset($_SESSION["compte"]);
                         <li class="li-sous-nav"><a href="souffleur.php">Souffleur</a></li>
                     </ul>
                 </li>
-                <li class="li-navbar"><a href="../vetements.php">Vêtements</a></li>
+                <li class="li-navbar"><a href="../vetements.php">Equipements</a></li>
                 <li class="li-navbar"><a href="">Engins +</a>
                     <ul class="ul-sous-nav">
                         <li class="li-sous-nav"><a href="motos.php">Motos</a></li>

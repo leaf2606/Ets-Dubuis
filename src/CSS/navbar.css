@@ -24,7 +24,6 @@ body {
   background-color: var(--background-color-main);
 }
 
-.nav-span,
 .header-nav .navbar ul li a,
 .img-jour-nuit {
   color: var(--secondary-text-color);
@@ -88,6 +87,12 @@ body {
 
 .menu-burger {
   display: none;
+}
+
+.nav-span {
+  display: block;
+  padding: 20px;
+  color: var(--primary-text-color);
 }
 
 /* Image jour et nuit */
@@ -171,5 +176,11 @@ body {
 
   .menu-burger.open + .navbar {
     display: block;
+  }
+
+  .nav-span {
+    display: block;
+    padding: 20px;
+    color: var(--primary-text-color);
   }
 }
