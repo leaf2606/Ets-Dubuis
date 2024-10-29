@@ -31,7 +31,7 @@
             referrerpolicy="no-referrer-when-downgrade"></iframe>
 
         <div class="container-mension">
-            <a class="lien-mension" href="">Mension légale</a><br>
+            <a class="lien-mension" href="">Mention légale</a><br>
             <a class="lien-mension" href="">Condition générale</a><br>
             <a class="lien-mension" href="">Politique de confidentialité</a>
         </div>

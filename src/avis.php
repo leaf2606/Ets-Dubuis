@@ -6,7 +6,8 @@ require_once("connect.php");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Vérification que l'utilisateur est connecté
     if (!isset($_SESSION['compte']) || !isset($_SESSION['compte']['id'])) {
-        echo "Erreur : Vous devez être connecté pour laisser un avis.";
+        // echo "Erreur : Vous devez être connecté pour laisser un avis.";
+        header("Location: compte.php");
         exit();
     }
 
@@ -21,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    $user_id = $_SESSION['compte']['id']; // Récupérer l'identifiant de l'utilisateur depuis la session
+    $user_id = $_SESSION['compte']['id']; 
 
     // Préparation de l'insertion dans la base de données
     $sql = "INSERT INTO avis (article_id, user_id, note, commentaire) VALUES (:article_id, :user_id, :note, :commentaire)";

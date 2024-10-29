@@ -24,13 +24,14 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
     // Vérifier que l'utilisateur existe
     if (!$catalogue) {
         echo "<p>Erreur : utilisateur non trouvé.</p>";
-        header("Refresh: 3; url=description.php");
+        header("Location: description.php");
         exit();
     }
 } else {
     header("Location: description.php");
     exit();
 }
+
 ?>
 
 <!DOCTYPE html>

@@ -115,12 +115,10 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     </div>
     <?php endif; ?><br>
 
-    <?php if ($loggedIn): ?>
-    <?php if (isset($_SESSION['compte']) && $_SESSION['compte']['role'] === 'user'): ?>
     <section id="avis-section">
         <div class="container-avis">
-            <p><strong>Bonjour, <?= htmlspecialchars($_SESSION['compte']['username']); ?>, laissez un avis !</strong>
-            </p><br>
+            <p><strong>Bonjour, <?= htmlspecialchars($_SESSION['compte']['username'] ?? 'Invité'); ?>, laissez un avis
+                    !</strong></p><br>
             <form action="avis.php" class="avis" method="POST">
                 <input type="hidden" name="article_id" value="<?= htmlspecialchars($item['id']); ?>">
                 <select name="note" id="note" required>
@@ -136,11 +134,6 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             </form>
         </div>
     </section>
-    <?php else: ?>
-    <p>Veuillez vous connecter pour laisser un avis.</p>
-    <?php endif; ?>
-    <?php endif; ?>
-
 
     <!-- Produit similaire  -->
     <h1 class="produit-suggeres">Produits similaires</h1>

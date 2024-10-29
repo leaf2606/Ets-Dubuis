@@ -15,7 +15,7 @@ if (isset($_SESSION['compte']) && $_SESSION['compte']['role'] === 'admin') {
         $query = $db->prepare($sql);
         $query->bindValue(":id", $id, PDO::PARAM_INT);
         $query->execute();
-        $item = $query->fetch(PDO::FETCH_ASSOC);  // Fetching into $item
+        $item = $query->fetch(PDO::FETCH_ASSOC);  
 
         if (!$item) {
             echo "Erreur : article non trouvé.";
