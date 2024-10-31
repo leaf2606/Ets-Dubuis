@@ -67,6 +67,8 @@ h1 {
 
 .box .img-card {
   width: 100%;
+  height: 400px; /* Par exemple, pour avoir une hauteur fixe */
+  object-fit: cover;
   border-radius: 10px;
   display: block;
   transition: transform 0.5s;

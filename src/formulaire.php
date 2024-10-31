@@ -24,7 +24,7 @@ require_once("connect.php");
     <h1 class="titre-back">Article | <a href="../index.php">&ensp;Accueil</a></h1>
     <div class="container-back">
         <form action="backend-ajout.php" method="POST" class="formulaire-admin" enctype="multipart/form-data">
-            <h1>Formulaire d'ajout d'article</h1>
+            <h1 class="titre-formulaire-admin">Formulaire d'ajout d'article</h1>
             <input class="input-admin" type="text" name="img" id="img" placeholder="URL de l'image">
             <input class="input-admin" type="text" name="titre" id="titre"
                 placeholder="Titre pour la carte et la description">
@@ -47,8 +47,8 @@ require_once("connect.php");
             <input class="input-admin" type="text" name="poids" id="poids" placeholder="Poids">
             <input class="input-admin" type="text" name="puissance" id="puissance" placeholder="Puissance">
 
-            <label for="category">Choisir la catégorie :</label><br>
-            <select name="category" id="category" required>
+            <label class="label-formulaire-admin" for="category">Choisir la catégorie :</label><br>
+            <select name="category" id="category" class="select-formulaire-admin" required>
                 <option value="vetements">Vêtements</option>
                 <option value="accessoires">Accessoires</option>
                 <option value="motos">Equipements</option>

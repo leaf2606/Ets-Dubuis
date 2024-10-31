@@ -267,7 +267,7 @@ html {
 
 .parallax-text {
   font-size: 35px;
-  color: var(--primary-text-color);
+  color: white;
   font-weight: bold;
 }
 

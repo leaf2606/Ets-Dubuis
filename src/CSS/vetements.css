@@ -53,6 +53,7 @@ html {
   flex-wrap: wrap;
   padding: 20px;
   margin: 20px auto;
+  gap: 20px;
 }
 
 .lien-news-5 {

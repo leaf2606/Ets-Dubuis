@@ -93,7 +93,7 @@ require_once("connect.php");
                 <a href="../propos.php#paragraphe-3-section" class="button-lien">Bonsoir</a>
             </div>
             <div class="media-icons">
-                <a href="" class="lien-logo-header"><img class="img-logo" src="../img/insta.png" alt="instagram"></a>
+                <a href="" class="lien-logo-header"><img class="img-logo" src="../img/linkedin.png" alt="linkedin"></a>
                 <a href="" class="lien-logo-header"><img class="img-logo" src="../img/facebook.png" alt="facebook"></a>
             </div>
             <div class="slider-navigation">

@@ -42,12 +42,7 @@ html {
   font-family: var(--Montserrat-bold);
 }
 
-.admin-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+.admin-buttons,
 .admin-buttons-5 {
   display: flex;
   justify-content: center;
@@ -74,10 +69,8 @@ html {
 
 .button-back-1 {
   display: inline-block;
-  width: 100%;
   max-width: 250px;
   padding: 15px 30px;
-  margin-left: 43%;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
@@ -88,6 +81,8 @@ html {
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(51, 153, 255, 0.2);
   transition: all 0.3s ease;
+  margin: 10px auto;
+  display: block;
 }
 
 .button-back-2 {
@@ -161,10 +156,12 @@ html {
 .button-back-2:hover,
 .button-back-3:hover,
 .button-back-4:hover,
-*.button-back-5:hover {
+.button-back-5:hover {
   background-color: #2672cc;
   box-shadow: 0 6px 15px rgba(38, 114, 204, 0.3);
 }
+
+/* Pour le formulaire admin  */
 
 .formulaire-admin {
   display: flex;
@@ -243,6 +240,31 @@ textarea.input-admin {
 
 @media (max-width: 600px) and (min-width: 349px) {
   .admin-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 699px) {
+  .button-back-1 {
+    margin: 10px auto;
+  }
+}
+
+/* Media queries pour le formulaire de l'admin */
+
+@media (max-width: 730px) and (min-width: 349px) {
+  .formulaire-admin {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .select-formulaire-admin {
+    width: 70%;
+  }
+
+  .label-formulaire-admin,
+  .titre-formulaire-admin {
     display: flex;
     flex-direction: column;
   }
