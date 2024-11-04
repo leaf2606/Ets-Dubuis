@@ -67,7 +67,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div id="accessoires" class="card-container">
-        <h1 class="titre-categorie">Accesoires Harnais Ergo-pro</h1>
+        <h1 class="titre-categorie">Accesoires</h1>
         <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">

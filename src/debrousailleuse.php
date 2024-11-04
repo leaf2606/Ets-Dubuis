@@ -45,7 +45,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
     <?php endif; ?>
 
     <div id="dos" class="card-container">
-        <h1 class="titre-categorie">Débrouissailleuse de dos</h1>
+        <h1 class="titre-categorie">Débroussailleuse de dos</h1>
         <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
@@ -67,7 +67,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div id="serie" class="card-container">
-        <h1 class="titre-categorie">Débrouissailleuse Série T</h1>
+        <h1 class="titre-categorie">Débroussailleuse Série T</h1>
         <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
@@ -89,7 +89,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div id="srm" class="card-container">
-        <h1 class="titre-categorie">Débrouissailleuse SRM</h1>
+        <h1 class="titre-categorie">Débroussailleuse SRM</h1>
         <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
@@ -111,7 +111,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div id="dsrm" class="card-container">
-        <h1 class="titre-categorie">Débrouissailleuse DSRM</h1>
+        <h1 class="titre-categorie">Débroussailleuse DSRM</h1>
         <div class="wrapper-vetements">
             <div class="card-area">
                 <div class="box-area">
