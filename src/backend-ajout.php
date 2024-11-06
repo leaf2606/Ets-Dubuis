@@ -7,6 +7,11 @@ require_once("connect.php");
 // Vérification des données POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+    // Débogage initial des données POST
+    // echo "<pre>";
+    // print_r($_POST); 
+    // echo "</pre>";
+
     if (
         isset($_POST["img"]) && !empty($_POST["img"]) &&
         isset($_POST["text"]) && !empty($_POST["text"]) &&
@@ -37,6 +42,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $carburant = isset($_POST["carburant"]) ? strip_tags($_POST["carburant"]) : null;
         $poids = isset($_POST["poids"]) ? strip_tags($_POST["poids"]) : null;
         $puissance = isset($_POST["puissance"]) ? strip_tags($_POST["puissance"]) : null;
+
+        // Débogage des données traitées avant l'insertion
+        // echo "<pre>";
+        // print_r([
+        //     "img" => $img,
+        //     "titre" => $titre,
+        //     "text" => $text,
+        //     "message" => $message,
+        //     "prix" => $prix,
+        //     "category" => $category,
+        //     "ref" => $ref,
+        //     "marque" => $marque,
+        //     "couleur" => $couleur,
+        //     "largeur_coupe" => $largeur_coupe,
+        //     "moteur" => $moteur,
+        //     "capacite_bac" => $capacite_bac,
+        //     "coupe" => $coupe,
+        //     "roue" => $roue,
+        //     "divers" => $divers,
+        //     "transmission" => $transmission,
+        //     "cylindre" => $cylindre,
+        //     "carburant" => $carburant,
+        //     "poids" => $poids,
+        //     "puissance" => $puissance
+        // ]);
+        // echo "</pre>";
 
         // Préparation de la requête d'insertion
         $sql = "INSERT INTO catalogue (img, titre, text, message, prix, ref, marque, couleur, category, largeur_coupe, moteur, capacite_bac, coupe, roue, divers, transmission, cylindre, carburant, poids, puissance) 
@@ -70,6 +101,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("Location: description.php?id=" . $lastInsertId);
             exit();
         } else {
+            // Affichage d'erreurs SQL (utile uniquement en phase de débogage)
+            // echo "<pre>";
+            // print_r($query->errorInfo()); 
+            // echo "</pre>";
             echo "Erreur : Impossible d'ajouter l'article.";
         }
     } else {

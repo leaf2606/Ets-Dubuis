@@ -124,7 +124,15 @@ const burgerMenuButton = document.querySelector(".menu-burger img");
 const burgerMenu = document.querySelector(".menu-burger");
 const navbar = document.querySelector(".navbar");
 
+// Ajouter un événement de clic sur le bouton du menu burger
 burgerMenuButton.onclick = function () {
+  // console.log("Bouton du menu burger cliqué.");
+
+  // Basculer la classe 'open' sur le menu burger
   burgerMenu.classList.toggle("open");
+  // console.log("Classe 'open' du menu burger :", burgerMenu.classList.contains("open"));
+
+  // Basculer la classe 'open' sur la barre de navigation
   navbar.classList.toggle("open");
+  // console.log("Classe 'open' de la navbar :", navbar.classList.contains("open"));
 };

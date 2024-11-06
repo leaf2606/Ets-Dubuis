@@ -15,109 +15,121 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
     $sql = "SELECT * FROM catalogue WHERE id = :id";
     $query = $db->prepare($sql);
     $query->bindValue(":id", $id, PDO::PARAM_INT);
-    $query->execute();
-    $item = $query->fetch(PDO::FETCH_ASSOC);
+    
+    try {
+        $query->execute();
+        $item = $query->fetch(PDO::FETCH_ASSOC);
 
-    // Vérifier si l'article existe
-    if (!$item) {
-        echo "Article non trouvé.";
-        exit;
-    }
-
-    // Traitement du formulaire lors de la soumission
-    if ($_POST) {
-        // Vérifier si tous les champs obligatoires sont remplis
-        if (
-            isset($_POST["id"]) && !empty($_POST["id"]) &&
-            isset($_POST["titre"]) && !empty($_POST["titre"]) &&
-            isset($_POST["message"]) && !empty($_POST["message"]) &&
-            isset($_POST["prix"]) && !empty($_POST["prix"]) &&
-            isset($_POST["category"]) && !empty($_POST["category"])  
-        ) {
-            // Nettoyer et stocker les données
-            $id = strip_tags($_POST["id"]);
-            $titre = strip_tags($_POST["titre"]);
-            $message = strip_tags($_POST["message"]);
-            $prix = strip_tags($_POST["prix"]);
-            $img = strip_tags($_POST["img"] ?? '');  
-            $ref = strip_tags($_POST["ref"] ?? '');
-            $marque = strip_tags($_POST["marque"] ?? '');
-            $couleur = strip_tags($_POST["couleur"] ?? '');
-            $largeur_coupe = strip_tags($_POST["largeur_coupe"] ?? '');
-            $moteur = strip_tags($_POST["moteur"] ?? '');
-            $capacite_bac = strip_tags($_POST["capacite_bac"] ?? '');
-            $coupe = strip_tags($_POST["coupe"] ?? '');
-            $roue = strip_tags($_POST["roue"] ?? '');
-            $divers = strip_tags($_POST["divers"] ?? '');
-            $transmission = strip_tags($_POST["transmission"] ?? '');
-            $cylindre = strip_tags($_POST["cylindre"] ?? '');
-            $carburant = strip_tags($_POST["carburant"] ?? '');
-            $poids = strip_tags($_POST["poids"] ?? '');
-            $puissance = strip_tags($_POST["puissance"] ?? '');
-            $category = strip_tags($_POST["category"]); 
-
-            // Préparer la requête de mise à jour
-            $sql = "UPDATE catalogue 
-                    SET img = :img, 
-                        titre = :titre, 
-                        message = :message, 
-                        prix = :prix, 
-                        ref = :ref, 
-                        marque = :marque, 
-                        couleur = :couleur, 
-                        category = :category, 
-                        largeur_coupe = :largeur_coupe, 
-                        moteur = :moteur, 
-                        capacite_bac = :capacite_bac, 
-                        coupe = :coupe, 
-                        roue = :roue, 
-                        divers = :divers, 
-                        transmission = :transmission, 
-                        cylindre = :cylindre, 
-                        carburant = :carburant, 
-                        poids = :poids, 
-                        puissance = :puissance 
-                    WHERE id = :id";
-            
-            $query = $db->prepare($sql);
-            $query->bindValue(":id", $id, PDO::PARAM_INT);
-            $query->bindValue(":img", $img, PDO::PARAM_STR);
-            $query->bindValue(":titre", $titre, PDO::PARAM_STR);
-            $query->bindValue(":message", $message, PDO::PARAM_STR);
-            $query->bindValue(":prix", floatval($prix), PDO::PARAM_STR);
-            $query->bindValue(":ref", $ref, PDO::PARAM_STR);
-            $query->bindValue(":marque", $marque, PDO::PARAM_STR);
-            $query->bindValue(":couleur", $couleur, PDO::PARAM_STR);
-            $query->bindValue(":category", $category, PDO::PARAM_STR);
-            $query->bindValue(":largeur_coupe", $largeur_coupe, PDO::PARAM_STR);
-            $query->bindValue(":moteur", $moteur, PDO::PARAM_STR);
-            $query->bindValue(":capacite_bac", $capacite_bac, PDO::PARAM_STR);
-            $query->bindValue(":coupe", $coupe, PDO::PARAM_STR);
-            $query->bindValue(":roue", $roue, PDO::PARAM_STR);
-            $query->bindValue(":divers", $divers, PDO::PARAM_STR);
-            $query->bindValue(":transmission", $transmission, PDO::PARAM_STR);
-            $query->bindValue(":cylindre", $cylindre, PDO::PARAM_STR);
-            $query->bindValue(":carburant", $carburant, PDO::PARAM_STR);
-            $query->bindValue(":poids", $poids, PDO::PARAM_STR);
-            $query->bindValue(":puissance", $puissance, PDO::PARAM_STR);
-            
-            // Exécution de la requête
-            if ($query->execute()) {
-                // Redirection vers la description de l'article avec son ID
-                header("Location: description.php?id=" . $id);
-                exit();
-            } else {
-                echo "Erreur : Impossible de modifier l'article. " . implode(", ", $query->errorInfo());
-            }
-        } else {
-            echo "Erreur : Veuillez remplir tous les champs obligatoires.";
+        // Vérifier si l'article existe
+        if (!$item) {
+            echo "Article non trouvé.";
+            exit;
         }
+
+        // Affichage des informations de l'article pour débogage
+        // echo "<pre>";
+        // var_dump($item); 
+        // echo "</pre>";
+
+        // Traitement du formulaire lors de la soumission
+        if ($_POST) {
+            // Vérifier si tous les champs obligatoires sont remplis
+            if (
+                isset($_POST["id"]) && !empty($_POST["id"]) &&
+                isset($_POST["titre"]) && !empty($_POST["titre"]) &&
+                isset($_POST["message"]) && !empty($_POST["message"]) &&
+                isset($_POST["prix"]) && !empty($_POST["prix"]) &&
+                isset($_POST["category"]) && !empty($_POST["category"])  
+            ) {
+                // Nettoyer et stocker les données
+                $id = strip_tags($_POST["id"]);
+                $titre = strip_tags($_POST["titre"]);
+                $message = strip_tags($_POST["message"]);
+                $prix = strip_tags($_POST["prix"]);
+                $img = strip_tags($_POST["img"] ?? '');  
+                $ref = strip_tags($_POST["ref"] ?? '');
+                $marque = strip_tags($_POST["marque"] ?? '');
+                $couleur = strip_tags($_POST["couleur"] ?? '');
+                $largeur_coupe = strip_tags($_POST["largeur_coupe"] ?? '');
+                $moteur = strip_tags($_POST["moteur"] ?? '');
+                $capacite_bac = strip_tags($_POST["capacite_bac"] ?? '');
+                $coupe = strip_tags($_POST["coupe"] ?? '');
+                $roue = strip_tags($_POST["roue"] ?? '');
+                $divers = strip_tags($_POST["divers"] ?? '');
+                $transmission = strip_tags($_POST["transmission"] ?? '');
+                $cylindre = strip_tags($_POST["cylindre"] ?? '');
+                $carburant = strip_tags($_POST["carburant"] ?? '');
+                $poids = strip_tags($_POST["poids"] ?? '');
+                $puissance = strip_tags($_POST["puissance"] ?? '');
+                $category = strip_tags($_POST["category"]); 
+
+                // Préparer la requête de mise à jour
+                $sql = "UPDATE catalogue 
+                        SET img = :img, 
+                            titre = :titre, 
+                            message = :message, 
+                            prix = :prix, 
+                            ref = :ref, 
+                            marque = :marque, 
+                            couleur = :couleur, 
+                            category = :category, 
+                            largeur_coupe = :largeur_coupe, 
+                            moteur = :moteur, 
+                            capacite_bac = :capacite_bac, 
+                            coupe = :coupe, 
+                            roue = :roue, 
+                            divers = :divers, 
+                            transmission = :transmission, 
+                            cylindre = :cylindre, 
+                            carburant = :carburant, 
+                            poids = :poids, 
+                            puissance = :puissance 
+                        WHERE id = :id";
+                
+                $query = $db->prepare($sql);
+                $query->bindValue(":id", $id, PDO::PARAM_INT);
+                $query->bindValue(":img", $img, PDO::PARAM_STR);
+                $query->bindValue(":titre", $titre, PDO::PARAM_STR);
+                $query->bindValue(":message", $message, PDO::PARAM_STR);
+                $query->bindValue(":prix", floatval($prix), PDO::PARAM_STR);
+                $query->bindValue(":ref", $ref, PDO::PARAM_STR);
+                $query->bindValue(":marque", $marque, PDO::PARAM_STR);
+                $query->bindValue(":couleur", $couleur, PDO::PARAM_STR);
+                $query->bindValue(":category", $category, PDO::PARAM_STR);
+                $query->bindValue(":largeur_coupe", $largeur_coupe, PDO::PARAM_STR);
+                $query->bindValue(":moteur", $moteur, PDO::PARAM_STR);
+                $query->bindValue(":capacite_bac", $capacite_bac, PDO::PARAM_STR);
+                $query->bindValue(":coupe", $coupe, PDO::PARAM_STR);
+                $query->bindValue(":roue", $roue, PDO::PARAM_STR);
+                $query->bindValue(":divers", $divers, PDO::PARAM_STR);
+                $query->bindValue(":transmission", $transmission, PDO::PARAM_STR);
+                $query->bindValue(":cylindre", $cylindre, PDO::PARAM_STR);
+                $query->bindValue(":carburant", $carburant, PDO::PARAM_STR);
+                $query->bindValue(":poids", $poids, PDO::PARAM_STR);
+                $query->bindValue(":puissance", $puissance, PDO::PARAM_STR);
+                
+                // Exécution de la requête
+                if ($query->execute()) {
+                    // Redirection vers la description de l'article avec son ID
+                    header("Location: description.php?id=" . $id);
+                    exit();
+                } else {
+                    $errorInfo = implode(", ", $query->errorInfo());
+                    echo "Erreur : Impossible de modifier l'article. " . $errorInfo;
+                    // error_log("Erreur lors de la mise à jour de l'article ID $id: $errorInfo"); 
+                }
+            } else {
+                echo "Erreur : Veuillez remplir tous les champs obligatoires.";
+            }
+        }
+    } catch (Exception $e) {
+        echo "Une erreur s'est produite : " . $e->getMessage();
+        // error_log("Exception capturée : " . $e->getMessage());
     }
 } else {
     echo "Aucun ID fourni.";
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="fr">
