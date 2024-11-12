@@ -54,7 +54,6 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
         <p>Texte : <?= htmlspecialchars($catalogue["text"]) ?></p>
         <p>Message : <?= htmlspecialchars($catalogue["message"]) ?></p>
         <p>Prix : <?= htmlspecialchars($catalogue["prix"]) ?></p>
-        <p>Référence : <?= htmlspecialchars($catalogue["ref"]) ?></p>
         <p>Marque : <?= htmlspecialchars($catalogue["marque"]) ?></p>
         <p>Couleur : <?= htmlspecialchars($catalogue["couleur"]) ?></p>
         <p>Category : <?= htmlspecialchars($catalogue["category"]) ?></p>

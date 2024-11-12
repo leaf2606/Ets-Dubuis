@@ -68,27 +68,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <section id="paragraphe-1-section">
 
-        <h1 class="titre-propos">Informations sur l'entreprise</h1>
+        <h1 class="titre-propos">Ets Dubuis</h1>
 
-        <p class="text-propos">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum quibusdam, eum natus
-            nesciunt
-            ab, vero quia
-            repellendus ratione perferendis sed in eius voluptatum quam excepturi quod numquam, animi nostrum mollitia?
-            Soluta, veritatis. Ea officia iusto, et exercitationem eos quo tempora iure saepe praesentium aperiam vel
-            assumenda provident harum perferendis distinctio deserunt voluptate? Distinctio beatae magnam perspiciatis
-            harum
-            minima amet officia!
-            Delectus voluptatum id quaerat, voluptatibus eaque quisquam autem consequatur iure molestias hic,
-            repudiandae
-            odio ab totam. Tempore officia nam eveniet voluptate quis asperiores, aliquid dolore, quas tenetur facilis
-            temporibus fugiat.
-            Labore corrupti non quod illum voluptatem, culpa ab perferendis rerum. Ullam, praesentium possimus. Eligendi
-            ea
-            aperiam quidem corporis dolore, animi tenetur similique ab perferendis neque iusto, id libero culpa officia?
-            Quo ex eum ipsum! Illo deleniti voluptatibus iusto, iure alias placeat fugit praesentium voluptas, veritatis
-            nobis reprehenderit itaque sed, consequuntur odit totam sit voluptates accusamus pariatur qui asperiores
-            tempora
-            quaerat?</p>
+        <p class="text-propos">Cette entreprise à été créer en 2004, les activités ont été lancer peu après. La
+            clientelle à vite commencer a approcher le magasin.
+            L'entreprise se nomme Ets Dubuis, elle fais principalement de la vente et des réparations dans le domaine du
+            motoculture, motos, quads...</p>
 
     </section>
 

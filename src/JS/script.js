@@ -8,40 +8,66 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  const ref = "<?= htmlspecialchars($item['ref']); ?>";
   const marque = "<?= htmlspecialchars($item['marque']); ?>";
   const prix = "<?= htmlspecialchars($item['prix']); ?>";
   const couleur = "<?= htmlspecialchars($item['couleur']); ?>";
   const message = "<?= htmlspecialchars($item['message']); ?>";
+  const type_moteur = "<?= htmlspecialchars($item['type_moteur']); ?>";
+  const capacite_batterie =
+    "<?= htmlspecialchars($item['capacite_batterie']); ?>";
+  const type_temps = "<?= htmlspecialchars($item['type_temps']); ?>";
+  const type_carburant = "<?= htmlspecialchars($item['type_carburant']); ?>";
+  const tension = "<?= htmlspecialchars($item['tension']); ?>";
   const largeur_coupe = "<?= htmlspecialchars($item['largeur_coupe']); ?>";
-  const moteur = "<?= htmlspecialchars($item['moteur']); ?>";
-  const capacite_bac = "<?= htmlspecialchars($item['capacite_bac']); ?>";
-  const coupe = "<?= htmlspecialchars($item['coupe']); ?>";
-  const roue = "<?= htmlspecialchars($item['roue']); ?>";
-  const divers = "<?= htmlspecialchars($item['divers']); ?>";
-  const transmission = "<?= htmlspecialchars($item['transmission']); ?>";
-  const cylindre = "<?= htmlspecialchars($item['cylindre']); ?>";
-  const carburant = "<?= htmlspecialchars($item['carburant']); ?>";
+  const type_fil = "<?= htmlspecialchars($item['type_fil']); ?>";
+  const type_lame = "<?= htmlspecialchars($item['type_lame']); ?>";
+  const longueur_lame = "<?= htmlspecialchars($item['longueur_lame']); ?>";
+  const vitesse_coupe = "<?= htmlspecialchars($item['vitesse_coupe']); ?>";
   const poids = "<?= htmlspecialchars($item['poids']); ?>";
+  const poignee = "<?= htmlspecialchars($item['poignee']); ?>";
+  const vibrations = "<?= htmlspecialchars($item['vibrations']); ?>";
+  const sangle = "<?= htmlspecialchars($item['sangle']); ?>";
+  const type_coupe = "<?= htmlspecialchars($item['type_coupe']); ?>";
+  const sonore = "<?= htmlspecialchars($item['sonore']); ?>";
+  const systeme = "<?= htmlspecialchars($item['systeme']); ?>";
+  const securite = "<?= htmlspecialchars($item['securite']); ?>";
+  const dimension = "<?= htmlspecialchars($item['dimension']); ?>";
   const puissance = "<?= htmlspecialchars($item['puissance']); ?>";
+  const capacite_reservoir =
+    "<?= htmlspecialchars($item['capacite_reservoir']); ?>";
+  const diametre = "<?= htmlspecialchars($item['diametre']); ?>";
+  const vitesse_souffle = "<?= htmlspecialchars($item['vitesse_souffle']); ?>";
+  const autonomie = "<?= htmlspecialchars($item['autonomie']); ?>";
 
   // Masquer les champs si les données sont vides
-  hideIfEmpty("ref", ref);
   hideIfEmpty("marque", marque);
   hideIfEmpty("prix", prix);
   hideIfEmpty("couleur", couleur);
   hideIfEmpty("message", message);
+  hideIfEmpty("type_moteur", type_moteur);
+  hideIfEmpty("capacite_batterie", capacite_batterie);
+  hideIfEmpty("type_temps", type_temps);
+  hideIfEmpty("type_carburant", type_carburant);
+  hideIfEmpty("tension", tension);
   hideIfEmpty("largeur_coupe", largeur_coupe);
-  hideIfEmpty("moteur", moteur);
-  hideIfEmpty("capacite_bac", capacite_bac);
-  hideIfEmpty("coupe", coupe);
-  hideIfEmpty("roue", roue);
-  hideIfEmpty("divers", divers);
-  hideIfEmpty("transmission", transmission);
-  hideIfEmpty("cylindre", cylindre);
-  hideIfEmpty("carburant", carburant);
+  hideIfEmpty("type_fil", type_fil);
+  hideIfEmpty("type_lame", type_lame);
+  hideIfEmpty("longueur_lame", longueur_lame);
+  hideIfEmpty("vitesse_coupe", vitesse_coupe);
   hideIfEmpty("poids", poids);
+  hideIfEmpty("poignee", poignee);
+  hideIfEmpty("vibrations", vibrations);
+  hideIfEmpty("sangle", sangle);
+  hideIfEmpty("type_coupe", type_coupe);
+  hideIfEmpty("sonore", sonore);
+  hideIfEmpty("systeme", systeme);
+  hideIfEmpty("securite", securite);
+  hideIfEmpty("dimension", dimension);
   hideIfEmpty("puissance", puissance);
+  hideIfEmpty("capacite_reservoir", capacite_reservoir);
+  hideIfEmpty("diametre", diametre);
+  hideIfEmpty("vitesse_souffle", vitesse_souffle);
+  hideIfEmpty("autonomie", autonomie);
 });
 
 // JS pour l'animation jour / nuit

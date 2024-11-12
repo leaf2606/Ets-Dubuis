@@ -28,50 +28,74 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $prix = str_replace('€', '', $_POST["prix"]);
         $category = strip_tags($_POST["category"]);
 
-        $ref = isset($_POST["ref"]) ? strip_tags($_POST["ref"]) : null;
-        $marque = isset($_POST["marque"]) ? strip_tags($_POST["marque"]) : null;
-        $couleur = isset($_POST["couleur"]) ? strip_tags($_POST["couleur"]) : null;
-        $largeur_coupe = isset($_POST["largeur_coupe"]) ? strip_tags($_POST["largeur_coupe"]) : null;
-        $moteur = isset($_POST["moteur"]) ? strip_tags($_POST["moteur"]) : null;
-        $capacite_bac = isset($_POST["capacite_bac"]) ? strip_tags($_POST["capacite_bac"]) : null;
-        $coupe = isset($_POST["coupe"]) ? strip_tags($_POST["coupe"]) : null;
-        $roue = isset($_POST["roue"]) ? strip_tags($_POST["roue"]) : null;
-        $divers = isset($_POST["divers"]) ? strip_tags($_POST["divers"]) : null;
-        $transmission = isset($_POST["transmission"]) ? strip_tags($_POST["transmission"]) : null;
-        $cylindre = isset($_POST["cylindre"]) ? strip_tags($_POST["cylindre"]) : null;
-        $carburant = isset($_POST["carburant"]) ? strip_tags($_POST["carburant"]) : null;
-        $poids = isset($_POST["poids"]) ? strip_tags($_POST["poids"]) : null;
-        $puissance = isset($_POST["puissance"]) ? strip_tags($_POST["puissance"]) : null;
+         $marque = isset($_POST["marque"]) ? strip_tags($_POST["marque"]) : '';
+        $couleur = isset($_POST["couleur"]) ? strip_tags($_POST["couleur"]) : '';
+        $type_moteur = isset($_POST["type_moteur"]) ? strip_tags($_POST["type_moteur"]) : '';
+        $capacite_batterie = isset($_POST["capacite_batterie"]) ? strip_tags($_POST["capacite_batterie"]) : '';
+        $type_temps = isset($_POST["type_temps"]) ? strip_tags($_POST["type_temps"]) : '';
+        $type_carburant = isset($_POST["type_carburant"]) ? strip_tags($_POST["type_carburant"]) : '';
+        $tension = isset($_POST["tension"]) ? strip_tags($_POST["tension"]) : '';
+        $largeur_coupe = isset($_POST["largeur_coupe"]) ? strip_tags($_POST["largeur_coupe"]) : '';
+        $type_fil = isset($_POST["type_fil"]) ? strip_tags($_POST["type_fil"]) : '';
+        $type_lame = isset($_POST["type_lame"]) ? strip_tags($_POST["type_lame"]) : '';
+        $longueur_lame = isset($_POST["longueur_lame"]) ? strip_tags($_POST["longueur_lame"]) : '';
+        $vitesse_coupe = isset($_POST["vitesse_coupe"]) ? strip_tags($_POST["vitesse_coupe"]) : '';
+        $poids = isset($_POST["poids"]) ? strip_tags($_POST["poids"]) : '';
+        $poignee = isset($_POST["poignee"]) ? strip_tags($_POST["poignee"]) : '';
+        $vibrations = isset($_POST["vibrations"]) ? strip_tags($_POST["vibrations"]) : '';
+        $sangle = isset($_POST["sangle"]) ? strip_tags($_POST["sangle"]) : '';
+        $type_coupe = isset($_POST["type_coupe"]) ? strip_tags($_POST["type_coupe"]) : '';
+        $sonore = isset($_POST["sonore"]) ? strip_tags($_POST["sonore"]) : '';
+        $systeme = isset($_POST["systeme"]) ? strip_tags($_POST["systeme"]) : '';
+        $securite = isset($_POST["securite"]) ? strip_tags($_POST["securite"]) : '';
+        $dimension = isset($_POST["dimension"]) ? strip_tags($_POST["dimension"]) : '';
+        $puissance = isset($_POST["puissance"]) ? strip_tags($_POST["puissance"]) : '';
+        $capacite_reservoir = isset($_POST["capacite_reservoir"]) ? strip_tags($_POST["capacite_reservoir"]) : '';
+        $diametre = isset($_POST["diametre"]) ? strip_tags($_POST["diametre"]) : '';
+        $vitesse_souffle = isset($_POST["vitesse_souffle"]) ? strip_tags($_POST["vitesse_souffle"]) : '';
+        $autonomie = isset($_POST["autonomie"]) ? strip_tags($_POST["autonomie"]) : '';
 
-        // Débogage des données traitées avant l'insertion
-        // echo "<pre>";
-        // print_r([
-        //     "img" => $img,
-        //     "titre" => $titre,
-        //     "text" => $text,
-        //     "message" => $message,
-        //     "prix" => $prix,
-        //     "category" => $category,
-        //     "ref" => $ref,
-        //     "marque" => $marque,
-        //     "couleur" => $couleur,
-        //     "largeur_coupe" => $largeur_coupe,
-        //     "moteur" => $moteur,
-        //     "capacite_bac" => $capacite_bac,
-        //     "coupe" => $coupe,
-        //     "roue" => $roue,
-        //     "divers" => $divers,
-        //     "transmission" => $transmission,
-        //     "cylindre" => $cylindre,
-        //     "carburant" => $carburant,
-        //     "poids" => $poids,
-        //     "puissance" => $puissance
-        // ]);
-        // echo "</pre>";
+    // Débogage des données traitées avant l'insertion
+    //     echo "<pre>";
+    // print_r([
+    //     "img" => $img,
+    //     "titre" => $titre,
+    //     "text" => $text,
+    //     "message" => $message,
+    //     "prix" => $prix,
+    //     "category" => $category,
+    //     "marque" => $marque,
+    //     "couleur" => $couleur,
+    //     "type_moteur" => $type_moteur,
+    //     "capacite_batterie" => $capacite_batterie,
+    //     "type_temps" => $type_temps,
+    //     "type_carburant" => $type_carburant,
+    //     "tension" => $tension,
+    //     "largeur_coupe" => $largeur_coupe,
+    //     "type_fil" => $type_fil,
+    //     "type_lame" => $type_lame,
+    //     "longueur_lame" => $longueur_lame,
+    //     "vitesse_coupe" => $vitesse_coupe,
+    //     "poids" => $poids,
+    //     "poignee" => $poignee,
+    //     "vibrations" => $vibrations,
+    //     "sangle" => $sangle,
+    //     "type_coupe" => $type_coupe,
+    //     "sonore" => $sonore,
+    //     "systeme" => $systeme,
+    //     "securite" => $securite,
+    //     "dimension" => $dimension,
+    //     "puissance" => $puissance,
+    //     "capacite_reservoir" => $capacite_reservoir,
+    //     "diametre" => $diametre,
+    //     "vitesse_souffle" => $vitesse_souffle,
+    //     "autonomie" => $autonomie
+    // ]);
+    // echo "</pre>";
 
         // Préparation de la requête d'insertion
-        $sql = "INSERT INTO catalogue (img, titre, text, message, prix, ref, marque, couleur, category, largeur_coupe, moteur, capacite_bac, coupe, roue, divers, transmission, cylindre, carburant, poids, puissance) 
-                VALUES (:img, :titre, :text, :message, :prix, :ref, :marque, :couleur, :category, :largeur_coupe, :moteur, :capacite_bac, :coupe, :roue, :divers, :transmission, :cylindre, :carburant, :poids, :puissance)";
+         $sql = "INSERT INTO catalogue (img, titre, text, message, prix, marque, couleur, category, type_moteur, capacite_batterie, type_temps, type_carburant, tension, largeur_coupe, type_fil, type_lame, longueur_lame, vitesse_coupe, poids, poignee, vibrations, sangle, type_coupe, sonore, systeme, securite, dimension, puissance, capacite_reservoir, diametre, vitesse_souffle, autonomie) 
+                VALUES (:img, :titre, :text, :message, :prix, :marque, :couleur, :category, :type_moteur, :capacite_batterie, :type_temps, :type_carburant, :tension, :largeur_coupe, :type_fil, :type_lame, :longueur_lame, :vitesse_coupe, :poids, :poignee, :vibrations, :sangle, :type_coupe, :sonore, :systeme, :securite, :dimension, :puissance, :capacite_reservoir, :diametre, :vitesse_souffle, :autonomie)";
 
         $query = $db->prepare($sql);
         $query->bindValue(":img", $img);
@@ -79,21 +103,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query->bindValue(":text", $text);
         $query->bindValue(":message", $message);
         $query->bindValue(":prix", floatval($prix));
-        $query->bindValue(":ref", $ref);
         $query->bindValue(":marque", $marque);
         $query->bindValue(":couleur", $couleur);
         $query->bindValue(":category", $category);
+        $query->bindValue(":type_moteur", $type_moteur);
+        $query->bindValue(":capacite_batterie", $capacite_batterie);
+        $query->bindValue(":type_temps", $type_temps);
+        $query->bindValue(":type_carburant", $type_carburant);
+        $query->bindValue(":tension", $tension);
         $query->bindValue(":largeur_coupe", $largeur_coupe);
-        $query->bindValue(":moteur", $moteur);
-        $query->bindValue(":capacite_bac", $capacite_bac);
-        $query->bindValue(":coupe", $coupe);
-        $query->bindValue(":roue", $roue);
-        $query->bindValue(":divers", $divers);
-        $query->bindValue(":transmission", $transmission);
-        $query->bindValue(":cylindre", $cylindre);
-        $query->bindValue(":carburant", $carburant);
+        $query->bindValue(":type_fil", $type_fil);
+        $query->bindValue(":type_lame", $type_lame);
+        $query->bindValue(":longueur_lame", $longueur_lame);
+        $query->bindValue(":vitesse_coupe", $vitesse_coupe);
         $query->bindValue(":poids", $poids);
+        $query->bindValue(":poignee", $poignee);
+        $query->bindValue(":vibrations", $vibrations);
+        $query->bindValue(":sangle", $sangle);
+        $query->bindValue(":type_coupe", $type_coupe);
+        $query->bindValue(":sonore", $sonore);
+        $query->bindValue(":systeme", $systeme);
+        $query->bindValue(":securite", $securite);
+        $query->bindValue(":dimension", $dimension);
         $query->bindValue(":puissance", $puissance);
+        $query->bindValue(":capacite_reservoir", $capacite_reservoir);
+        $query->bindValue(":diametre", $diametre);
+        $query->bindValue(":vitesse_souffle", $vitesse_souffle);
+        $query->bindValue(":autonomie", $autonomie);
 
         // Exécution de la requête
         if ($query->execute()) {
