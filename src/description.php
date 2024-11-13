@@ -58,9 +58,6 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
     <div class="container-description">
         <p class="text-descriptif">Déscription : <?= htmlspecialchars($item['message']); ?></p>
-        <?php if (!empty($item['ref'])): ?>
-        <p class="text-descriptif">Référence : <?= htmlspecialchars($item['ref']); ?></p>
-        <?php endif; ?>
         <?php if (!empty($item['marque'])): ?>
         <p class="text-descriptif">Marque : <?= htmlspecialchars($item['marque']); ?></p>
         <?php endif; ?>
@@ -73,34 +70,73 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         <?php if (!empty($item['largeur_coupe'])): ?>
         <p class="text-descriptif">Largeur de la coupe : <?= htmlspecialchars($item['largeur_coupe']); ?></p>
         <?php endif; ?>
-        <?php if (!empty($item['moteur'])): ?>
-        <p class="text-descriptif">Moteur : <?= htmlspecialchars($item['moteur']); ?></p>
-        <?php endif; ?><?php if (!empty($item['capacite_bac'])): ?>
-        <p class="text-descriptif">Capacité de la coupe : <?= htmlspecialchars($item['capacite_bac']); ?></p>
+        <?php if (!empty($item['type_moteur'])): ?>
+        <p class="text-descriptif">Moteur : <?= htmlspecialchars($item['type_moteur']); ?></p>
+        <?php endif; ?><?php if (!empty($item['type_coupe'])): ?>
+        <p class="text-descriptif">Type de coupe : <?= htmlspecialchars($item['type_coupe']); ?></p>
         <?php endif; ?>
-        <?php if (!empty($item['coupe'])): ?>
-        <p class="text-descriptif">Coupe : <?= htmlspecialchars($item['coupe']); ?></p>
-        <?php endif; ?>
-        <?php if (!empty($item['roue'])): ?>
-        <p class="text-descriptif">Roue : <?= htmlspecialchars($item['roue']); ?></p>
-        <?php endif; ?>
-        <?php if (!empty($item['divers'])): ?>
-        <p class="text-descriptif">Divers : <?= htmlspecialchars($item['divers']); ?></p>
-        <?php endif; ?>
-        <?php if (!empty($item['transmission'])): ?>
-        <p class="text-descriptif">Transmission : <?= htmlspecialchars($item['transmission']); ?></p>
-        <?php endif; ?>
-        <?php if (!empty($item['cylindre'])): ?>
-        <p class="text-descriptif">Cylindre : <?= htmlspecialchars($item['cylindre']); ?></p>
-        <?php endif; ?>
-        <?php if (!empty($item['carburant'])): ?>
-        <p class="text-descriptif">Carburant : <?= htmlspecialchars($item['carburant']); ?></p>
+        <?php if (!empty($item['type_carburant'])): ?>
+        <p class="text-descriptif">Carburant : <?= htmlspecialchars($item['type_carburant']); ?></p>
         <?php endif; ?>
         <?php if (!empty($item['poids'])): ?>
         <p class="text-descriptif">Poids : <?= htmlspecialchars($item['poids']); ?></p>
         <?php endif; ?>
         <?php if (!empty($item['puissance'])): ?>
         <p class="text-descriptif">Puissance : <?= htmlspecialchars($item['puissance']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['capacite_batterie'])): ?>
+        <p class="text-descriptif">Capacité de la batterie : <?= htmlspecialchars($item['capacite_batterie']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['type_temps'])): ?>
+        <p class="text-descriptif">Temps : <?= htmlspecialchars($item['type_temps']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['tension'])): ?>
+        <p class="text-descriptif">Tension : <?= htmlspecialchars($item['tension']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['autonomie'])): ?>
+        <p class="text-descriptif">Autonomie : <?= htmlspecialchars($item['autonomie']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['capacite_reservoir'])): ?>
+        <p class="text-descriptif">Capacité du reservoir : <?= htmlspecialchars($item['capacite_reservoir']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['type_fil'])): ?>
+        <p class="text-descriptif">Type de fil : <?= htmlspecialchars($item['type_fil']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['type_lame'])): ?>
+        <p class="text-descriptif">Type de lame : <?= htmlspecialchars($item['type_lame']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['longueur_lame'])): ?>
+        <p class="text-descriptif">Longueur de la lame : <?= htmlspecialchars($item['longueur_lame']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['vitesse_coupe'])): ?>
+        <p class="text-descriptif">Vitesse de la coupe : <?= htmlspecialchars($item['vitesse_coupe']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['poignee'])): ?>
+        <p class="text-descriptif">Poignée : <?= htmlspecialchars($item['poignee']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['vibrations'])): ?>
+        <p class="text-descriptif">Vibrations : <?= htmlspecialchars($item['vibrations']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['sangle'])): ?>
+        <p class="text-descriptif">Sangle : <?= htmlspecialchars($item['sangle']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['sonore'])): ?>
+        <p class="text-descriptif">Son : <?= htmlspecialchars($item['sonore']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['systeme'])): ?>
+        <p class="text-descriptif">Système : <?= htmlspecialchars($item['systeme']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['securite'])): ?>
+        <p class="text-descriptif">sécurité : <?= htmlspecialchars($item['securite']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['dimension'])): ?>
+        <p class="text-descriptif">Dimension : <?= htmlspecialchars($item['dimension']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['diametre'])): ?>
+        <p class="text-descriptif">Diamètre : <?= htmlspecialchars($item['diametre']); ?></p>
+        <?php endif; ?>
+        <?php if (!empty($item['vitesse_souffle'])): ?>
+        <p class="text-descriptif">Vitesse de souffle : <?= htmlspecialchars($item['vitesse_souffle']); ?></p>
         <?php endif; ?>
         <?php if (isset($_SESSION['compte']) && $_SESSION['compte']['role'] === 'admin'): ?>
         <p class="text-descriptif">Catégorie : <?= htmlspecialchars($item['category']); ?></p>
