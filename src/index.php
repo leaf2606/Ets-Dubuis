@@ -33,63 +33,48 @@ require_once("connect.php");
             <img class="img-header" src="../img/12.jpg" alt="header">
             <img class="img-header" src="../img/13.jpg" alt="header">
             <div class="content active">
-                <h1 class="titre-header">Bonjour,<span class="span-titre">Coucou</span></h1>
-                <p class="text-header">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae eligendi
-                    molestias voluptatem
-                    cupiditate doloremque, id recusandae fuga ipsa sint architecto rerum! Voluptatem consequuntur, ea
-                    blanditiis maiores at quidem asperiores optio!
-                    Iure aspernatur perspiciatis placeat! Consequatur magni repudiandae facere voluptatem nobis repellat
-                    soluta, omnis quasi. Esse cum, eos, eius ex expedita maxime, quasi ipsum quam doloribus accusamus
-                    libero
-                    nemo dolorum quia.</p>
+                <h1 class="titre-header">Ets Dubuis</h1>
+                <p class="text-header">Depuis le 2 avril 2001, nous mettons notre expertise et notre passion au service
+                    de vos besoins en motoculture. Spécialisés dans la vente, la réparation et l’entretien de matériel
+                    pour jardins et espaces verts, nous accompagnons particuliers et professionnels avec des solutions
+                    adaptées à chaque projet. Forts de plus de 20 ans d’expérience, nous sommes fiers de proposer des
+                    équipements de qualité et un service personnalisé pour entretenir vos espaces extérieurs en toute
+                    sérénité. Faites confiance à une entreprise familiale et locale qui place votre satisfaction au cœur
+                    de ses priorités.</p>
                 <a href="../propos.php#paragraphe-1-section" class="button-lien">A propos</a>
             </div>
             <div class="content">
-                <h1 class="titre-header">Hello,<span class="span-titre">Coucou</span></h1>
-                <p class="text-header">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae eligendi
-                    molestias voluptatem
-                    cupiditate doloremque, id recusandae fuga ipsa sint architecto rerum! Voluptatem consequuntur, ea
-                    blanditiis maiores at quidem asperiores optio!
-                    Iure aspernatur perspiciatis placeat! Consequatur magni repudiandae facere voluptatem nobis repellat
-                    soluta, omnis quasi. Esse cum, eos, eius ex expedita maxime, quasi ipsum quam doloribus accusamus
-                    libero
-                    nemo dolorum quia.</p>
+                <h1 class="titre-header">Mission principale</h1>
+                <p class="text-header">Notre entreprise se consacre à une mission principale : la vente et le service
+                    après-vente de matériel de motoculture et de motos. Nous mettons un point d’honneur à vous proposer
+                    des produits de qualité et un accompagnement complet, qu’il s’agisse de conseils d’achat ou de
+                    l’entretien de vos équipements. Notre priorité est de vous offrir des solutions fiables et adaptées
+                    à vos besoins, tout en garantissant un service professionnel et personnalisé.</p>
                 <a href="../propos.php#parallax-1" class="button-lien">Bonsoir</a>
             </div>
             <div class="content">
-                <h1 class="titre-header">Hi,<span class="span-titre">Coucou</span></h1>
-                <p class="text-header">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae eligendi
-                    molestias voluptatem
-                    cupiditate doloremque, id recusandae fuga ipsa sint architecto rerum! Voluptatem consequuntur, ea
-                    blanditiis maiores at quidem asperiores optio!
-                    Iure aspernatur perspiciatis placeat! Consequatur magni repudiandae facere voluptatem nobis repellat
-                    soluta, omnis quasi. Esse cum, eos, eius ex expedita maxime, quasi ipsum quam doloribus accusamus
-                    libero
-                    nemo dolorum quia.</p>
+                <h1 class="titre-header">Evolution</h1>
+                <p class="text-header">Notre entreprise a débuté avec une seule personne : le patron lui-même, animé par
+                    la passion de la motoculture et des motos. Grâce à son engagement et à la confiance de nos clients,
+                    l’entreprise a grandi et compte aujourd’hui une équipe de deux personnes, le patron et un ouvrier
+                    qualifié. Ensemble, nous unissons nos forces pour vous offrir un service de qualité, aussi bien dans
+                    la vente que dans le service après-vente de vos équipements. Une aventure humaine, bâtie sur le
+                    savoir-faire et la proximité !</p>
                 <a href="../propos.php#paragraphe-2-section" class="button-lien">Bonsoir</a>
             </div>
             <div class="content">
-                <h1 class="titre-header">Salut,<span class="span-titre">Coucou</span></h1>
-                <p class="text-header">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae eligendi
-                    molestias voluptatem
-                    cupiditate doloremque, id recusandae fuga ipsa sint architecto rerum! Voluptatem consequuntur, ea
-                    blanditiis maiores at quidem asperiores optio!
-                    Iure aspernatur perspiciatis placeat! Consequatur magni repudiandae facere voluptatem nobis repellat
-                    soluta, omnis quasi. Esse cum, eos, eius ex expedita maxime, quasi ipsum quam doloribus accusamus
-                    libero
-                    nemo dolorum quia.</p>
+                <h1 class="titre-header">Fidélité des clients</h1>
+                <p class="text-header">Nous avons la chance de bénéficier d’une clientèle fidèle depuis nos débuts. Leur
+                    confiance renouvelée au fil des années témoigne de la qualité de nos produits et de notre service.
+                    Nous nous engageons à toujours satisfaire leurs attentes, et à entretenir des relations durables.
+                </p>
                 <a href="../propos.php#newsletter-section" class="button-lien">Bonsoir</a>
             </div>
             <div class="content">
-                <h1 class="titre-header">Beunos,<span class="span-titre">Coucou</span></h1>
-                <p class="text-header">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae eligendi
-                    molestias voluptatem
-                    cupiditate doloremque, id recusandae fuga ipsa sint architecto rerum! Voluptatem consequuntur, ea
-                    blanditiis maiores at quidem asperiores optio!
-                    Iure aspernatur perspiciatis placeat! Consequatur magni repudiandae facere voluptatem nobis repellat
-                    soluta, omnis quasi. Esse cum, eos, eius ex expedita maxime, quasi ipsum quam doloribus accusamus
-                    libero
-                    nemo dolorum quia.</p>
+                <h1 class="titre-header">Partenaire</h1>
+                <p class="text-header">Depuis 2001, nous travaillons avec des partenaires de qualité, qui nous
+                    permettent de proposer des équipements performants et fiables. Ces partenariats, établis dès notre
+                    création, sont essentiels pour offrir des solutions efficaces à nos clients.</p>
                 <a href="../propos.php#paragraphe-3-section" class="button-lien">Bonsoir</a>
             </div>
             <div class="media-icons">

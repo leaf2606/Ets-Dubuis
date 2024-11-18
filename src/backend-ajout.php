@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $prix = str_replace('€', '', $_POST["prix"]);
         $category = strip_tags($_POST["category"]);
 
-         $marque = isset($_POST["marque"]) ? strip_tags($_POST["marque"]) : '';
+        $marque = isset($_POST["marque"]) ? strip_tags($_POST["marque"]) : '';
         $couleur = isset($_POST["couleur"]) ? strip_tags($_POST["couleur"]) : '';
         $type_moteur = isset($_POST["type_moteur"]) ? strip_tags($_POST["type_moteur"]) : '';
         $capacite_batterie = isset($_POST["capacite_batterie"]) ? strip_tags($_POST["capacite_batterie"]) : '';

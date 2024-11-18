@@ -68,12 +68,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <section id="paragraphe-1-section">
 
-        <h1 class="titre-propos">Ets Dubuis</h1>
+        <h1 class="titre-propos">Nos initiatives pour l'avenir</h1>
 
-        <p class="text-propos">Cette entreprise à été créer en 2004, les activités ont été lancer peu après. La
-            clientelle à vite commencer a approcher le magasin.
-            L'entreprise se nomme Ets Dubuis, elle fais principalement de la vente et des réparations dans le domaine du
-            motoculture, motos, quads...</p>
+        <p class="text-propos">Depuis toujours, notre entreprise place l’entretien et la fidélisation de sa clientèle au
+            cœur de ses priorités. Nous cultivons des relations de confiance durables, convaincus que cette proximité
+            est essentielle pour bâtir un avenir solide. Notre objectif est de transmettre cette passion et ce
+            savoir-faire à un futur successeur, afin de garantir la continuité de nos valeurs et de notre engagement
+            envers nos clients.</p>
 
     </section>
 
@@ -96,38 +97,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <section id="paragraphe-2-section">
 
-        <h1 class="titre-propos">Autre infos sur l'entreprise</h1>
+        <h1 class="titre-propos">La vente de matériel de qualité</h1>
 
 
-        <p class="text-propos">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum quibusdam, eum natus
-            nesciunt
-            ab, vero quia
-            repellendus ratione perferendis sed in eius voluptatum quam excepturi quod numquam, animi nostrum mollitia?
-            Soluta, veritatis. Ea officia iusto, et exercitationem eos quo tempora iure saepe praesentium aperiam vel
-            assumenda provident harum perferendis distinctio deserunt voluptate? Distinctio beatae magnam perspiciatis
-            harum
-            minima amet officia!
-            Delectus voluptatum id quaerat, voluptatibus eaque quisquam autem consequatur iure molestias hic,
-            repudiandae
-            odio ab totam. Tempore officia nam eveniet voluptate quis asperiores, aliquid dolore, quas tenetur facilis
-            temporibus fugiat.
-            Labore corrupti non quod illum voluptatem, culpa ab perferendis rerum. Ullam, praesentium possimus. Eligendi
-            ea
-            aperiam quidem corporis dolore, animi tenetur similique ab perferendis neque iusto, id libero culpa officia?
-            Quo ex eum ipsum! Illo deleniti voluptatibus iusto, iure alias placeat fugit praesentium voluptas, veritatis
-            nobis reprehenderit itaque sed, consequuntur odit totam sit voluptates accusamus pariatur qui asperiores
-            tempora
-            quaerat?Delectus voluptatum id quaerat, voluptatibus eaque quisquam autem consequatur iure molestias hic,
-            repudiandae
-            odio ab totam. Tempore officia nam eveniet voluptate quis asperiores, aliquid dolore, quas tenetur facilis
-            temporibus fugiat.
-            Labore corrupti non quod illum voluptatem, culpa ab perferendis rerum. Ullam, praesentium possimus. Eligendi
-            ea
-            aperiam quidem corporis dolore, animi tenetur similique ab perferendis neque iusto, id libero culpa officia?
-            Quo ex eum ipsum! Illo deleniti voluptatibus iusto, iure alias placeat fugit praesentium voluptas, veritatis
-            nobis reprehenderit itaque sed, consequuntur odit totam sit voluptates accusamus pariatur qui asperiores
-            tempora
-            quaerat?</p>
+        <p class="text-propos">Chez Ets Dubuis, nous mettons un point d’honneur à vous proposer des
+            équipements de motoculture et de motos de haute qualité, soigneusement sélectionnés auprès de marques
+            réputées pour leur fiabilité et leur performance. Nous savons que la qualité du matériel est essentielle
+            pour garantir une expérience optimale et une utilisation à long terme. C’est pourquoi nous choisissons des
+            produits conçus pour répondre aux besoins des particuliers comme des professionnels, en tenant compte des
+            dernières innovations et des standards les plus élevés en matière de technologie et de sécurité.
+
+            Que ce soit pour entretenir votre jardin, travailler vos espaces verts ou profiter de vos motos, nous vous
+            offrons des solutions fiables et durables, adaptées à chaque type de projet. Notre équipe vous guide dans le
+            choix de l’équipement le mieux adapté à vos besoins, en tenant compte de vos critères spécifiques comme la
+            puissance, la maniabilité, et bien sûr, votre budget.
+
+            Nous sommes convaincus qu’un matériel de qualité est la clé de la satisfaction de nos clients. C’est
+            pourquoi, au-delà de la vente, nous vous accompagnons tout au long de l’utilisation de vos équipements, avec
+            des conseils d’entretien pour prolonger leur durée de vie et optimiser leur performance. En choisissant [Nom
+            de l’entreprise], vous optez pour des produits robustes et un service de proximité, afin de vous assurer une
+            entière satisfaction.</p>
 
         <section class="parallax-2">
             <div class="parallax-inner">
@@ -138,14 +127,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
 
     <section>
-        <h1 class="titre-propos">Coucou la papaye</h1>
-        <p class="text-propos ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti exercitationem omnis
-            architecto quam? Est,
-            officiis expedita fuga assumenda non voluptas libero esse, deserunt autem, sint itaque quasi quod quos
-            nobis.
-            Doloremque saepe nihil veniam consequuntur modi quibusdam inventore suscipit sequi laudantium incidunt vitae
-            totam eveniet minus obcaecati, architecto fugit temporibus explicabo, nisi doloribus aut voluptatum aliquid
-            enim similique. Error, officiis.</p>
+        <h1 class="titre-propos">Le service de réparation</h1>
+        <p class="text-propos ">Nous savons que la réparation rapide et de qualité de vos
+            équipements est essentielle pour maintenir leur performance et prolonger leur durée de vie. C'est pourquoi
+            nous mettons un point d'honneur à offrir un service de réparation soigné et professionnel, adapté aux
+            besoins spécifiques de chaque client. Que ce soit pour du matériel de motoculture ou des motos, nous
+            diagnostiquons avec précision les problèmes, et nous nous engageons à apporter les solutions les plus
+            efficaces.
+
+            Notre équipe qualifiée prend le temps de réparer vos équipements dans les plus brefs délais, tout en
+            garantissant un travail soigné, effectué avec des pièces de qualité. Nous comprenons l’importance de
+            minimiser les temps d'immobilisation, surtout pour les professionnels qui dépendent de leurs outils au
+            quotidien, et c'est pourquoi nous mettons tout en œuvre pour intervenir rapidement.
+
+            En outre, nous proposons des solutions flexibles de règlement afin de faciliter l’accès à nos services de
+            réparation. Nous savons que chaque situation est unique, c'est pourquoi nous restons à l’écoute de vos
+            besoins, en vous offrant des options de paiement adaptées à votre budget. En choisissant [Nom de
+            l’entreprise], vous avez la garantie d’un service de réparation fiable, rapide et sur-mesure, pour que vous
+            puissiez reprendre vos activités en toute sérénité.</p>
     </section>
 
     <div class="wrapper">
@@ -246,19 +245,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <section id="paragraphe-3-section">
         <div class="container-section-3">
-            <h1 class="titre-propos">Autre infos sur l'entreprise</h1>
-            <h2 class="sub-title">Bonsoir, Paris</h2>
-            <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus, repellat
-                enim ipsum vitae odit voluptate, quo quia minima saepe numquam facere possimus et labore minus cumque
-                deleniti debitis.</p>
+            <h1 class="titre-propos">La relation avec les clients</h1>
+            <h2 class="sub-title">Une équipe compétente</h2>
+            <p class="text-bas">Notre ouvrier qualifié joue un rôle essentiel dans la satisfaction de nos clients. Grâce
+                à son expertise, nous pouvons assurer des réparations et entretiens de qualité, garantissant ainsi des
+                équipements toujours performants.</p>
 
             <div class="img-container">
                 <img class="img-container-text" src="../img/4.jpg" alt="Image">
             </div>
 
-            <p class="text-bas">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint soluta doloribus, repellat
-                enim ipsum vitae odit voluptate, quo quia minima saepe numquam facere possimus et labore minus cumque
-                deleniti debitis.</p>
+            <p class="text-bas">Nous plaçons la satisfaction client au cœur de notre démarche. En étant à l’écoute de
+                leurs besoins et en offrant un service personnalisé, nous établissons des relations de confiance
+                durables et solides avec chacun d’entre eux.</p>
         </div>
     </section>
 
