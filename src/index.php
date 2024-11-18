@@ -45,11 +45,12 @@ require_once("connect.php");
             </div>
             <div class="content">
                 <h1 class="titre-header">Mission principale</h1>
-                <p class="text-header">Notre entreprise se consacre à une mission principale : la vente et le service
-                    après-vente de matériel de motoculture et de motos. Nous mettons un point d’honneur à vous proposer
-                    des produits de qualité et un accompagnement complet, qu’il s’agisse de conseils d’achat ou de
-                    l’entretien de vos équipements. Notre priorité est de vous offrir des solutions fiables et adaptées
-                    à vos besoins, tout en garantissant un service professionnel et personnalisé.</p>
+                <p class="text-header">Notre entreprise se consacre à la vente et au service après-vente de matériel de
+                    motoculture et de motos.
+                    Nous vous proposons des produits de qualité, accompagnés d’un service professionnel et personnalisé.
+                    Que ce soit pour des conseils d’achat ou l’entretien de vos équipements, nous sommes à vos côtés.
+                    Notre mission est de vous offrir des solutions fiables, adaptées à vos besoins.
+                    Faites confiance à notre expertise pour un accompagnement complet et sur mesure.</p>
                 <a href="../propos.php#parallax-1" class="button-lien">Bonsoir</a>
             </div>
             <div class="content">

@@ -141,12 +141,13 @@ section {
 
 .slider-navigation {
   z-index: 888;
-  position: relative;
+  position: fixed; /* Changer de absolute à fixed pour que la position reste constante */
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(80px);
-  margin-bottom: 12px;
 }
 
 .slider-navigation .nav-button {

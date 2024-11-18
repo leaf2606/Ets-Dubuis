@@ -74,7 +74,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             cœur de ses priorités. Nous cultivons des relations de confiance durables, convaincus que cette proximité
             est essentielle pour bâtir un avenir solide. Notre objectif est de transmettre cette passion et ce
             savoir-faire à un futur successeur, afin de garantir la continuité de nos valeurs et de notre engagement
-            envers nos clients.</p>
+            envers nos clients.
+            Nous mettons un point d'honneur à offrir un service sur-mesure, répondant aux attentes les plus exigeantes
+            de nos clients. Ainsi, nous nous assurons que chaque interaction soit une occasion de renforcer cette
+            relation de confiance et de pérenniser notre succès commun.</p>
 
     </section>
 
