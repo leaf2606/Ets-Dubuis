@@ -54,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $diametre = isset($_POST["diametre"]) ? strip_tags($_POST["diametre"]) : '';
         $vitesse_souffle = isset($_POST["vitesse_souffle"]) ? strip_tags($_POST["vitesse_souffle"]) : '';
         $autonomie = isset($_POST["autonomie"]) ? strip_tags($_POST["autonomie"]) : '';
+        $type_essence = isset($_POST["type_essence"]) ? strip_tags($_POST["type_essence"]) : '';
 
     // Débogage des données traitées avant l'insertion
     //     echo "<pre>";
@@ -94,8 +95,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // echo "</pre>";
 
         // Préparation de la requête d'insertion
-         $sql = "INSERT INTO catalogue (img, titre, text, message, prix, marque, couleur, category, type_moteur, capacite_batterie, type_temps, type_carburant, tension, largeur_coupe, type_fil, type_lame, longueur_lame, vitesse_coupe, poids, poignee, vibrations, sangle, type_coupe, sonore, systeme, securite, dimension, puissance, capacite_reservoir, diametre, vitesse_souffle, autonomie) 
-                VALUES (:img, :titre, :text, :message, :prix, :marque, :couleur, :category, :type_moteur, :capacite_batterie, :type_temps, :type_carburant, :tension, :largeur_coupe, :type_fil, :type_lame, :longueur_lame, :vitesse_coupe, :poids, :poignee, :vibrations, :sangle, :type_coupe, :sonore, :systeme, :securite, :dimension, :puissance, :capacite_reservoir, :diametre, :vitesse_souffle, :autonomie)";
+         $sql = "INSERT INTO catalogue (img, titre, text, message, prix, marque, couleur, category, type_moteur, capacite_batterie, type_temps, type_carburant, tension, largeur_coupe, type_fil, type_lame, longueur_lame, vitesse_coupe, poids, poignee, vibrations, sangle, type_coupe, sonore, systeme, securite, dimension, puissance, capacite_reservoir, diametre, vitesse_souffle, autonomie, type_essence) 
+                VALUES (:img, :titre, :text, :message, :prix, :marque, :couleur, :category, :type_moteur, :capacite_batterie, :type_temps, :type_carburant, :tension, :largeur_coupe, :type_fil, :type_lame, :longueur_lame, :vitesse_coupe, :poids, :poignee, :vibrations, :sangle, :type_coupe, :sonore, :systeme, :securite, :dimension, :puissance, :capacite_reservoir, :diametre, :vitesse_souffle, :autonomie, :type_essence)";
 
         $query = $db->prepare($sql);
         $query->bindValue(":img", $img);
@@ -130,6 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query->bindValue(":diametre", $diametre);
         $query->bindValue(":vitesse_souffle", $vitesse_souffle);
         $query->bindValue(":autonomie", $autonomie);
+        $query->bindValue(":type_essence", $type_essence);
 
         // Exécution de la requête
         if ($query->execute()) {

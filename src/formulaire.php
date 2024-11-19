@@ -579,7 +579,13 @@ if (!isAdmin()) {
 
                 <input class="input-admin" type="text" name="puissance" id="puissance" placeholder="Puissance">
                 <input class="input-admin" type="text" name="dimension" id="dimension" placeholder="Dimensions">
-                <input class="input-admin" type="text" name="poids" id="poids" placeholder="Poids">
+                <input class="input-admin" type="text" name="poids" id="poids" placeholder="Poids"><br>
+
+                <label class="label-formulaire-admin" for="type_essence">Type de coupe</label>
+                <select name="type_essence" id="type_essence" class="select-formulaire-admin" required>
+                    <option value="essence">Essence</option>
+                    <option value="diesel">Diesel</option>
+                </select><br>
 
                 <label class="label-formulaire-admin" for="category">Choisir la catégorie :</label>
                 <select name="category" id="category" class="select-formulaire-admin" required>

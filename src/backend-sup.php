@@ -148,6 +148,9 @@ if (isset($_SESSION['compte']) && $_SESSION['compte']['role'] === 'admin') {
             <?php if (!empty($item['autonomie'])): ?>
             <p class="text-descriptif">Autonomie : <?= htmlspecialchars($item['autonomie']); ?></p>
             <?php endif; ?>
+            <?php if (!empty($item['type_essence'])): ?>
+            <p class="text-descriptif">Essence ou Diesel': <?= htmlspecialchars($item['autonomie']); ?></p>
+            <?php endif; ?>
             <?php if (isset($_SESSION['compte']) && $_SESSION['compte']['role'] === 'admin'): ?>
             <p class="text-descriptif">Catégorie : <?= htmlspecialchars($item['category']); ?></p>
             <?php endif; ?>

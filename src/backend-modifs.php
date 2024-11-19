@@ -81,6 +81,7 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
                 $diametre = strip_tags($_POST["diametre"] ?? '');
                 $vitesse_souffle = strip_tags($_POST["vitesse_souffle"] ?? '');
                 $autonomie = strip_tags($_POST["autonomie"] ?? '');
+                $type_essence = strip_tags($_POST["type_essence"] ?? '');
                 $category = strip_tags($_POST["category"]); 
 
                 // Débogage des données traitées avant l'insertion
@@ -118,7 +119,8 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
                 //     "capacite_reservoir" => $capacite_reservoir,
                 //     "diametre" => $diametre,
                 //     "vitesse_souffle" => $vitesse_souffle,
-                //     "autonomie" => $autonomie
+                //     "autonomie" => $autonomie,
+                //     "type_essence" => $type_essence
                 // ]);
                 // echo "</pre>";
 
@@ -156,6 +158,7 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
                             diametre = :diametre,
                             vitesse_souffle = :vitesse_souffle,
                             autonomie = :autonomie
+                            type_essence = :type_essence
                         WHERE id = :id";
                 
                 $query = $db->prepare($sql);
@@ -192,6 +195,7 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
                 $query->bindValue(":diametre", $diametre, PDO::PARAM_STR);
                 $query->bindValue(":vitesse_souffle", $vitesse_souffle, PDO::PARAM_STR);
                 $query->bindValue(":autonomie", $autonomie, PDO::PARAM_STR);
+                $query->bindValue(":type_essence", $type_essence, PDO::PARAM_STR);
                 
                 // Exécution de la requête
                 if ($query->execute()) {
@@ -1472,7 +1476,18 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
                 <input class="input-admin" type="text" name="dimension" id="dimension"
                     value="<?= htmlspecialchars($item['dimension']); ?>" placeholder="Dimensions">
                 <input class="input-admin" type="text" name="poids" id="poids"
-                    value="<?= htmlspecialchars($item['poids']); ?>" placeholder="Poids">
+                    value="<?= htmlspecialchars($item['poids']); ?>" placeholder="Poids"><br>
+
+                <label class="label-formulaire-admin" for="type_essence">Type de coupe</label>
+                <select name="type_essence" id="type_essence" class="select-formulaire-admin"
+                    value="<?= htmlspecialchars($item['puissance']); ?>" required>
+                    <option value="essence"
+                        <?= (isset($currentCategory) && $currentCategory === 'essence') ? 'selected' : '' ?>>Essence
+                    </option>
+                    <option value="diesel"
+                        <?= (isset($currentCategory) && $currentCategory === 'diesel') ? 'selected' : '' ?>>Diesel
+                    </option>
+                </select><br>
 
                 <label for="category">Choisir la catégorie :</label>
                 <select name="category" value="<?= htmlspecialchars($item['category']); ?>" required>

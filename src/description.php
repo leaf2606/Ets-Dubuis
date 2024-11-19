@@ -138,6 +138,9 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         <?php if (!empty($item['vitesse_souffle'])): ?>
         <p class="text-descriptif">Vitesse de souffle : <?= htmlspecialchars($item['vitesse_souffle']); ?></p>
         <?php endif; ?>
+        <?php if (!empty($item['type_essence'])): ?>
+        <p class="text-descriptif">Type : <?= htmlspecialchars($item['type_essence']); ?></p>
+        <?php endif; ?>
         <?php if (isset($_SESSION['compte']) && $_SESSION['compte']['role'] === 'admin'): ?>
         <p class="text-descriptif">Catégorie : <?= htmlspecialchars($item['category']); ?></p>
         <?php endif; ?>

@@ -51,7 +51,7 @@ require_once("connect.php");
                     Que ce soit pour des conseils d’achat ou l’entretien de vos équipements, nous sommes à vos côtés.
                     Notre mission est de vous offrir des solutions fiables, adaptées à vos besoins.
                     Faites confiance à notre expertise pour un accompagnement complet et sur mesure.</p>
-                <a href="../propos.php#parallax-1" class="button-lien">Bonsoir</a>
+                <a href="../propos.php#parallax-1" class="button-lien">A propos</a>
             </div>
             <div class="content">
                 <h1 class="titre-header">Evolution</h1>
@@ -61,7 +61,7 @@ require_once("connect.php");
                     qualifié. Ensemble, nous unissons nos forces pour vous offrir un service de qualité, aussi bien dans
                     la vente que dans le service après-vente de vos équipements. Une aventure humaine, bâtie sur le
                     savoir-faire et la proximité !</p>
-                <a href="../propos.php#paragraphe-2-section" class="button-lien">Bonsoir</a>
+                <a href="../propos.php#paragraphe-2-section" class="button-lien">A propos</a>
             </div>
             <div class="content">
                 <h1 class="titre-header">Fidélité des clients</h1>
@@ -69,14 +69,14 @@ require_once("connect.php");
                     confiance renouvelée au fil des années témoigne de la qualité de nos produits et de notre service.
                     Nous nous engageons à toujours satisfaire leurs attentes, et à entretenir des relations durables.
                 </p>
-                <a href="../propos.php#newsletter-section" class="button-lien">Bonsoir</a>
+                <a href="../propos.php#newsletter-section" class="button-lien">A propos</a>
             </div>
             <div class="content">
                 <h1 class="titre-header">Partenaire</h1>
                 <p class="text-header">Depuis 2001, nous travaillons avec des partenaires de qualité, qui nous
                     permettent de proposer des équipements performants et fiables. Ces partenariats, établis dès notre
                     création, sont essentiels pour offrir des solutions efficaces à nos clients.</p>
-                <a href="../propos.php#paragraphe-3-section" class="button-lien">Bonsoir</a>
+                <a href="../propos.php#paragraphe-3-section" class="button-lien">A propos</a>
             </div>
             <div class="media-icons">
                 <a href="" class="lien-logo-header"><img class="img-logo" src="../img/linkedin.png" alt="linkedin"></a>

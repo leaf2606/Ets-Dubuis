@@ -141,7 +141,7 @@ section {
 
 .slider-navigation {
   z-index: 888;
-  position: fixed; /* Changer de absolute à fixed pour que la position reste constante */
+  position: fixed;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
