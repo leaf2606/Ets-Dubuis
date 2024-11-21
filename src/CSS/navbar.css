@@ -48,7 +48,7 @@ body {
 .header-nav .logo-nav {
   font-weight: bolder;
   font-size: 25px;
-  color: var(--secondary-text-color);
+  color: white;
 }
 
 .header-nav .navbar .ul-navbar .li-navbar {
@@ -59,7 +59,7 @@ body {
 .header-nav .navbar .ul-navbar .li-navbar a {
   font-size: 20px;
   padding: 20px;
-  color: var(--primary-text-color);
+  color: white;
   display: block;
 }
 

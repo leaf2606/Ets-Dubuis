@@ -51,10 +51,14 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         </div>
     </header>
 
-    <figure class="figure-description">
-        <img class="img-description" src="<?= htmlspecialchars($item['img']); ?>"
+    <div class="zoomable-container">
+        <img class="zoomable-container_img" src="<?= htmlspecialchars($item['img']); ?>"
             alt="Image de <?= htmlspecialchars($item['titre']); ?>">
-    </figure>
+        <div class="zoom-controls">
+            <button id="zoom-in">+</button>
+            <button id="zoom-out">-</button>
+        </div>
+    </div><br><br>
 
     <div class="container-description">
         <p class="text-descriptif">Déscription : <?= htmlspecialchars($item['message']); ?></p>
@@ -218,6 +222,52 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     <?php endif; ?>
 
     <?php include_once("./include/footer.php"); ?>
+
+    <script>
+    const zoomableContainer = document.querySelector('.zoomable-container');
+    const zoomableImg = document.querySelector('.zoomable-container_img');
+
+    const zoomInBtn = document.getElementById('zoom-in');
+    const zoomOutBtn = document.getElementById('zoom-out');
+
+    let zoomLevel = 1;
+
+    // Fonction pour gérer le zoom
+    function setZoomLevel(scale) {
+        zoomLevel = scale;
+        zoomableImg.style.transform = `scale(${zoomLevel})`;
+    }
+
+    // Bouton "+" pour zoomer
+    zoomInBtn.addEventListener('click', () => {
+        zoomLevel = Math.min(zoomLevel + 0.2, 5);
+        setZoomLevel(zoomLevel);
+    });
+
+    // Bouton "-" pour dézoomer
+    zoomOutBtn.addEventListener('click', () => {
+        zoomLevel = Math.max(zoomLevel - 0.2, 1);
+        setZoomLevel(zoomLevel);
+    });
+
+    // Gestion du mouvement de la souris pour ajuster le point d'origine du zoom
+    zoomableContainer.addEventListener('mousemove', (e) => {
+        const rect = zoomableContainer.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const positionXInContainer = (x / rect.width) * 100;
+        const positionYInContainer = (y / rect.height) * 100;
+
+        zoomableImg.style.transformOrigin = `${positionXInContainer}% ${positionYInContainer}%`;
+    });
+
+    // Réinitialiser le zoom lorsque la souris quitte le conteneur
+    zoomableContainer.addEventListener('mouseleave', () => {
+        setZoomLevel(1);
+    });
+    </script>
 
 </body>
 

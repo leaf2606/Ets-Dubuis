@@ -29,7 +29,7 @@ p {
   font-family: var(--Montserrat-bold);
 }
 
-/* Header design */
+/* Header design Accueil */
 
 header {
   z-index: 999;
@@ -89,20 +89,23 @@ section {
   font-size: 3em;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   line-height: 75px;
   margin-bottom: 40px;
 }
 
-#home .content .titre-header span {
+/* #home .content .titre-header span {
   font-size: 1.2em;
   font-weight: 600;
-}
+} */
 
 #home .content .text-header {
   margin-bottom: 65px;
-  font-family: var(--Montserrat-light);
+  font-family: var(--Montserrat-black);
   font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 25px;
 }
 
 #home .content .button-lien {

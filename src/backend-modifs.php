@@ -157,7 +157,7 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
                             capacite_reservoir = :capacite_reservoir,
                             diametre = :diametre,
                             vitesse_souffle = :vitesse_souffle,
-                            autonomie = :autonomie
+                            autonomie = :autonomie,
                             type_essence = :type_essence
                         WHERE id = :id";
                 

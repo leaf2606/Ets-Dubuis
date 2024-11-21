@@ -21,6 +21,7 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/vetements.css">
     <link rel="stylesheet" href="css/backend.css">
+    <link rel="stylesheet" href="css/barre-de-recherche.css">
     <script src="js/script.js" defer></script>
     <title>Débrousailleuse</title>
 </head>
@@ -37,6 +38,8 @@ $catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
             <button class="lien-nouveautes" onclick="openTab('dsrm')">DSRM</button>
         </div>
     </div>
+
+    <!-- <?php include_once("./include/barre-de-recherche.php"); ?> -->
 
     <!-- Card  -->
 
