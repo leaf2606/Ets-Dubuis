@@ -92,7 +92,7 @@ body {
 .nav-span {
   display: block;
   padding: 20px;
-  color: var(--primary-text-color);
+  color: white;
 }
 
 /* Image jour et nuit */

@@ -322,3 +322,37 @@ select option[value="5"] {
     padding: 5px;
   }
 }
+
+/* Pour le zoom des images descriptions */
+
+@media (max-width: 550px) and (min-width: 480px) {
+  .zoomable-container {
+    margin: 0 auto;
+    height: 600px;
+    width: 70%;
+  }
+}
+
+@media (max-width: 479px) and (min-width: 431px) {
+  .zoomable-container {
+    margin: 0 auto;
+    height: 400px;
+    width: 60%;
+  }
+}
+
+@media (max-width: 430px) and (min-width: 400px) {
+  .zoomable-container {
+    margin: 0 auto;
+    height: 200px;
+    width: 50%;
+  }
+}
+
+@media (max-width: 399px) and (min-width: 349px) {
+  .zoomable-container {
+    margin: 0 auto;
+    height: 200px;
+    width: 50%;
+  }
+}
