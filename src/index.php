@@ -27,11 +27,11 @@ require_once("connect.php");
     <header>
 
         <section id="home">
-            <img class="img-header active" src="../img/header-1.png" alt="header">
-            <img class="img-header" src="../img/8.jpg" alt="header">
-            <img class="img-header" src="../img/header-1.png" alt="header">
-            <img class="img-header" src="../img/12.jpg" alt="header">
-            <img class="img-header" src="../img/13.jpg" alt="header">
+            <img class="img-header active" src="../img/img-3.jpg" alt="header">
+            <img class="img-header" src="../img/img-9.jpg" alt="header">
+            <img class="img-header" src="../img/img-2.jpg" alt="header">
+            <img class="img-header" src="../img/img-7.jpg" alt="header">
+            <img class="img-header" src="../img/11.jpg" alt="header">
             <div class="content active">
                 <h1 class="titre-header">Ets Dubuis</h1>
                 <p class="text-header">Depuis le 2 avril 2001, nous mettons notre expertise et notre passion au service

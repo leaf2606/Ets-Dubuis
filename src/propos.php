@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <header>
             <figure class="figure-container">
-                <img class="img-propos" src="../img/header-1.png" alt="img-header">
+                <img class="img-propos" src="../img/img-5.jpg" alt="img-header">
             </figure>
         </header>
 
@@ -84,15 +84,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <section id="parallax-1">
         <div class="parallax-trios">
             <div class="parallax-item">
-                <img src="../img/reparation.png" class="img-parallax" alt="img-reparation">
+                <img src="../img/img-12.png" class="img-parallax" alt="img-reparation">
                 <p class="parallax-text">Réparation</p>
             </div>
             <div class="parallax-item">
-                <img src="../img/vente.png" class="img-parallax" alt="img-vente">
+                <img src="../img/test-16.png" class="img-parallax" alt="img-vente">
                 <p class="parallax-text">Vente</p>
             </div>
             <div class="parallax-item">
-                <img src="../img/conseil.png" class="img-parallax" alt="img-conseil">
+                <img src="../img/66.png" class="img-parallax" alt="img-conseil">
                 <p class="parallax-text">Conseil</p>
             </div>
         </div>
@@ -255,7 +255,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 équipements toujours performants.</p>
 
             <div class="img-container">
-                <img class="img-container-text" src="../img/4.jpg" alt="Image">
+                <img class="img-container-text" src="../img/38.jpg" alt="Image">
             </div>
 
             <p class="text-bas">Nous plaçons la satisfaction client au cœur de notre démarche. En étant à l’écoute de
