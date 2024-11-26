@@ -252,16 +252,16 @@ html {
 }
 
 .img-parallax {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   object-fit: cover;
-  /* border: solid 3px white; */
+  border: solid 3px white;
   border-radius: 50%;
   margin-bottom: 10px;
 }
 
 .parallax-text {
-  font-size: 35px;
+  font-size: 30px;
   color: white;
   font-weight: bold;
 }
@@ -272,7 +272,7 @@ html {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 7% 0;
+  padding: 13% 0;
 }
 
 .titre-parallax {
@@ -291,7 +291,7 @@ html {
 }
 
 .parallax-inner {
-  padding: 15% 0;
+  padding: 13% 0;
 }
 
 p.text-parallax {
@@ -300,6 +300,28 @@ p.text-parallax {
   text-align: justify;
   line-height: 40px;
   margin: 0 50px 10px;
+}
+
+/* Media pour les icônes sur l'effet parallax */
+
+@media (max-width: 660px) and (min-width: 530px) {
+  .parallax-trios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: start;
+  }
+}
+
+@media (max-width: 529px) and (min-width: 349px) {
+  .parallax-trios {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: start;
+  }
 }
 
 /* Media Newsletter */

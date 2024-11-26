@@ -105,10 +105,12 @@ iframe {
   color: var(--secondary-text-color);
 }
 
-@media (max-width: 787px) and (min-width: 349px) {
+/* Media pour les mensions légales */
+
+@media (max-width: 942px) and (min-width: 349px) {
   .container-mension {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column;
     text-align: center;
     height: 150px;
   }

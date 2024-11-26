@@ -84,15 +84,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <section id="parallax-1">
         <div class="parallax-trios">
             <div class="parallax-item">
-                <img src="../img/img-12.png" class="img-parallax" alt="img-reparation">
+                <img src="../img/rep-2.png" class="img-parallax" alt="img-reparation">
                 <p class="parallax-text">Réparation</p>
             </div>
             <div class="parallax-item">
-                <img src="../img/test-16.png" class="img-parallax" alt="img-vente">
+                <img src="../img/vente-3.png" class="img-parallax" alt="img-vente">
                 <p class="parallax-text">Vente</p>
             </div>
             <div class="parallax-item">
-                <img src="../img/66.png" class="img-parallax" alt="img-conseil">
+                <img src="../img/conseil-2.png" class="img-parallax" alt="img-conseil">
                 <p class="parallax-text">Conseil</p>
             </div>
         </div>
